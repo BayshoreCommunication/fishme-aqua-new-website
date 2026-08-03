@@ -1,15 +1,52 @@
 @import "tailwindcss";
 
+@utility container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (min-width: 640px) {
+    max-width: 640px;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    padding-inline: 2rem;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #141414;
+
+  --color-primary: #006e5c;
+  --color-black: #141414;
+  --color-white: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-primary: var(--color-primary);
+  --color-black: var(--color-black);
+  --color-white: var(--color-white);
+
+  --font-sans: var(--font-mulish);
+  --font-heading: var(--font-playfair-display);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +59,21 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+.title-gradient {
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+  background: linear-gradient(90deg, #f91c13 0%, #00cb83 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }

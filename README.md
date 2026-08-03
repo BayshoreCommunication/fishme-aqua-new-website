@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is the [Fish Me Aqua](https://www.fishmeaqua.com) website, a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+**Live site:** [https://www.fishmeaqua.com](https://www.fishmeaqua.com)
 
 ## Getting Started
 
