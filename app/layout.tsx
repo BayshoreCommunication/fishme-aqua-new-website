@@ -50,8 +50,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="light"
       className={`${playfairDisplay.variable} ${mulish.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");var isDark=t?t==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.setAttribute("data-theme",isDark?"dark":"light");}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex flex-1 flex-col pt-20">{children}</main>

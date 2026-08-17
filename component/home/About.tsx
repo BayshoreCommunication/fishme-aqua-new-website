@@ -39,14 +39,14 @@ const MediaCard = ({ gradient }: { gradient: string }) => (
 
 const About = () => {
   return (
-    <section className="bg-[#0b0b0b] py-20 sm:py-28">
+    <section className="bg-background py-20 sm:py-28">
       <div className="container">
         <Reveal direction="up" delay={0}>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-            <h2 className="font-heading text-3xl font-bold uppercase tracking-widest text-white sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold uppercase tracking-widest text-foreground sm:text-4xl">
               About Us
             </h2>
-            <p className="max-w-xl text-sm leading-relaxed text-white/60 sm:text-right sm:text-base">
+            <p className="max-w-xl text-sm leading-relaxed text-foreground/60 sm:text-right sm:text-base">
               FishMeAqua designs and builds premium aquariums, aquascapes,
               ponds, and nature-inspired environments, creating beautiful
               living ecosystems for homes, businesses, and commercial spaces.
@@ -65,7 +65,7 @@ const About = () => {
 
         <Reveal direction="up" delay={450}>
           <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-xl text-sm leading-relaxed text-white/60 sm:text-base">
+            <p className="max-w-xl text-sm leading-relaxed text-foreground/60 sm:text-base">
               At FishMeAqua, we believe nature is more than decoration—it is
               an experience. Our mission is to transform ordinary spaces
               into inspiring environments that promote relaxation, wellness,

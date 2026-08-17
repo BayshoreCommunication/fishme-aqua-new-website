@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useSyncExternalStore } from "react";
 import Button from "@/component/shared/Button";
+import ThemeToggle from "@/component/shared/ThemeToggle";
 
 type NavLink = {
   label: string;
@@ -176,6 +177,7 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
+          <ThemeToggle />
           <Button href="/contact-us" variant="primary" className="!px-5 !py-2.5 text-sm">
             Book Free Consultation
             <span className="ml-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20">
@@ -184,14 +186,17 @@ const Navbar = () => {
           </Button>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setMobileOpen((prev) => !prev)}
-          className="flex items-center justify-center rounded-full p-2 text-white lg:hidden"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            className="flex items-center justify-center rounded-full p-2 text-white"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
