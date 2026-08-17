@@ -1,5 +1,9 @@
+"use client";
+
+import React, { useState, useRef, useEffect } from "react";
 import Button from "@/component/shared/Button";
 import Reveal from "@/component/motion/Reveal";
+import Image from "next/image";
 
 const ArrowUpRightIcon = () => (
   <svg
@@ -22,24 +26,77 @@ const PlayIcon = () => (
   </svg>
 );
 
-const MediaCard = ({ gradient }: { gradient: string }) => (
-  <div
-    className={`group relative aspect-video overflow-hidden rounded-2xl bg-gradient-to-br ${gradient}`}
-  >
-    <div className="absolute inset-0 bg-black/10 transition-colors duration-200 group-hover:bg-black/25" />
-    <button
-      type="button"
-      aria-label="Play video"
-      className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition-transform duration-200 hover:scale-105"
-    >
-      <PlayIcon />
-    </button>
-  </div>
-);
+interface MediaCardProps {
+  imageSrc: string;
+  videoSrc: string;
+  alt: string;
+  isPlaying: boolean;
+  onPlay: () => void;
+}
+
+const MediaCard = ({
+  imageSrc,
+  videoSrc,
+  alt,
+  isPlaying,
+  onPlay,
+}: MediaCardProps) => {
+  return (
+    <div className="group relative aspect-video overflow-hidden rounded-2xl bg-black shadow-xl">
+      {isPlaying ? (
+        <video
+          src={videoSrc}
+          controls
+          autoPlay
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      ) : (
+        <div className="relative h-full w-full cursor-pointer" onClick={onPlay}>
+          <Image
+            src={imageSrc}
+            alt={alt}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-black/30 transition-colors duration-200 group-hover:bg-black/45" />
+
+          <button
+            type="button"
+            aria-label="Play video"
+            className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-white/30 text-white backdrop-blur-md transition-transform duration-200 group-hover:scale-110"
+          >
+            <PlayIcon />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const About = () => {
+  const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Scroll up ba down korle section screen er baire gele video off korar jonno
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+
+      // Jodi section-ti completely screen er upore ba niche chole jay
+      if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
+        setActiveVideoIndex(null);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="bg-background py-20 sm:py-28">
+    <section ref={sectionRef} className="bg-background py-20 sm:py-28">
       <div className="container">
         <Reveal direction="up" delay={0}>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -48,28 +105,40 @@ const About = () => {
             </h2>
             <p className="max-w-xl text-sm leading-relaxed text-foreground/60 sm:text-right sm:text-base">
               FishMeAqua designs and builds premium aquariums, aquascapes,
-              ponds, and nature-inspired environments, creating beautiful
-              living ecosystems for homes, businesses, and commercial spaces.
+              ponds, and nature-inspired environments, creating beautiful living
+              ecosystems for homes, businesses, and commercial spaces.
             </p>
           </div>
         </Reveal>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           <Reveal direction="up" delay={150}>
-            <MediaCard gradient="from-zinc-700 via-zinc-800 to-black" />
+            <MediaCard
+              imageSrc="/assets/home/about-1.png"
+              videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
+              alt="About FishMeAqua - 1"
+              isPlaying={activeVideoIndex === 0}
+              onPlay={() => setActiveVideoIndex(0)}
+            />
           </Reveal>
           <Reveal direction="up" delay={300}>
-            <MediaCard gradient="from-teal-900 via-slate-800 to-black" />
+            <MediaCard
+              imageSrc="/assets/home/about-2.png"
+              videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
+              alt="About FishMeAqua - 2"
+              isPlaying={activeVideoIndex === 1}
+              onPlay={() => setActiveVideoIndex(1)}
+            />
           </Reveal>
         </div>
 
         <Reveal direction="up" delay={450}>
           <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-xl text-sm leading-relaxed text-foreground/60 sm:text-base">
-              At FishMeAqua, we believe nature is more than decoration—it is
-              an experience. Our mission is to transform ordinary spaces
-              into inspiring environments that promote relaxation, wellness,
-              and a deeper connection with the natural world.
+              At FishMeAqua, we believe nature is more than decoration—it is an
+              experience. Our mission is to transform ordinary spaces into
+              inspiring environments that promote relaxation, wellness, and a
+              deeper connection with the natural world.
             </p>
             <Button
               href="/about"
