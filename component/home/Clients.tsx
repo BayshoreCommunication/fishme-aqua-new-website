@@ -27,13 +27,11 @@ const ClientLogosSlider = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section className="py-12 md:py-16 bg-background text-foreground overflow-hidden transition-colors duration-300">
+    <section className="py-12 md:py-16  text-foreground overflow-hidden transition-colors duration-300 bg-foreground/5 dark:bg-white/2">
       <div className="w-full px-4 sm:px-8 md:px-16">
         <Reveal direction="up" delay={150}>
-          <div className="w-full bg-foreground/1.5 dark:bg-white/2 backdrop-blur-xl border-y border-foreground/5 dark:border-white/5 py-8 px-6 sm:px-10 rounded-2xl shadow-sm transition-all duration-300 overflow-hidden relative">
+          <div className="w-full   transition-all duration-300 overflow-hidden relative">
             {/* Left and Right Fade Gradients for smooth modern edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-background via-background/60 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-background via-background/60 to-transparent z-10 pointer-events-none" />
 
             {/* Marquee Track Container */}
             <div

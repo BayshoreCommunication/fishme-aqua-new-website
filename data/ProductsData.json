@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "title": "Crystal Glass Tank",
+    "price": 8500,
+    "category": "Tank",
+    "image": "/assets/products/CrystalGlassTank.png",
+    "description": "High-quality crystal glass tank"
+  },
+  {
+    "id": 2,
+    "title": "Nasir Glass Tank",
+    "price": 6500,
+    "category": "Tank",
+    "image": "/assets/products/NasirGlassTank.png",
+    "description": "Durable glass tank for aquatic setups"
+  },
+  {
+    "id": 3,
+    "title": "Light",
+    "price": 2500,
+    "category": "Light",
+    "image": "/assets/products/Light.png",
+    "description": "Energy-efficient aquarium LED light"
+  },
+  {
+    "id": 4,
+    "title": "Hob Filter",
+    "price": 1800,
+    "category": "Filter",
+    "image": "/assets/products/HobFilter.png",
+    "description": "Hanging-on-back filtration system"
+  },
+  {
+    "id": 5,
+    "title": "Canister Filter",
+    "price": 6500,
+    "category": "Filter",
+    "image": "/assets/products/CanisterFilter.png",
+    "description": "Powerful external canister filter"
+  },
+  {
+    "id": 6,
+    "title": "Filter Media",
+    "price": 6500,
+    "category": "Filter",
+    "image": "/assets/products/FilterMedia.png",
+    "description": "Advanced biological filter media"
+  },
+  {
+    "id": 7,
+    "title": "Cotton",
+    "price": 6500,
+    "category": "Filter",
+    "image": "/assets/products/Cotton.png",
+    "description": "Filter floss and cotton pad"
+  },
+  {
+    "id": 8,
+    "title": "Iron Wood",
+    "price": 6500,
+    "category": "Hardscape Materials",
+    "image": "/assets/products/IronWood.png",
+    "description": "Natural decorative iron wood"
+  },
+  {
+    "id": 9,
+    "title": "Spider Wood",
+    "price": 6500,
+    "category": "Hardscape Materials",
+    "image": "/assets/products/SpiderWood.png",
+    "description": "Intricate branching spider wood"
+  },
+  {
+    "id": 10,
+    "title": "Water Cooler",
+    "price": 6500,
+    "category": "Water Cooler",
+    "image": "/assets/products/WaterCooler.png",
+    "description": "Aquarium temperature chiller"
+  },
+  {
+    "id": 11,
+    "title": "Dragon Stone",
+    "price": 6500,
+    "category": "Hardscape Materials",
+    "image": "/assets/products/DragonStone.png",
+    "description": "Unique textured aquascape stone"
+  },
+  {
+    "id": 12,
+    "title": "Seiryu Stone",
+    "price": 6500,
+    "category": "Hardscape Materials",
+    "image": "/assets/products/SeiryuStone.png",
+    "description": "Classic grey striated aquascape rock"
+  },
+  {
+    "id": 13,
+    "title": "Lava Rock",
+    "price": 6500,
+    "category": "Hardscape Materials",
+    "image": "/assets/products/LavaRock.png",
+    "description": "Porous volcanic rock for beneficial bacteria"
+  },
+  {
+    "id": 14,
+    "title": "Aqua Soil",
+    "price": 6500,
+    "category": "Aqua Soil",
+    "image": "/assets/products/AquaSoil.png",
+    "description": "Nutrient-rich planted tank substrate"
+  },
+  {
+    "id": 15,
+    "title": "Plants",
+    "price": 6500,
+    "category": "Plants",
+    "image": "/assets/products/Plants.png",
+    "description": "Fresh live aquatic plants bundle"
+  },
+  {
+    "id": 16,
+    "title": "Water Conditioner",
+    "price": 6500,
+    "category": "Fertilizers & Chemicals",
+    "image": "/assets/products/WaterConditioner.png",
+    "description": "Safe tap water dechlorinator"
+  },
+  {
+    "id": 17,
+    "title": "Fish Medicine",
+    "price": 6500,
+    "category": "Fertilizers & Chemicals",
+    "image": "/assets/products/FishMedicine.png",
+    "description": "Effective health treatment for aquarium fish"
+  },
+  {
+    "id": 18,
+    "title": "Fish Food",
+    "price": 6500,
+    "category": "Fish Food",
+    "image": "/assets/products/FishFood.png",
+    "description": "Balanced daily nutrition for fish"
+  },
+  {
+    "id": 19,
+    "title": "Maintenance Kit",
+    "price": 6500,
+    "category": "Maintenance Kit",
+    "image": "/assets/products/MaintenanceKit.png",
+    "description": "Complete aquarium cleaning tools set"
+  },
+  {
+    "id": 20,
+    "title": "CO2 System",
+    "price": 6500,
+    "category": "CO2 System",
+    "image": "/assets/products/CO2System.png",
+    "description": "Complete CO2 injection system kit"
+  }
+]
