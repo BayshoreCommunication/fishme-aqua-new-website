@@ -98,12 +98,12 @@ const Hero = () => {
         priority
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/55 to-black/25" />
 
       <div className="container relative z-10 grid gap-12 py-20 lg:grid-cols-2 lg:items-center lg:gap-8">
-        <div className="flex flex-col items-start gap-6">
+        <div className="flex flex-col items-start text-left gap-6">
           <Reveal direction="up" delay={0}>
-            <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl text-left">
               Transform Your{" "}
               <span className="sm:whitespace-nowrap">
                 Space with <span className="title-gradient">Living Art</span>
@@ -112,7 +112,7 @@ const Hero = () => {
           </Reveal>
 
           <Reveal direction="up" delay={150}>
-            <p className="max-w-lg text-base leading-relaxed text-white/75 sm:text-lg">
+            <p className="max-w-lg text-base leading-relaxed text-white/75 sm:text-lg text-left">
               Premium aquatic design solutions for luxury homes, corporate
               offices, and commercial spaces. From custom aquariums to
               breathtaking aquascapes.
@@ -120,11 +120,11 @@ const Hero = () => {
           </Reveal>
 
           <Reveal direction="up" delay={300} className="w-full sm:w-auto">
-            <div className="flex w-full flex-row items-center justify-center gap-2 sm:w-auto sm:justify-start sm:gap-4">
+            <div className="flex w-full flex-row items-start justify-start gap-2 sm:w-auto sm:gap-4">
               <Button
                 href="/contact-us"
                 variant="primary"
-                className="whitespace-nowrap !px-3 !py-2 text-xs sm:!px-6 sm:!py-3 sm:text-sm"
+                className="whitespace-nowrap px-3! py-2! text-xs sm:px-6! sm:py-3! sm:text-sm"
               >
                 Book Free Consultation
                 <span className="ml-2 hidden h-5 w-5 items-center justify-center rounded-full bg-white/20 sm:inline-flex">
@@ -135,7 +135,7 @@ const Hero = () => {
               <Button
                 href="/projects"
                 variant="outline"
-                className="!border-white whitespace-nowrap !text-white !px-3 !py-2 text-xs hover:!bg-white hover:!text-black sm:!px-6 sm:!py-3 sm:text-sm"
+                className="border-white! whitespace-nowrap text-white! px-3! py-2! text-xs hover:bg-white! hover:text-black! sm:px-6! sm:py-3! sm:text-sm"
               >
                 View Our Projects
                 <span className="ml-2 hidden h-5 w-5 items-center justify-center rounded-full bg-white/10 sm:inline-flex">
@@ -146,7 +146,7 @@ const Hero = () => {
           </Reveal>
 
           <Reveal direction="up" delay={450} className="w-full sm:w-auto">
-            <p className="flex w-full flex-wrap items-center justify-center gap-3 text-white/70 sm:w-auto sm:justify-start">
+            <p className="flex w-full flex-wrap items-center justify-start gap-3 text-white/70 sm:w-auto">
               <span className="italic">Connect Our Community -</span>
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
                 <WhatsAppIcon className="h-4 w-4" />
