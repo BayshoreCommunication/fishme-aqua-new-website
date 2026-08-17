@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Play, Quote, Star } from "lucide-react";
@@ -23,8 +23,59 @@ const ArrowUpRightIcon = () => (
   </svg>
 );
 
+const largeTestimonials = [
+  {
+    videoThumbnail: "/assets/home/DavidCallahan-Video.png",
+    authorImage: "/assets/home/DavidCallahan.png",
+    name: "David Callahan",
+    role: "Marketing Director, Spotify",
+    quote:
+      "FishMeAqua transformed our office reception into a calm, memorable space. The installation was flawless, and visitors now mention the aquarium every single day.",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  },
+  {
+    videoThumbnail: "/assets/home/JaneCooper-Video.png",
+    authorImage: "/assets/home/JaneCooper.png",
+    name: "Jane Cooper",
+    role: "Operations Manager, Northstar",
+    quote:
+      "From the first design sketch to the final setup, the team understood exactly what we wanted. Our aquarium is now the highlight of our welcoming lounge.",
+    videoUrl: "https://www.youtube.com/embed/aqz-KE-bpKQ",
+  },
+  {
+    videoThumbnail: "/assets/home/about-1.png",
+    authorImage: "/assets/home/avatar1.png",
+    name: "Sarah Mitchel",
+    role: "Founder, Green Haven",
+    quote:
+      "The aquascape feels like a living piece of art. Their maintenance support keeps everything pristine, effortless, and beautiful for us every single day.",
+    videoUrl: "https://www.youtube.com/embed/Scxs7L0vhZ4",
+  },
+  {
+    videoThumbnail: "/assets/home/about-2.png",
+    authorImage: "/assets/home/avatar2.png",
+    name: "Michael Brown",
+    role: "Director, Urban Retreat",
+    quote:
+      "Our guests love the atmosphere FishMeAqua created. The project finished professionally, on schedule, with exceptional attention to every important detail.",
+    videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
+  },
+];
+
 const WhatOurClientsSay = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const testimonial = largeTestimonials[activeTestimonial];
+
+  useEffect(() => {
+    const slider = window.setInterval(() => {
+      setActiveTestimonial((current) =>
+        (current + 1) % largeTestimonials.length,
+      );
+    }, 4500);
+
+    return () => window.clearInterval(slider);
+  }, []);
 
   return (
     <section className="py-20 md:py-28 bg-background text-foreground overflow-hidden transition-colors duration-300">
@@ -52,8 +103,8 @@ const WhatOurClientsSay = () => {
                 <div>
                   <div className="relative h-64 sm:h-72 w-full rounded-3xl overflow-hidden mb-6 bg-black">
                     <Image
-                      src="/assets/home/DavidCallahan-Video.png"
-                      alt="David Callahan"
+                      src={testimonial.videoThumbnail}
+                      alt={testimonial.name}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -61,7 +112,7 @@ const WhatOurClientsSay = () => {
                     <button
                       onClick={() =>
                         setSelectedVideo(
-                          "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                          testimonial.videoUrl,
                         )
                       }
                       aria-label="Play Testimonial Video"
@@ -72,11 +123,8 @@ const WhatOurClientsSay = () => {
                   </div>
 
                   <Quote className="w-7 h-7 text-teal-500/80 mb-3" />
-                  <p className="text-foreground/80 text-sm sm:text-base leading-relaxed font-light mb-8">
-                    &quot;We needed a modern, high-converting website, and the
-                    Bravio team delivered beyond expectations. Their design and
-                    SEO expertise helped us increase conversion rate by 800% in
-                    just two weeks. Highly recommend!&quot;
+                  <p className="min-h-[120px] text-foreground/80 text-sm sm:text-base leading-relaxed font-light mb-8">
+                    &quot;{testimonial.quote}&quot;
                   </p>
                 </div>
 
@@ -84,27 +132,37 @@ const WhatOurClientsSay = () => {
                   <div className="flex items-center gap-3">
                     <div className="relative w-12 h-12 rounded-full overflow-hidden border border-foreground/20">
                       <Image
-                        src="/assets/home/DavidCallahan.png"
-                        alt="David Callahan"
+                        src={testimonial.authorImage}
+                        alt={testimonial.name}
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
                       <h4 className="font-bold text-foreground text-sm">
-                        David Callahan
+                        {testimonial.name}
                       </h4>
                       <p className="text-foreground/60 text-xs">
-                        Marketing Director, Spotify
+                        {testimonial.role}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-teal-500" />
-                    <span className="w-2 h-2 rounded-full bg-foreground/20" />
-                    <span className="w-2 h-2 rounded-full bg-foreground/20" />
-                    <span className="w-2 h-2 rounded-full bg-foreground/20" />
+                  <div className="flex items-center gap-1.5" aria-label="Testimonial slider">
+                    {largeTestimonials.map((_, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        aria-label={`Show testimonial ${index + 1}`}
+                        aria-current={activeTestimonial === index}
+                        onClick={() => setActiveTestimonial(index)}
+                        className={`h-2 w-2 rounded-full transition-colors ${
+                          activeTestimonial === index
+                            ? "bg-teal-500"
+                            : "bg-foreground/20"
+                        }`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -117,7 +175,7 @@ const WhatOurClientsSay = () => {
             {/* 2. RIGHT CARD 1: Sarah Mitchel Review Card */}
             {/* ========================================================= */}
             <Reveal direction="up" delay={200} className="h-full">
-              <div className="h-full bg-foreground/[0.03] dark:bg-white/[0.04] backdrop-blur-xl rounded-[2rem] p-6 border border-foreground/10 dark:border-white/15 flex flex-col justify-between shadow-lg">
+              <div className="h-full lg:min-h-[304px] bg-foreground/[0.03] dark:bg-white/[0.04] backdrop-blur-xl rounded-[2rem] p-6 border border-foreground/10 dark:border-white/15 flex flex-col justify-between shadow-lg">
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <Quote className="w-6 h-6 text-teal-500/80" />
@@ -165,7 +223,7 @@ const WhatOurClientsSay = () => {
             {/* 3. RIGHT CARD 2: Jane Cooper Review Card */}
             {/* ========================================================= */}
             <Reveal direction="up" delay={300} className="h-full">
-              <div className="h-full bg-foreground/[0.03] dark:bg-white/[0.04] backdrop-blur-xl rounded-[2rem] p-6 border border-foreground/10 dark:border-white/15 flex flex-col justify-between shadow-lg">
+              <div className="h-full lg:min-h-[304px] bg-foreground/[0.03] dark:bg-white/[0.04] backdrop-blur-xl rounded-[2rem] p-6 border border-foreground/10 dark:border-white/15 flex flex-col justify-between shadow-lg">
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <Quote className="w-6 h-6 text-teal-500/80" />
@@ -212,7 +270,7 @@ const WhatOurClientsSay = () => {
             {/* 4. RIGHT CARD 3: Acme Corporation Review Card */}
             {/* ========================================================= */}
             <Reveal direction="up" delay={400} className="h-full">
-              <div className="h-full bg-foreground/[0.03] dark:bg-white/[0.04] backdrop-blur-xl rounded-[2rem] p-6 border border-foreground/10 dark:border-white/15 flex flex-col justify-between shadow-lg">
+              <div className="h-full lg:min-h-[304px] bg-foreground/[0.03] dark:bg-white/[0.04] backdrop-blur-xl rounded-[2rem] p-6 border border-foreground/10 dark:border-white/15 flex flex-col justify-between shadow-lg">
                 <div>
                   <Quote className="w-6 h-6 text-teal-500/80 mb-3" />
                   <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed font-light mb-6">
@@ -257,7 +315,7 @@ const WhatOurClientsSay = () => {
             {/* 5. RIGHT CARD 4: Small Video Testimonial Card (Jane Cooper) */}
             {/* ========================================================= */}
             <Reveal direction="up" delay={500} className="h-full">
-              <div className="relative h-full min-h-[220px] rounded-[2rem] overflow-hidden border border-foreground/10 dark:border-white/15 group shadow-lg">
+              <div className="relative h-full min-h-[220px] lg:min-h-[304px] rounded-[2rem] overflow-hidden border border-foreground/10 dark:border-white/15 group shadow-lg">
                 <Image
                   src="/assets/home/JaneCooper-Video.png"
                   alt="Jane Cooper Testimonial"
