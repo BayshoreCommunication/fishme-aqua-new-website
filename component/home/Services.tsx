@@ -222,7 +222,7 @@ const Services = () => {
               return (
                 <SwiperSlide key={service.id} className="h-auto!">
                   {/* Glassmorphism Card styled exactly like the reference image */}
-                  <div className="h-full bg-white/[0.05] backdrop-blur-xl border border-white/15 p-7 rounded-3xl flex flex-col justify-between hover:border-white/30 hover:bg-white/[0.08] transition-all duration-300 group shadow-2xl">
+                  <div className="h-full bg-white/5 backdrop-blur-xl border border-white/15 p-7 rounded-3xl flex flex-col justify-between hover:border-white/30 hover:bg-white/8 transition-all duration-300 group shadow-2xl">
                     <div>
                       {/* Icon Container */}
                       <div className="w-14 h-14 rounded-2xl bg-white text-slate-900 flex items-center justify-center mb-6 shadow-md transition-transform duration-300 group-hover:scale-110">
