@@ -1,44 +1,29 @@
 @import "tailwindcss";
 
-.container {
+@utility container {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  box-sizing: border-box;
-}
+  margin-inline: auto;
+  padding-inline: 1rem;
 
-@media (min-width: 640px) {
-  .container {
+  @media (min-width: 640px) {
     max-width: 640px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-inline: 1.5rem;
   }
-}
 
-@media (min-width: 768px) {
-  .container {
+  @media (min-width: 768px) {
     max-width: 768px;
   }
-}
 
-@media (min-width: 1024px) {
-  .container {
+  @media (min-width: 1024px) {
     max-width: 1024px;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-inline: 2rem;
   }
-}
 
-@media (min-width: 1280px) {
-  .container {
+  @media (min-width: 1280px) {
     max-width: 1280px;
   }
-}
 
-@media (min-width: 1536px) {
-  .container {
+  @media (min-width: 1536px) {
     max-width: 1536px;
   }
 }
@@ -62,13 +47,6 @@
 
   --font-sans: var(--font-mulish);
   --font-heading: var(--font-playfair-display);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

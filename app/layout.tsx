@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Mulish } from "next/font/google";
+import { Mulish, Playfair_Display } from "next/font/google";
+import Footer from "@/component/layout/Footer";
+import Navbar from "@/component/layout/Navbar";
 import "./globals.css";
 
 const playfairDisplay = Playfair_Display({
@@ -50,7 +52,11 @@ export default function RootLayout({
       lang="en"
       className={`${playfairDisplay.variable} ${mulish.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        <main className="flex flex-1 flex-col pt-20">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
