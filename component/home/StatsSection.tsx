@@ -40,7 +40,7 @@ const StatsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 md:py-28 bg-slate-950 text-white overflow-hidden"
+      className="relative py-16 md:py-20 bg-slate-950 text-white overflow-hidden"
     >
       {/* Background Image with Dark Gradient Overlay */}
       <div className="absolute inset-0 z-0">

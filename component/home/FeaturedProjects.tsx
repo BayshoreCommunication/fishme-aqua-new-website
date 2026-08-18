@@ -135,7 +135,7 @@ const FeaturedProjects = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 md:py-28 bg-background text-foreground overflow-hidden"
+      className="py-16 md:py-20 bg-background text-foreground overflow-hidden"
     >
       <Container>
         {/* Header Section */}

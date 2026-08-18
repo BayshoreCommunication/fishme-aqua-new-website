@@ -36,7 +36,7 @@ const ShopAquaticEssentials = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-background text-foreground transition-colors duration-300">
+    <section className="py-16 md:py-20 bg-background text-foreground transition-colors duration-300">
       <Container>
         {/* Header Section */}
         <Reveal direction="up" delay={0}>

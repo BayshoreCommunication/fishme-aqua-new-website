@@ -27,7 +27,7 @@ const ClientLogosSlider = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section className="py-12 md:py-16  text-foreground overflow-hidden transition-colors duration-300 bg-foreground/5 dark:bg-white/2">
+    <section className="py-12 md:py-16  text-foreground overflow-hidden transition-colors duration-300 bg-foreground/3 dark:bg-white/2">
       <div className="w-full px-4 sm:px-8 md:px-16">
         <Reveal direction="up" delay={150}>
           <div className="w-full   transition-all duration-300 overflow-hidden relative">
