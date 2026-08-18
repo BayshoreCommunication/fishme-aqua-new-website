@@ -19,10 +19,10 @@ const navLinks: NavLink[] = [
     label: "Services",
     href: "/services",
     children: [
-      { label: "Aquarium Design", href: "/services/aquarium-design" },
+      { label: "Custom Aquariums", href: "/services/custom-aquariums" },
       { label: "Aquascaping", href: "/services/aquascaping" },
       { label: "Maintenance", href: "/services/maintenance" },
-      { label: "Consultation", href: "/services/consultation" },
+      { label: "Pond Design", href: "/services/pond-design" },
     ],
   },
   { label: "Projects", href: "/projects" },
@@ -137,13 +137,13 @@ const Navbar = () => {
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.label} className="group relative">
-                <button
-                  type="button"
+                <Link
+                  href={link.href}
                   className="flex items-center gap-1 rounded-full px-3 py-2 font-sans text-sm font-medium text-white/90 transition-colors hover:text-primary"
                 >
                   {link.label}
                   <ChevronDownIcon className="transition-transform duration-200 group-hover:rotate-180" />
-                </button>
+                </Link>
                 <div className="invisible absolute left-0 top-full z-10 w-56 translate-y-1 rounded-2xl border border-black/5 bg-white p-2 opacity-0 shadow-xl transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   {link.children.map((child) => (
                     <Link
@@ -229,6 +229,13 @@ const Navbar = () => {
                           {child.label}
                         </Link>
                       ))}
+                      <Link
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="rounded-lg px-3 py-2 font-sans text-sm font-semibold text-primary"
+                      >
+                        View all services
+                      </Link>
                     </div>
                   )}
                 </div>

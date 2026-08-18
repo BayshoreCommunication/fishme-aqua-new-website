@@ -12,18 +12,10 @@ import "swiper/css/navigation";
 
 import Reveal from "@/component/motion/Reveal";
 import {
-  Fish,
-  Waves,
-  Trees,
-  TreePine,
-  Droplets,
-  CloudRain,
-  Mountain,
-  Flower2,
-  Wrench,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { services as servicesData } from "@/data/services";
 
 const ArrowUpRightIcon = () => (
   <svg
@@ -40,80 +32,6 @@ const ArrowUpRightIcon = () => (
   </svg>
 );
 
-export const servicesData = [
-  {
-    id: 1,
-    slug: "custom-aquariums",
-    title: "Custom Aquariums",
-    description:
-      "Bespoke aquarium design and installation for residential and commercial spaces.",
-    icon: Fish,
-  },
-  {
-    id: 2,
-    slug: "aquascaping",
-    title: "Aquascaping",
-    description:
-      "Artistic underwater landscapes using plants, rocks, and driftwood.",
-    icon: Waves,
-  },
-  {
-    id: 3,
-    slug: "pond-design",
-    title: "Pond Design",
-    description:
-      "Stunning koi ponds and garden water features for outdoor spaces.",
-    icon: TreePine,
-  },
-  {
-    id: 4,
-    slug: "fountains",
-    title: "Fountains",
-    description:
-      "Indoor and outdoor fountain installations that create tranquil ambiance.",
-    icon: Droplets,
-  },
-  {
-    id: 5,
-    slug: "terrariums",
-    title: "Terrariums",
-    description:
-      "Self-sustaining mini ecosystems enclosed in beautiful glass containers.",
-    icon: Flower2,
-  },
-  {
-    id: 6,
-    slug: "rainforest-design",
-    title: "Rainforest Design",
-    description:
-      "Lush tropical environments with high humidity plants and specialized lighting.",
-    icon: CloudRain,
-  },
-  {
-    id: 7,
-    slug: "paludarium-design",
-    title: "Paludarium Design",
-    description:
-      "A stunning combination of terrestrial land and aquatic habitats.",
-    icon: Mountain,
-  },
-  {
-    id: 8,
-    slug: "landscaping",
-    title: "Landscaping",
-    description:
-      "Complete outdoor garden planning and nature-inspired structural designs.",
-    icon: Trees,
-  },
-  {
-    id: 9,
-    slug: "maintenance",
-    title: "Maintenance",
-    description:
-      "Professional cleaning, water testing, and ecosystem upkeep services.",
-    icon: Wrench,
-  },
-];
 
 const Services = () => {
   const swiperRef = useRef<SwiperType | null>(null);
