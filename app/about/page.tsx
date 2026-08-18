@@ -1,5 +1,9 @@
 "use client";
 
+import OurJourney from "@/component/about/OurJourney";
+import OurStory from "@/component/about/OurStory";
+import OurValues from "@/component/about/OurValues";
+import WhyFishMeAqua from "@/component/home/WhyFishMeAqua";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 
 const AboutPage = () => {
@@ -12,7 +16,10 @@ const AboutPage = () => {
         backgroundImage="/assets/home/hero-bg.svg"
       />
 
-      {/* Baki page sections ekhane thakbe */}
+      <OurStory />
+      <OurValues />
+      <WhyFishMeAqua />
+      <OurJourney />
     </>
   );
 };
