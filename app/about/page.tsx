@@ -1,19 +1,20 @@
 "use client";
 
-import Button from "@/component/shared/Button";
+import Breadcrumb from "@/component/shared/Breadcrumb";
 
-const page = () => {
+const AboutPage = () => {
   return (
-    <div className="container">
-      <div className="!bg-primary flex justify-center">
-        {" "}
-        <Button href="/">Go home</Button>
-        <Button variant="outline" onClick={() => alert("clicked")}>
-          Click me
-        </Button>
-      </div>
-    </div>
+    <>
+      {/* Custom Title, Subtitle ebong Background Image pass kora hocche */}
+      <Breadcrumb
+        firstPart="About"
+        lastWord="Fish Me Aqua"
+        backgroundImage="/assets/home/hero-bg.svg"
+      />
+
+      {/* Baki page sections ekhane thakbe */}
+    </>
   );
 };
 
-export default page;
+export default AboutPage;
