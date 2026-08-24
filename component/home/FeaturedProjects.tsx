@@ -11,7 +11,6 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import Container from "@/component/layout/Container";
 import Reveal from "@/component/motion/Reveal";
 import projectsData from "@/data/FeaturedProjects.json";
 
@@ -137,7 +136,7 @@ const FeaturedProjects = () => {
       ref={sectionRef}
       className="py-16 md:py-20 bg-background text-foreground overflow-hidden"
     >
-      <Container>
+      <div className="container">
         {/* Header Section */}
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-10">
@@ -286,7 +285,7 @@ const FeaturedProjects = () => {
             )}
           </div>
         </Reveal>
-      </Container>
+      </div>
 
       {/* Video Modal */}
       {selectedVideo && (

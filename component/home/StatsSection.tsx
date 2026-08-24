@@ -3,7 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import CountUp from "@/component/motion/CountUp";
-import Container from "@/component/layout/Container";
+
 import Reveal from "@/component/motion/Reveal";
 
 interface StatItem {
@@ -55,7 +55,7 @@ const StatsSection = () => {
         <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px]" />
       </div>
 
-      <Container className="relative z-10">
+      <div className="container relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
           {statsData.map((stat, index) => (
             <Reveal key={index} direction="up" delay={index * 100}>
@@ -72,7 +72,7 @@ const StatsSection = () => {
             </Reveal>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 };

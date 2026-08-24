@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Play, Quote, Star } from "lucide-react";
 
-import Container from "@/component/layout/Container";
 import Reveal from "@/component/motion/Reveal";
 
 const ArrowUpRightIcon = () => (
@@ -79,7 +78,7 @@ const WhatOurClientsSay = () => {
 
   return (
     <section className="py-16 md:py-20 bg-background text-foreground overflow-hidden transition-colors duration-300">
-      <Container>
+      <div className="container">
         {/* Header Section */}
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -410,7 +409,7 @@ const WhatOurClientsSay = () => {
             </div>
           </div>
         </Reveal>
-      </Container>
+      </div>
 
       {/* Video Modal Popup */}
       {selectedVideo && (

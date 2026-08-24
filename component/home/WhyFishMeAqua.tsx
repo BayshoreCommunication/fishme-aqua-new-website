@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Play, Award, Sparkles, ShieldCheck, Headphones } from "lucide-react";
-import Container from "@/component/layout/Container";
+
 import Reveal from "@/component/motion/Reveal";
 
 interface WhyChooseItem {
@@ -82,7 +82,7 @@ const WhyFishMeAqua = () => {
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
       </div>
 
-      <Container className="relative z-10">
+      <div className="relative container z-10">
         {/* Header Section */}
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -203,7 +203,7 @@ const WhyFishMeAqua = () => {
             </Reveal>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };

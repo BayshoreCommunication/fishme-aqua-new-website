@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock, Sprout } from "lucide-react";
 
-import Container from "@/component/layout/Container";
 import Reveal from "@/component/motion/Reveal";
 
 const ArrowUpRightIcon = () => (
@@ -26,7 +25,7 @@ const ArrowUpRightIcon = () => (
 const BlogSection = () => {
   return (
     <section className="py-16 md:py-20 bg-foreground/3 dark:bg-white/2 text-foreground overflow-hidden transition-colors duration-300">
-      <Container>
+      <div className="container">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <Reveal direction="up" delay={0}>
@@ -208,7 +207,7 @@ const BlogSection = () => {
             </Reveal>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };
