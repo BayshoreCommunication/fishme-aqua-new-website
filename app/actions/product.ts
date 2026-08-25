@@ -3,7 +3,7 @@
 const BACKEND_URL = (
   process.env.API_URL ??
   process.env.NEXT_PUBLIC_API_URL ??
-  "https://api.bayshorecommunication.com"
+  "https://fishmeaqua-backend.vercel.app"
 ).replace(/\/$/, "");
 const PRODUCTS_API = `${BACKEND_URL}/api/v1/products`;
 
@@ -64,7 +64,8 @@ export interface ListProductsParams {
 export type ProductSort = "default" | "price-low" | "price-high" | "name";
 
 export type ProductActionResult<T> =
-  { ok: true; data: T } | { ok: false; error: string };
+  | { ok: true; data: T }
+  | { ok: false; error: string };
 
 const normalizeInteger = (
   value: number | undefined,

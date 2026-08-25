@@ -1,12 +1,12 @@
 "use server";
 
-import { AuthError } from "next-auth";
 import { signIn, signOut } from "@/auth";
+import { AuthError } from "next-auth";
 
 const BACKEND_URL = (
   process.env.API_URL ??
   process.env.NEXT_PUBLIC_API_URL ??
-  "https://api.bayshorecommunication.com"
+  "https://fishmeaqua-backend.vercel.app"
 ).replace(/\/$/, "");
 const API = `${BACKEND_URL}/api/v1`;
 

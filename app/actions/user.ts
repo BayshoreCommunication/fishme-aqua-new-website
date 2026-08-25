@@ -5,7 +5,7 @@ import { auth } from "@/auth";
 const BACKEND_URL = (
   process.env.API_URL ??
   process.env.NEXT_PUBLIC_API_URL ??
-  "https://api.bayshorecommunication.com"
+  "https://fishmeaqua-backend.vercel.app"
 ).replace(/\/$/, "");
 const ME_API = `${BACKEND_URL}/api/v1/users/me`;
 
@@ -237,7 +237,11 @@ export async function updateProfileAction(
       return { ok: false, error: "The profile service returned invalid data." };
     }
 
-    return { ok: true, data: profile, message: "Profile updated successfully." };
+    return {
+      ok: true,
+      data: profile,
+      message: "Profile updated successfully.",
+    };
   } catch {
     return { ok: false, error: "Unable to connect to the profile service." };
   }
@@ -256,7 +260,8 @@ export async function changeCustomerPasswordAction(
   if (!currentPassword || newPassword.length < 8) {
     return {
       ok: false,
-      error: "Enter your current password and a new password of at least 8 characters.",
+      error:
+        "Enter your current password and a new password of at least 8 characters.",
     };
   }
   if (newPassword !== confirmPassword) {

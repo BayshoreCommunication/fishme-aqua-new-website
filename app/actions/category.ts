@@ -3,7 +3,7 @@
 const BACKEND_URL = (
   process.env.API_URL ??
   process.env.NEXT_PUBLIC_API_URL ??
-  "https://api.bayshorecommunication.com"
+  "https://fishmeaqua-backend.vercel.app"
 ).replace(/\/$/, "");
 const CATEGORIES_API = `${BACKEND_URL}/api/v1/categories`;
 const OBJECT_ID_PATTERN = /^[a-f\d]{24}$/i;
@@ -23,7 +23,8 @@ export interface Category {
 }
 
 export type CategoryActionResult<T> =
-  { ok: true; data: T } | { ok: false; error: string };
+  | { ok: true; data: T }
+  | { ok: false; error: string };
 
 async function readError(response: Response, fallback: string) {
   try {

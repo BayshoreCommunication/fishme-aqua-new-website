@@ -5,7 +5,7 @@ import { auth } from "@/auth";
 const BACKEND_URL = (
   process.env.API_URL ??
   process.env.NEXT_PUBLIC_API_URL ??
-  "https://api.bayshorecommunication.com"
+  "https://fishmeaqua-backend.vercel.app"
 ).replace(/\/$/, "");
 const REVIEWS_API = `${BACKEND_URL}/api/v1/reviews`;
 
@@ -95,7 +95,10 @@ const OBJECT_ID_PATTERN = /^[a-f\d]{24}$/i;
 
 const readApiError = async (response: Response, fallback: string) => {
   try {
-    const body = (await response.json()) as { message?: unknown; errors?: unknown };
+    const body = (await response.json()) as {
+      message?: unknown;
+      errors?: unknown;
+    };
     if (Array.isArray(body.errors) && typeof body.errors[0] === "string") {
       return body.errors[0];
     }
@@ -129,14 +132,20 @@ export async function submitCustomerReviewAction(
     return { ok: false, error: "Choose a rating between 1 and 5." };
   }
   if (comment.length < 3 || comment.length > 1000) {
-    return { ok: false, error: "Review must be between 3 and 1000 characters." };
+    return {
+      ok: false,
+      error: "Review must be between 3 and 1000 characters.",
+    };
   }
   if (attachments.length > 5) {
     return { ok: false, error: "You can attach up to five files." };
   }
   for (const file of attachments) {
     if (!ALLOWED_ATTACHMENT_TYPES.has(file.type)) {
-      return { ok: false, error: "Only JPG, PNG, WEBP, and PDF files are allowed." };
+      return {
+        ok: false,
+        error: "Only JPG, PNG, WEBP, and PDF files are allowed.",
+      };
     }
     if (file.size > MAX_ATTACHMENT_SIZE) {
       return { ok: false, error: `${file.name} is larger than 5MB.` };

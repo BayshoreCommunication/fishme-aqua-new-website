@@ -21,7 +21,7 @@ interface BackendSigninResponse {
 const BACKEND_URL = (
   process.env.API_URL ??
   process.env.NEXT_PUBLIC_API_URL ??
-  "https://api.bayshorecommunication.com"
+  "https://fishmeaqua-backend.vercel.app"
 ).replace(/\/$/, "");
 const AUTH_SECRET =
   process.env.WEBSITE_AUTH_SECRET ??
@@ -73,9 +73,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
             ? credentials.identifier.trim()
             : "";
         const password =
-          typeof credentials?.password === "string"
-            ? credentials.password
-            : "";
+          typeof credentials?.password === "string" ? credentials.password : "";
 
         if (!identifier || !password) return null;
 

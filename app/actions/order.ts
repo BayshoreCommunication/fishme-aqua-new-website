@@ -5,7 +5,7 @@ import { auth } from "@/auth";
 const BACKEND_URL = (
   process.env.API_URL ??
   process.env.NEXT_PUBLIC_API_URL ??
-  "https://api.bayshorecommunication.com"
+  "https://fishmeaqua-backend.vercel.app"
 ).replace(/\/$/, "");
 const ORDERS_API = `${BACKEND_URL}/api/v1/orders`;
 
@@ -154,7 +154,8 @@ export async function createOrderAction(
   const customerEmail = getValue(formData, "email").toLowerCase();
   const notes = getValue(formData, "notes");
   const items = parseItems(getValue(formData, "items"));
-  const useAlternateAddress = getValue(formData, "shipToDifferentAddress") === "on";
+  const useAlternateAddress =
+    getValue(formData, "shipToDifferentAddress") === "on";
   const prefix = useAlternateAddress ? "shipping" : "billing";
   const division = getValue(formData, `${prefix}Division`);
   const district = getValue(formData, `${prefix}District`);
@@ -165,15 +166,22 @@ export async function createOrderAction(
   const zone = getValue(formData, `${prefix}Zone`);
 
   if (!customerName || !customerPhone || !PHONE_PATTERN.test(customerPhone)) {
-    return { ok: false, error: "Enter a valid customer name and phone number." };
+    return {
+      ok: false,
+      error: "Enter a valid customer name and phone number.",
+    };
   }
   if (customerEmail && !EMAIL_PATTERN.test(customerEmail)) {
-    return { ok: false, error: "Enter a valid email address or leave it empty." };
+    return {
+      ok: false,
+      error: "Enter a valid email address or leave it empty.",
+    };
   }
   if (!items) {
     return {
       ok: false,
-      error: "Your cart contains an unavailable product. Please update your cart.",
+      error:
+        "Your cart contains an unavailable product. Please update your cart.",
     };
   }
   if (
@@ -181,7 +189,10 @@ export async function createOrderAction(
     !area ||
     !DELIVERY_ZONES.includes(zone as (typeof DELIVERY_ZONES)[number])
   ) {
-    return { ok: false, error: "Complete the delivery address before ordering." };
+    return {
+      ok: false,
+      error: "Complete the delivery address before ordering.",
+    };
   }
   if (postCode && !POST_CODE_PATTERN.test(postCode)) {
     return { ok: false, error: "Post code must contain exactly four digits." };
@@ -249,9 +260,7 @@ export async function getCustomerOrdersAction(
   const accessToken = session?.user?.accessToken;
   if (!accessToken) return { ok: false, error: "Please sign in again." };
 
-  const page = Number.isInteger(requestedPage)
-    ? Math.max(1, requestedPage)
-    : 1;
+  const page = Number.isInteger(requestedPage) ? Math.max(1, requestedPage) : 1;
 
   try {
     const response = await fetch(`${ORDERS_API}/my-orders?page=${page}`, {
@@ -265,7 +274,10 @@ export async function getCustomerOrdersAction(
     if (!response.ok) {
       return {
         ok: false,
-        error: await readApiError(response, "Unable to load your order history."),
+        error: await readApiError(
+          response,
+          "Unable to load your order history.",
+        ),
       };
     }
 
