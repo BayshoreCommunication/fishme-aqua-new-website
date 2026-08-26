@@ -16,6 +16,7 @@ import {
   FileText,
   Heart,
   HelpCircle,
+  Link2,
   Minus,
   LoaderCircle,
   PackageCheck,
@@ -79,6 +80,7 @@ const ProductDetials = ({
     initialReviews.ok ? "" : initialReviews.error,
   );
   const [reviewsLoading, setReviewsLoading] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
   const { wishlist, cart, toggleWishlist, addToCart, openCart } =
     useShopStore();
   const shopProduct = toShopProduct(product);
@@ -112,6 +114,38 @@ const ProductDetials = ({
     if (!isInStock) return;
     addToCart(product._id, quantity, shopProduct);
     if (showCart) openCart();
+  };
+
+  const getShareUrl = () =>
+    typeof window !== "undefined" ? window.location.href : "";
+
+  const shareText = product.shortDescription
+    ? `${product.title} — ${product.shortDescription}`
+    : product.title;
+
+  const openShareWindow = (url: string) =>
+    window.open(url, "_blank", "noopener,noreferrer,width=600,height=600");
+
+  const handleShare = (network: "facebook" | "x" | "whatsapp" | "linkedin") => {
+    const url = encodeURIComponent(getShareUrl());
+    const text = encodeURIComponent(shareText);
+    const shareUrls: Record<typeof network, string> = {
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+      x: `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
+      whatsapp: `https://wa.me/?text=${text}%20${url}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+    };
+    openShareWindow(shareUrls[network]);
+  };
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(getShareUrl());
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2000);
+    } catch {
+      setLinkCopied(false);
+    }
   };
 
   return (
@@ -337,6 +371,87 @@ const ProductDetials = ({
                 </dd>
               </div>
             </dl>
+
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <span className="text-sm font-bold text-foreground/65">
+                Share:
+              </span>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  aria-label="Share on Facebook"
+                  onClick={() => handleShare("facebook")}
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-foreground/8 text-foreground/65 transition-colors hover:bg-primary hover:text-white dark:bg-white/10"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4 fill-current"
+                    aria-hidden="true"
+                  >
+                    <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  aria-label="Share on X"
+                  onClick={() => handleShare("x")}
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-foreground/8 text-foreground/65 transition-colors hover:bg-primary hover:text-white dark:bg-white/10"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4 fill-current"
+                    aria-hidden="true"
+                  >
+                    <path d="M18.9 2h3.3l-7.2 8.2L23.3 22h-6.7l-5.2-6.8L5.4 22H2.1l7.7-8.8L1 2h6.9l4.7 6.2Zm-1.2 18h1.8L7.1 4h-1.9Z" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  aria-label="Share on WhatsApp"
+                  onClick={() => handleShare("whatsapp")}
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-foreground/8 text-foreground/65 transition-colors hover:bg-primary hover:text-white dark:bg-white/10"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4 fill-current"
+                    aria-hidden="true"
+                  >
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.31-1.93 1.34-.5.03-1.01.22-3.39-.71-2.87-1.14-4.72-4.05-4.87-4.24-.14-.19-1.17-1.56-1.17-2.98s.75-2.11 1.02-2.4c.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.58.17.29.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.35 1.45.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.94.29.14.48.21.55.34.07.13.07.75-.17 1.43Z" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  aria-label="Share on LinkedIn"
+                  onClick={() => handleShare("linkedin")}
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-foreground/8 text-foreground/65 transition-colors hover:bg-primary hover:text-white dark:bg-white/10"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4 fill-current"
+                    aria-hidden="true"
+                  >
+                    <path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3.2 8.75h3.5V21H3.2Zm6.16 0h3.35v1.68h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.32 4.18 5.35V21h-3.5v-5.32c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21H9.36Z" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  aria-label="Copy product link"
+                  onClick={handleCopyLink}
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-foreground/8 text-foreground/65 transition-colors hover:bg-primary hover:text-white dark:bg-white/10"
+                >
+                  {linkCopied ? (
+                    <Check aria-hidden="true" className="h-4 w-4" />
+                  ) : (
+                    <Link2 aria-hidden="true" className="h-4 w-4" />
+                  )}
+                </button>
+              </div>
+              {linkCopied && (
+                <span className="text-xs font-semibold text-primary">
+                  Link copied!
+                </span>
+              )}
+            </div>
 
             <div className="mt-auto grid gap-3 pt-4 text-sm text-foreground/65 sm:grid-cols-2">
               <p className="flex items-center gap-2">

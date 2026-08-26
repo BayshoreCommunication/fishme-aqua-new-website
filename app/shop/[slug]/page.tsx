@@ -2,8 +2,40 @@ import { getProductAction, listProductsAction } from "@/app/actions/product";
 import { getApprovedProductReviewsAction } from "@/app/actions/review";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import ProductDetials from "@/component/shop/ProductDetials";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import sanitizeHtml from "sanitize-html";
+
+export const generateMetadata = async ({
+  params,
+}: PageProps<"/shop/[slug]">): Promise<Metadata> => {
+  const { slug } = await params;
+  const productResult = await getProductAction(slug);
+  if (!productResult.ok) return {};
+
+  const product = productResult.data;
+  const description =
+    product.shortDescription || `${product.title} — available at Fish Me Aqua.`;
+
+  return {
+    title: product.title,
+    description,
+    openGraph: {
+      title: product.title,
+      description,
+      type: "website",
+      images: product.featureImage
+        ? [{ url: product.featureImage, alt: product.title }]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.title,
+      description,
+      images: product.featureImage ? [product.featureImage] : undefined,
+    },
+  };
+};
 
 const Page = async ({ params }: PageProps<"/shop/[slug]">) => {
   const { slug } = await params;
