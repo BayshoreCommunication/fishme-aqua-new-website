@@ -4,6 +4,7 @@ import { signoutAction } from "@/app/actions/auth";
 import Button from "@/component/shared/Button";
 import ThemeToggle from "@/component/shared/ThemeToggle";
 import {
+  ChevronRight,
   Heart,
   LogIn,
   LogOut,
@@ -13,6 +14,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { services } from "@/data/services";
 import { usePathname } from "next/navigation";
 import { useRef, useState, useSyncExternalStore } from "react";
 
@@ -38,12 +40,10 @@ const navLinks: NavLink[] = [
   {
     label: "Services",
     href: "/services",
-    children: [
-      { label: "Custom Aquariums", href: "/services/custom-aquariums" },
-      { label: "Aquascaping", href: "/services/aquascaping" },
-      { label: "Maintenance", href: "/services/maintenance" },
-      { label: "Pond Design", href: "/services/pond-design" },
-    ],
+    children: services.map((service) => ({
+      label: service.title,
+      href: `/services/${service.slug}`,
+    })),
   },
   { label: "Projects", href: "/projects" },
   { label: "Portfolio", href: "/portfolio" },
@@ -122,6 +122,34 @@ const subscribeToScroll = (callback: () => void) => {
   return () => window.removeEventListener("scroll", callback);
 };
 
+const normalizePath = (path: string) => {
+  if (!path) return "/";
+  const trimmed = path.split("?")[0].split("#")[0];
+  if (trimmed.length > 1 && trimmed.endsWith("/")) {
+    return trimmed.slice(0, -1);
+  }
+  return trimmed || "/";
+};
+
+const isRouteActive = (href: string, currentPath: string) => {
+  const normCurrent = normalizePath(currentPath);
+  const normHref = normalizePath(href);
+
+  if (normHref === "/") {
+    return normCurrent === "/";
+  }
+
+  return normCurrent === normHref || normCurrent.startsWith(`${normHref}/`);
+};
+
+const isParentNavActive = (link: NavLink, currentPath: string) => {
+  if (isRouteActive(link.href, currentPath)) return true;
+  if (link.children?.some((child) => isRouteActive(child.href, currentPath))) {
+    return true;
+  }
+  return false;
+};
+
 const getScrolledSnapshot = () => window.scrollY > 20;
 
 const getScrolledServerSnapshot = () => false;
@@ -158,46 +186,113 @@ const Navbar = ({ user = null }: NavbarProps) => {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) =>
-            link.children ? (
+          {navLinks.map((link) => {
+            const isParentActive = isParentNavActive(link, pathname);
+
+            return link.children ? (
               <div key={link.label} className="group relative">
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 font-sans text-sm font-medium text-white/90 transition-colors hover:text-primary"
+                  className={`flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-1.5 font-sans text-sm transition-all duration-200 ${
+                    isParentActive
+                      ? "border border-white text-white font-medium"
+                      : "border border-transparent text-white/80 hover:text-white"
+                  }`}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
                   <ChevronDownIcon className="transition-transform duration-200 group-hover:rotate-180" />
                 </Link>
-                <div className="invisible absolute left-0 top-full z-10 w-56 translate-y-1 rounded-2xl border border-black/5 bg-white p-2 opacity-0 shadow-xl transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                  {link.children.map((child) => (
-                    <Link
-                      key={child.label}
-                      href={child.href}
-                      className="block rounded-xl px-3 py-2 font-sans text-sm text-black/70 transition-colors hover:bg-primary/10 hover:text-primary"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
+                {(() => {
+                  const midpoint = Math.ceil(link.children.length / 2);
+                  const leftColumn = link.children.slice(0, midpoint);
+                  const rightColumn = link.children.slice(midpoint);
+
+                  return (
+                    <div className="invisible absolute -left-14 top-full z-50 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                      <div className="w-[580px] rounded-3xl border border-white/10 bg-[#121615]/95 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.65)] backdrop-blur-xl">
+                        <div className="grid grid-cols-[1fr_auto_1fr] items-stretch gap-x-6">
+                          {/* Left Column (5 items) */}
+                          <div className="flex flex-col gap-3">
+                            {leftColumn.map((child) => {
+                              const isChildActive = isRouteActive(
+                                child.href,
+                                pathname,
+                              );
+                              return (
+                                <Link
+                                  key={child.label}
+                                  href={child.href}
+                                  className={`group/item flex items-center justify-between rounded-xl px-2 py-1.5 font-sans text-sm tracking-wide transition-colors ${
+                                    isChildActive
+                                      ? "font-semibold text-primary"
+                                      : "font-medium text-white/90 hover:text-primary"
+                                  }`}
+                                >
+                                  <span>{child.label}</span>
+                                  <ChevronRight
+                                    className={`h-4 w-4 shrink-0 transition-all duration-200 group-hover/item:translate-x-0.5 ${
+                                      isChildActive
+                                        ? "text-primary"
+                                        : "text-white/70 group-hover/item:text-primary"
+                                    }`}
+                                  />
+                                </Link>
+                              );
+                            })}
+                          </div>
+
+                          {/* Center Vertical Divider */}
+                          <div className="my-0.5 w-px bg-white/20 self-stretch" />
+
+                          {/* Right Column (4 items) */}
+                          <div className="flex flex-col gap-3">
+                            {rightColumn.map((child) => {
+                              const isChildActive = isRouteActive(
+                                child.href,
+                                pathname,
+                              );
+                              return (
+                                <Link
+                                  key={child.label}
+                                  href={child.href}
+                                  className={`group/item flex items-center justify-between rounded-xl px-2 py-1.5 font-sans text-sm tracking-wide transition-colors ${
+                                    isChildActive
+                                      ? "font-semibold text-primary"
+                                      : "font-medium text-white/90 hover:text-primary"
+                                  }`}
+                                >
+                                  <span>{child.label}</span>
+                                  <ChevronRight
+                                    className={`h-4 w-4 shrink-0 transition-all duration-200 group-hover/item:translate-x-0.5 ${
+                                      isChildActive
+                                        ? "text-primary"
+                                        : "text-white/70 group-hover/item:text-primary"
+                                    }`}
+                                  />
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
-            ) : link.label === "Shop" ? (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="whitespace-nowrap rounded-full border border-white/30 px-4 py-2 font-sans text-sm font-medium text-white/90 transition-colors hover:border-primary hover:text-primary"
-              >
-                {link.label}
-              </Link>
             ) : (
               <Link
                 key={link.label}
                 href={link.href}
-                className="whitespace-nowrap rounded-full px-3 py-2 font-sans text-sm font-medium text-white/90 transition-colors hover:text-primary"
+                className={`whitespace-nowrap rounded-full px-4 py-1.5 font-sans text-sm transition-all duration-200 ${
+                  isParentActive
+                    ? "border border-white text-white font-medium"
+                    : "border border-transparent text-white/80 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
-            ),
-          )}
+            );
+          })}
         </nav>
 
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
@@ -230,15 +325,21 @@ const Navbar = ({ user = null }: NavbarProps) => {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-white/10 bg-black/95 backdrop-blur-md lg:hidden">
+        <div className="border-t border-white/10 bg-black/95 backdrop-blur-md lg:hidden max-h-[calc(100vh-5rem)] overflow-y-auto">
           <nav className="container flex flex-col gap-1 py-4">
-            {navLinks.map((link) =>
-              link.children ? (
+            {navLinks.map((link) => {
+              const isParentActive = isParentNavActive(link, pathname);
+
+              return link.children ? (
                 <div key={link.label}>
                   <button
                     type="button"
                     onClick={() => setMobileServicesOpen((prev) => !prev)}
-                    className="flex w-full items-center justify-between rounded-xl px-3 py-2.5 font-sans text-sm font-medium text-white/90"
+                    className={`flex w-full items-center justify-between rounded-xl px-3.5 py-2.5 font-sans text-sm transition-colors ${
+                      isParentActive
+                        ? "border border-white/60 bg-white/10 font-medium text-white"
+                        : "border border-transparent font-medium text-white/90"
+                    }`}
                   >
                     {link.label}
                     <ChevronDownIcon
@@ -249,20 +350,39 @@ const Navbar = ({ user = null }: NavbarProps) => {
                   </button>
                   {mobileServicesOpen && (
                     <div className="ml-3 flex flex-col gap-1 border-l border-white/10 pl-3">
-                      {link.children.map((child) => (
-                        <Link
-                          key={child.label}
-                          href={child.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="rounded-lg px-3 py-2 font-sans text-sm text-white/70 hover:text-primary"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                      {link.children.map((child) => {
+                        const isChildActive = isRouteActive(
+                          child.href,
+                          pathname,
+                        );
+                        return (
+                          <Link
+                            key={child.label}
+                            href={child.href}
+                            onClick={() => setMobileOpen(false)}
+                            className={`flex items-center justify-between rounded-lg px-3 py-2 font-sans text-sm transition-colors ${
+                              isChildActive
+                                ? "bg-white/10 font-semibold text-primary"
+                                : "text-white/70 hover:text-primary"
+                            }`}
+                          >
+                            <span>{child.label}</span>
+                            <ChevronRight
+                              className={`h-3.5 w-3.5 ${
+                                isChildActive ? "text-primary" : "text-white/40"
+                              }`}
+                            />
+                          </Link>
+                        );
+                      })}
                       <Link
                         href={link.href}
                         onClick={() => setMobileOpen(false)}
-                        className="rounded-lg px-3 py-2 font-sans text-sm font-semibold text-primary"
+                        className={`rounded-lg px-3 py-2 font-sans text-sm font-semibold transition-colors ${
+                          pathname === link.href
+                            ? "bg-white/10 text-primary"
+                            : "text-primary hover:underline"
+                        }`}
                       >
                         View all services
                       </Link>
@@ -274,12 +394,16 @@ const Navbar = ({ user = null }: NavbarProps) => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-xl px-3 py-2.5 font-sans text-sm font-medium text-white/90 hover:text-primary"
+                  className={`rounded-xl px-3.5 py-2.5 font-sans text-sm transition-colors ${
+                    isParentActive
+                      ? "border border-white/60 bg-white/10 font-medium text-white"
+                      : "border border-transparent font-medium text-white/90 hover:text-primary"
+                  }`}
                 >
                   {link.label}
                 </Link>
-              ),
-            )}
+              );
+            })}
 
             <Button
               href="/contact-us"
