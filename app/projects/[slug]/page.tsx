@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, use } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -20,6 +21,7 @@ type ProjectPageProps = { params: Promise<{ slug: string }> };
 
 export default function ProjectDetailPage({ params }: ProjectPageProps) {
   const { slug } = use(params);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const project = projects.find((item) => String(item.id) === slug);
   if (!project) notFound();

@@ -97,7 +97,7 @@ const BlogSection = () => {
                     <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-teal-300 transition-colors">
                       Beginner’s Guide to Aquascaping
                     </h3>
-                    <p className="text-gray-200 text-sm sm:text-base leading-relaxed line-clamp-2">
+                    <p className="text-gray-200 text-base leading-relaxed line-clamp-2">
                       Learn the fundamentals of creating stunning underwater
                       landscapes with our comprehensive guide for beginners.
                     </p>
@@ -147,7 +147,7 @@ const BlogSection = () => {
                     <h3 className="font-heading text-lg sm:text-xl font-bold text-white mb-1.5 group-hover:text-teal-300 transition-colors">
                       How to Maintain a Healthy Koi Pond
                     </h3>
-                    <p className="text-gray-200 text-sm leading-relaxed line-clamp-1">
+                    <p className="text-gray-200 text-base leading-relaxed line-clamp-1">
                       Essential tips for keeping your koi pond clean, balanced,
                       and fish thriving.
                     </p>
@@ -193,7 +193,7 @@ const BlogSection = () => {
                     <h3 className="font-heading text-lg sm:text-xl font-bold text-white mb-1.5 group-hover:text-teal-300 transition-colors">
                       Choosing the Right Plants for Your Aquarium
                     </h3>
-                    <p className="text-gray-200 text-sm leading-relaxed line-clamp-1">
+                    <p className="text-gray-200 text-base leading-relaxed line-clamp-1">
                       Discover which aquatic plants work best for different tank
                       types and lighting.
                     </p>
