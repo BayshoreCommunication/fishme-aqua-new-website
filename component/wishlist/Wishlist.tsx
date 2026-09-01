@@ -34,7 +34,7 @@ const Wishlist = () => {
 
   return (
     <section className="bg-background py-12 text-foreground sm:py-16 lg:py-20">
-      <div className="container max-w-7xl">
+      <div className="container">
         <header className="mb-8 sm:mb-10">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary dark:text-teal-400">
             Saved products

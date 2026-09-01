@@ -97,7 +97,7 @@ const OurStory = () => {
       ref={sectionRef}
       className="bg-background py-16 sm:py-20 overflow-hidden"
     >
-      <div className="container max-w-6xl mx-auto px-4">
+      <div className="container ">
         {/* Top Header Section: Heading on Left, Subtitle on Left/Right properly aligned */}
         <Reveal direction="up" delay={0}>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-10 text-left">
@@ -134,7 +134,7 @@ const OurStory = () => {
         </div>
 
         {/* Bottom Section: Descriptive Text & Left Aligned CTA Button */}
-        <div className="max-w-4xl mx-auto text-left flex flex-col items-center gap-8">
+        <div className="max-w-7xl mx-auto text-left flex flex-col items-center gap-8">
           <Reveal direction="up" delay={450}>
             <div className="space-y-4 text-xs sm:text-sm leading-relaxed text-foreground/70 font-light text-left">
               <p>

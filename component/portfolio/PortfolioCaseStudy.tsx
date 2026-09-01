@@ -9,7 +9,7 @@ import Reveal from "@/component/motion/Reveal";
 export default function PortfolioCaseStudy() {
   return (
     <section className="bg-background py-16 sm:py-24 text-foreground transition-colors duration-300">
-      <div className="container max-w-6xl">
+      <div className="container">
         {/* Section Header */}
         <Reveal direction="up" delay={0}>
           <div className="mx-auto mb-16 max-w-3xl text-center">

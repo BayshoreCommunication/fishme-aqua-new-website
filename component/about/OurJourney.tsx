@@ -157,7 +157,7 @@ const OurJourney = () => {
         />
       </div>
 
-      <div className="container relative z-10 max-w-7xl mx-auto px-4">
+      <div className="container relative z-10 x-auto px-4">
         {/* Section Header */}
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-20">

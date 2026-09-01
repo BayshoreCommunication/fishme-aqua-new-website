@@ -18,7 +18,7 @@ export default function ClientsPage() {
         backgroundImage="/assets/home/services-section-background.png"
       />
       <section className=" py-16 sm:py-20 bg-foreground/3 dark:bg-white/2">
-        <div className="container ">
+        <div className="container">
           <div className="mx-auto mb-7 max-w-md text-center">
             <h2 className="font-heading text-3xl font-bold text-black sm:text-4xl">
               Our Valued Clients

@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  createOrderAction,
-  type CreateOrderResult,
-} from "@/app/actions/order";
+import { createOrderAction, type CreateOrderResult } from "@/app/actions/order";
 import type { CustomerProfile } from "@/app/actions/user";
 import { staticProducts } from "@/component/shop/staticProducts";
 import { useShopStore } from "@/component/shop/shopStore";
@@ -15,13 +12,7 @@ import {
   getUnionsByUpazila,
   getUpazilasByDistrict,
 } from "bangladesh-geo-data";
-import {
-  Check,
-  Home,
-  LockKeyhole,
-  ShoppingBag,
-  Sparkles,
-} from "lucide-react";
+import { Check, Home, LockKeyhole, ShoppingBag, Sparkles } from "lucide-react";
 import Link from "next/link";
 import {
   ReactNode,
@@ -49,9 +40,7 @@ const getInitialAddressSelection = (user: CustomerProfile | null) => {
     divisions.find(({ name }) => name === address?.division)?.id ?? "";
   const zone =
     address?.zone ??
-    (address?.division && address.division !== "Dhaka"
-      ? "Outside Dhaka"
-      : "");
+    (address?.division && address.division !== "Dhaka" ? "Outside Dhaka" : "");
   const districts = divisionId ? getDistrictsByDivision(divisionId) : [];
   const districtId =
     districts.find(({ name }) => name === address?.district)?.id ?? "";
@@ -72,7 +61,8 @@ const getInitialAddressSelection = (user: CustomerProfile | null) => {
     : [];
   const cityCorpId =
     zone === "Inside Dhaka"
-      ? (cityCorporations.find(({ name }) => name === address?.upazila)?.id ?? "")
+      ? (cityCorporations.find(({ name }) => name === address?.upazila)?.id ??
+        "")
       : "";
   const thanas = cityCorpId ? getThanasByCityCorporation(cityCorpId) : [];
   const thanaId =
@@ -110,9 +100,7 @@ const CheckoutView = ({
   const [zone, setZone] = useState(initialAddress.zone);
   const [districtId, setDistrictId] = useState(initialAddress.districtId);
   const [upazilaId, setUpazilaId] = useState(initialAddress.upazilaId);
-  const [postOfficeId, setPostOfficeId] = useState(
-    initialAddress.postOfficeId,
-  );
+  const [postOfficeId, setPostOfficeId] = useState(initialAddress.postOfficeId);
   const [postCode, setPostCode] = useState(initialAddress.postCode);
   const [cityCorpId, setCityCorpId] = useState(initialAddress.cityCorpId);
   const [thanaId, setThanaId] = useState(initialAddress.thanaId);
@@ -145,8 +133,7 @@ const CheckoutView = ({
     postOfficeOptions.find(({ id }) => id === postOfficeId)?.postOffice ?? "";
   const cityCorporationName =
     cityCorporationOptions.find(({ id }) => id === cityCorpId)?.name ?? "";
-  const thanaName =
-    thanaOptions.find(({ id }) => id === thanaId)?.name ?? "";
+  const thanaName = thanaOptions.find(({ id }) => id === thanaId)?.name ?? "";
 
   const cartProducts = cart.flatMap((item) => {
     const product =
@@ -191,7 +178,7 @@ const CheckoutView = ({
 
   return (
     <section className="bg-background py-10 text-foreground sm:py-14 lg:py-16">
-      <div className="container max-w-7xl">
+      <div className="container">
         <form
           action={formAction}
           className="grid items-start gap-7 lg:grid-cols-[minmax(0,1fr)_360px] xl:gap-10"
@@ -225,7 +212,9 @@ const CheckoutView = ({
           <div className="rounded-3xl border border-foreground/[0.08] bg-foreground/[0.025] p-5 shadow-sm dark:border-white/10 dark:bg-white/[0.035] sm:p-7 lg:p-8">
             <div className="mb-7 flex items-center justify-between border-b border-foreground/10 pb-5 dark:border-white/10">
               <div>
-                <h2 className="font-heading text-xl font-bold">Billing details</h2>
+                <h2 className="font-heading text-xl font-bold">
+                  Billing details
+                </h2>
                 {initialUser ? (
                   <p className="mt-1 text-xs font-semibold text-primary dark:text-teal-400">
                     Your saved account details are ready to review.
@@ -243,23 +232,65 @@ const CheckoutView = ({
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Field label="First name" id="checkout-first-name" required>
-                <input id="checkout-first-name" name="firstName" autoComplete="given-name" defaultValue={initialUser?.firstName} placeholder="Enter first name" className={inputClassName} required />
+                <input
+                  id="checkout-first-name"
+                  name="firstName"
+                  autoComplete="given-name"
+                  defaultValue={initialUser?.firstName}
+                  placeholder="Enter first name"
+                  className={inputClassName}
+                  required
+                />
               </Field>
               <Field label="Last name" id="checkout-last-name" required>
-                <input id="checkout-last-name" name="lastName" autoComplete="family-name" defaultValue={initialUser?.lastName} placeholder="Enter last name" className={inputClassName} required />
+                <input
+                  id="checkout-last-name"
+                  name="lastName"
+                  autoComplete="family-name"
+                  defaultValue={initialUser?.lastName}
+                  placeholder="Enter last name"
+                  className={inputClassName}
+                  required
+                />
               </Field>
 
               <div className="sm:col-span-2">
                 <Field label="Company name (optional)" id="checkout-company">
-                  <input id="checkout-company" name="company" autoComplete="organization" defaultValue={initialUser?.companyName} placeholder="Enter company name" className={inputClassName} />
+                  <input
+                    id="checkout-company"
+                    name="company"
+                    autoComplete="organization"
+                    defaultValue={initialUser?.companyName}
+                    placeholder="Enter company name"
+                    className={inputClassName}
+                  />
                 </Field>
               </div>
 
               <Field label="Phone number" id="checkout-phone" required>
-                <input id="checkout-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" defaultValue={initialUser?.phone} placeholder="+8801XXXXXXXXX" className={inputClassName} pattern="[+]?[0-9]{7,15}" required />
+                <input
+                  id="checkout-phone"
+                  name="phone"
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  defaultValue={initialUser?.phone}
+                  placeholder="+8801XXXXXXXXX"
+                  className={inputClassName}
+                  pattern="[+]?[0-9]{7,15}"
+                  required
+                />
               </Field>
               <Field label="Email address (optional)" id="checkout-email">
-                <input id="checkout-email" name="email" type="email" autoComplete="email" defaultValue={initialUser?.email} placeholder="you@example.com" className={inputClassName} />
+                <input
+                  id="checkout-email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  defaultValue={initialUser?.email}
+                  placeholder="you@example.com"
+                  className={inputClassName}
+                />
               </Field>
 
               <Field label="Division" id="checkout-division" required>
@@ -271,38 +302,92 @@ const CheckoutView = ({
                     const nextDivision = event.target.value;
                     setDivisionId(nextDivision);
                     resetAddressDetails();
-                    const nextName = divisions.find(({ id }) => id === nextDivision)?.name ?? "";
+                    const nextName =
+                      divisions.find(({ id }) => id === nextDivision)?.name ??
+                      "";
                     setZone(nextName === "Dhaka" ? "" : "Outside Dhaka");
                   }}
                   className={inputClassName}
                   required
                 >
                   <option value="">Select division</option>
-                  {divisions.map((division) => <option key={division.id} value={division.id}>{division.name}</option>)}
+                  {divisions.map((division) => (
+                    <option key={division.id} value={division.id}>
+                      {division.name}
+                    </option>
+                  ))}
                 </select>
               </Field>
 
               {isDhakaDivision && (
                 <Field label="Delivery zone" id="checkout-zone" required>
-                  <select id="checkout-zone" name="zone" value={zone} onChange={(event) => { setZone(event.target.value); resetAddressDetails(); }} className={inputClassName} required>
+                  <select
+                    id="checkout-zone"
+                    name="zone"
+                    value={zone}
+                    onChange={(event) => {
+                      setZone(event.target.value);
+                      resetAddressDetails();
+                    }}
+                    className={inputClassName}
+                    required
+                  >
                     <option value="">Select delivery zone</option>
-                    {DELIVERY_ZONES.map((item) => <option key={item} value={item}>{item}</option>)}
+                    {DELIVERY_ZONES.map((item) => (
+                      <option key={item} value={item}>
+                        {item}
+                      </option>
+                    ))}
                   </select>
                 </Field>
               )}
 
               {isInsideDhaka && (
                 <>
-                  <Field label="City corporation" id="checkout-city-corporation" required>
-                    <select id="checkout-city-corporation" name="cityCorporation" value={cityCorpId} onChange={(event) => { setCityCorpId(event.target.value); setThanaId(""); }} className={inputClassName} required>
+                  <Field
+                    label="City corporation"
+                    id="checkout-city-corporation"
+                    required
+                  >
+                    <select
+                      id="checkout-city-corporation"
+                      name="cityCorporation"
+                      value={cityCorpId}
+                      onChange={(event) => {
+                        setCityCorpId(event.target.value);
+                        setThanaId("");
+                      }}
+                      className={inputClassName}
+                      required
+                    >
                       <option value="">Select city corporation</option>
-                      {cityCorporationOptions.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
+                      {cityCorporationOptions.map((item) => (
+                        <option key={item.id} value={item.id}>
+                          {item.name}
+                        </option>
+                      ))}
                     </select>
                   </Field>
                   <Field label="Thana / area" id="checkout-thana" required>
-                    <select id="checkout-thana" name="thana" value={thanaId} onChange={(event) => setThanaId(event.target.value)} className={inputClassName} disabled={!cityCorpId} required>
-                      <option value="">{cityCorpId ? "Select thana" : "Select city corporation first"}</option>
-                      {thanaOptions.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
+                    <select
+                      id="checkout-thana"
+                      name="thana"
+                      value={thanaId}
+                      onChange={(event) => setThanaId(event.target.value)}
+                      className={inputClassName}
+                      disabled={!cityCorpId}
+                      required
+                    >
+                      <option value="">
+                        {cityCorpId
+                          ? "Select thana"
+                          : "Select city corporation first"}
+                      </option>
+                      {thanaOptions.map((item) => (
+                        <option key={item.id} value={item.id}>
+                          {item.name}
+                        </option>
+                      ))}
                     </select>
                   </Field>
                 </>
@@ -311,22 +396,80 @@ const CheckoutView = ({
               {showOutsideDhakaFields && (
                 <>
                   <Field label="District" id="checkout-district" required>
-                    <select id="checkout-district" name="district" value={districtId} onChange={(event) => { setDistrictId(event.target.value); setUpazilaId(""); setPostOfficeId(""); setPostCode(""); }} className={inputClassName} required>
+                    <select
+                      id="checkout-district"
+                      name="district"
+                      value={districtId}
+                      onChange={(event) => {
+                        setDistrictId(event.target.value);
+                        setUpazilaId("");
+                        setPostOfficeId("");
+                        setPostCode("");
+                      }}
+                      className={inputClassName}
+                      required
+                    >
                       <option value="">Select district</option>
-                      {districtOptions.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
+                      {districtOptions.map((item) => (
+                        <option key={item.id} value={item.id}>
+                          {item.name}
+                        </option>
+                      ))}
                     </select>
                   </Field>
                   <Field label="Upazila" id="checkout-upazila" required>
-                    <select id="checkout-upazila" name="upazila" value={upazilaId} onChange={(event) => { setUpazilaId(event.target.value); setPostOfficeId(""); setPostCode(""); }} className={inputClassName} disabled={!districtId} required>
-                      <option value="">{districtId ? "Select upazila" : "Select district first"}</option>
-                      {upazilaOptions.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
+                    <select
+                      id="checkout-upazila"
+                      name="upazila"
+                      value={upazilaId}
+                      onChange={(event) => {
+                        setUpazilaId(event.target.value);
+                        setPostOfficeId("");
+                        setPostCode("");
+                      }}
+                      className={inputClassName}
+                      disabled={!districtId}
+                      required
+                    >
+                      <option value="">
+                        {districtId
+                          ? "Select upazila"
+                          : "Select district first"}
+                      </option>
+                      {upazilaOptions.map((item) => (
+                        <option key={item.id} value={item.id}>
+                          {item.name}
+                        </option>
+                      ))}
                     </select>
                   </Field>
                   {upazilaId && (
-                    <Field label="Post office" id="checkout-post-office" required>
-                      <select id="checkout-post-office" name="postOffice" value={postOfficeId} onChange={(event) => { const nextId = event.target.value; setPostOfficeId(nextId); setPostCode(postOfficeOptions.find(({ id }) => id === nextId)?.postalCode ?? ""); }} className={inputClassName} required>
+                    <Field
+                      label="Post office"
+                      id="checkout-post-office"
+                      required
+                    >
+                      <select
+                        id="checkout-post-office"
+                        name="postOffice"
+                        value={postOfficeId}
+                        onChange={(event) => {
+                          const nextId = event.target.value;
+                          setPostOfficeId(nextId);
+                          setPostCode(
+                            postOfficeOptions.find(({ id }) => id === nextId)
+                              ?.postalCode ?? "",
+                          );
+                        }}
+                        className={inputClassName}
+                        required
+                      >
                         <option value="">Select post office</option>
-                        {postOfficeOptions.map((item) => <option key={item.id} value={item.id}>{item.postOffice}</option>)}
+                        {postOfficeOptions.map((item) => (
+                          <option key={item.id} value={item.id}>
+                            {item.postOffice}
+                          </option>
+                        ))}
                       </select>
                     </Field>
                   )}
@@ -335,19 +478,42 @@ const CheckoutView = ({
 
               {(isInsideDhaka || postOfficeId) && (
                 <Field label="Post code" id="checkout-post-code">
-                  <input id="checkout-post-code" value={postCode} onChange={(event) => setPostCode(event.target.value)} inputMode="numeric" pattern="[0-9]{4}" maxLength={4} placeholder="Enter post code" className={inputClassName} />
+                  <input
+                    id="checkout-post-code"
+                    value={postCode}
+                    onChange={(event) => setPostCode(event.target.value)}
+                    inputMode="numeric"
+                    pattern="[0-9]{4}"
+                    maxLength={4}
+                    placeholder="Enter post code"
+                    className={inputClassName}
+                  />
                 </Field>
               )}
 
               <div className="sm:col-span-2">
                 <Field label="Street address" id="checkout-address" required>
-                  <input id="checkout-address" name="billingArea" autoComplete="street-address" defaultValue={initialUser?.address.area} placeholder="House number, road, sector or village" className={inputClassName} required />
+                  <input
+                    id="checkout-address"
+                    name="billingArea"
+                    autoComplete="street-address"
+                    defaultValue={initialUser?.address.area}
+                    placeholder="House number, road, sector or village"
+                    className={inputClassName}
+                    required
+                  />
                 </Field>
               </div>
 
               <div className="sm:col-span-2">
                 <Field label="Order notes (optional)" id="checkout-notes">
-                  <textarea id="checkout-notes" name="notes" rows={4} placeholder="Notes about your order, e.g. delivery instructions" className={`${inputClassName} h-28 resize-none py-3`} />
+                  <textarea
+                    id="checkout-notes"
+                    name="notes"
+                    rows={4}
+                    placeholder="Notes about your order, e.g. delivery instructions"
+                    className={`${inputClassName} h-28 resize-none py-3`}
+                  />
                 </Field>
               </div>
             </div>
@@ -375,53 +541,119 @@ const CheckoutView = ({
           <aside className="rounded-3xl border border-foreground/[0.08] bg-foreground/[0.035] p-5 shadow-sm dark:border-white/10 dark:bg-white/[0.05] sm:p-7 lg:sticky lg:top-28">
             <h2 className="font-heading text-xl font-bold">Your order</h2>
             <div className="mt-6 flex items-center justify-between border-b border-foreground/15 pb-3 text-xs font-bold uppercase tracking-wider dark:border-white/15">
-              <span>Product</span><span>Total</span>
+              <span>Product</span>
+              <span>Total</span>
             </div>
             <div className="divide-y divide-foreground/10 text-xs dark:divide-white/10">
-              {cartProducts.length > 0 ? cartProducts.map(({ product, quantity }) => (
-                <div key={product.id} className="flex gap-4 py-3.5">
-                  <span className="min-w-0 flex-1 text-foreground/60">{product.title} <strong className="whitespace-nowrap text-foreground/40">× {quantity}</strong></span>
-                  <span className="shrink-0 font-semibold">৳ {formatPrice(product.price * quantity)}</span>
-                </div>
-              )) : (
+              {cartProducts.length > 0 ? (
+                cartProducts.map(({ product, quantity }) => (
+                  <div key={product.id} className="flex gap-4 py-3.5">
+                    <span className="min-w-0 flex-1 text-foreground/60">
+                      {product.title}{" "}
+                      <strong className="whitespace-nowrap text-foreground/40">
+                        × {quantity}
+                      </strong>
+                    </span>
+                    <span className="shrink-0 font-semibold">
+                      ৳ {formatPrice(product.price * quantity)}
+                    </span>
+                  </div>
+                ))
+              ) : (
                 <div className="flex flex-col items-center py-8 text-center text-foreground/45">
                   <ShoppingBag aria-hidden="true" className="mb-2 h-6 w-6" />
                   <span>Your cart is empty.</span>
-                  <Link href="/shop" className="mt-2 font-bold text-primary">Browse products</Link>
+                  <Link href="/shop" className="mt-2 font-bold text-primary">
+                    Browse products
+                  </Link>
                 </div>
               )}
             </div>
 
             <SummaryRow label="Subtotal" value={`৳ ${formatPrice(subtotal)}`} />
-            <SummaryRow label="Shipping" value={shipping ? `৳ ${formatPrice(shipping)}` : subtotal ? "Calculated by address" : "—"} />
+            <SummaryRow
+              label="Shipping"
+              value={
+                shipping
+                  ? `৳ ${formatPrice(shipping)}`
+                  : subtotal
+                    ? "Calculated by address"
+                    : "—"
+              }
+            />
             <div className="mt-1 flex items-center justify-between border-y border-foreground/15 py-4 dark:border-white/15">
               <span className="font-heading text-lg font-bold">Total</span>
-              <span className="font-heading text-lg font-bold text-primary dark:text-teal-400">৳ {formatPrice(total)}</span>
+              <span className="font-heading text-lg font-bold text-primary dark:text-teal-400">
+                ৳ {formatPrice(total)}
+              </span>
             </div>
 
             <fieldset className="mt-6">
               <legend className="text-sm font-bold">Payment method</legend>
               <div className="mt-3 space-y-2.5">
-                <PaymentOption value="cod" label="Cash on delivery" selected="cod" />
-                <PaymentOption value="bkash" label="Mobile banking" selected="cod" badge="bKash · Nagad" disabled />
-                <PaymentOption value="card" label="Debit / credit card" selected="cod" badge="VISA · MC" disabled />
+                <PaymentOption
+                  value="cod"
+                  label="Cash on delivery"
+                  selected="cod"
+                />
+                <PaymentOption
+                  value="bkash"
+                  label="Mobile banking"
+                  selected="cod"
+                  badge="bKash · Nagad"
+                  disabled
+                />
+                <PaymentOption
+                  value="card"
+                  label="Debit / credit card"
+                  selected="cod"
+                  badge="VISA · MC"
+                  disabled
+                />
               </div>
             </fieldset>
 
-            <p className="mt-5 text-[11px] leading-5 text-foreground/45">Your personal data will be used to process your order and support your experience throughout this website.</p>
+            <p className="mt-5 text-[11px] leading-5 text-foreground/45">
+              Your personal data will be used to process your order and support
+              your experience throughout this website.
+            </p>
             {orderState.error && (
-              <p role="alert" className="mt-4 rounded-xl border border-rose-200 bg-rose-50 px-3.5 py-3 text-xs font-semibold leading-5 text-rose-700 dark:border-rose-400/20 dark:bg-rose-400/10 dark:text-rose-300">
+              <p
+                role="alert"
+                className="mt-4 rounded-xl border border-rose-200 bg-rose-50 px-3.5 py-3 text-xs font-semibold leading-5 text-rose-700 dark:border-rose-400/20 dark:bg-rose-400/10 dark:text-rose-300"
+              >
                 {orderState.error}
               </p>
             )}
             {hasUnavailableItems && !orderState.ok && (
-              <p role="alert" className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-3.5 py-3 text-xs font-semibold leading-5 text-amber-800 dark:border-amber-400/20 dark:bg-amber-400/10 dark:text-amber-300">
+              <p
+                role="alert"
+                className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-3.5 py-3 text-xs font-semibold leading-5 text-amber-800 dark:border-amber-400/20 dark:bg-amber-400/10 dark:text-amber-300"
+              >
                 Some older cart items are no longer orderable. Remove them and
                 add the current products from the shop.
               </p>
             )}
-            <button type="submit" disabled={cartProducts.length === 0 || hasUnavailableItems || isOrdering || orderState.ok} className="mt-5 h-12 w-full cursor-pointer rounded-full bg-primary px-6 text-sm font-bold text-white shadow-[0_10px_24px_rgba(0,110,92,0.2)] transition hover:bg-[#008c75] disabled:cursor-not-allowed disabled:opacity-45">{isOrdering ? "Placing order…" : orderState.ok ? "Order placed" : "Place order"}</button>
-            <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-foreground/40"><LockKeyhole aria-hidden="true" className="h-3 w-3" />Secure checkout</div>
+            <button
+              type="submit"
+              disabled={
+                cartProducts.length === 0 ||
+                hasUnavailableItems ||
+                isOrdering ||
+                orderState.ok
+              }
+              className="mt-5 h-12 w-full cursor-pointer rounded-full bg-primary px-6 text-sm font-bold text-white shadow-[0_10px_24px_rgba(0,110,92,0.2)] transition hover:bg-[#008c75] disabled:cursor-not-allowed disabled:opacity-45"
+            >
+              {isOrdering
+                ? "Placing order…"
+                : orderState.ok
+                  ? "Order placed"
+                  : "Place order"}
+            </button>
+            <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-foreground/40">
+              <LockKeyhole aria-hidden="true" className="h-3 w-3" />
+              Secure checkout
+            </div>
           </aside>
         </form>
       </div>
@@ -542,8 +774,7 @@ const ShippingAddressFields = ({
     postOfficeOptions.find(({ id }) => id === postOfficeId)?.postOffice ?? "";
   const cityCorporationName =
     cityCorporationOptions.find(({ id }) => id === cityCorpId)?.name ?? "";
-  const thanaName =
-    thanaOptions.find(({ id }) => id === thanaId)?.name ?? "";
+  const thanaName = thanaOptions.find(({ id }) => id === thanaId)?.name ?? "";
 
   const resetDetails = () => {
     setDistrictId("");
@@ -799,23 +1030,68 @@ const ShippingAddressFields = ({
   );
 };
 
-const Field = ({ label, id, required = false, children }: { label: string; id: string; required?: boolean; children: ReactNode }) => (
+const Field = ({
+  label,
+  id,
+  required = false,
+  children,
+}: {
+  label: string;
+  id: string;
+  required?: boolean;
+  children: ReactNode;
+}) => (
   <div>
-    <label htmlFor={id} className={labelClassName}>{label} {required && <span className="text-rose-500">*</span>}</label>
+    <label htmlFor={id} className={labelClassName}>
+      {label} {required && <span className="text-rose-500">*</span>}
+    </label>
     {children}
   </div>
 );
 
 const SummaryRow = ({ label, value }: { label: string; value: string }) => (
-  <div className="flex items-center justify-between border-t border-foreground/10 py-3.5 text-xs dark:border-white/10"><span className="font-semibold text-foreground/60">{label}</span><span className="font-bold">{value}</span></div>
+  <div className="flex items-center justify-between border-t border-foreground/10 py-3.5 text-xs dark:border-white/10">
+    <span className="font-semibold text-foreground/60">{label}</span>
+    <span className="font-bold">{value}</span>
+  </div>
 );
 
-const PaymentOption = ({ value, label, selected, badge, disabled = false }: { value: string; label: string; selected: string; badge?: string; disabled?: boolean }) => (
-  <label className={`flex items-center gap-3 rounded-xl border px-3.5 py-3 text-xs transition ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} ${selected === value ? "border-primary bg-primary/[0.06]" : "border-foreground/10 bg-background/60 dark:border-white/10"}`}>
-    <input type="radio" name="paymentMethod" value={value} checked={selected === value} readOnly disabled={disabled} className="h-3.5 w-3.5 accent-primary" />
+const PaymentOption = ({
+  value,
+  label,
+  selected,
+  badge,
+  disabled = false,
+}: {
+  value: string;
+  label: string;
+  selected: string;
+  badge?: string;
+  disabled?: boolean;
+}) => (
+  <label
+    className={`flex items-center gap-3 rounded-xl border px-3.5 py-3 text-xs transition ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} ${selected === value ? "border-primary bg-primary/[0.06]" : "border-foreground/10 bg-background/60 dark:border-white/10"}`}
+  >
+    <input
+      type="radio"
+      name="paymentMethod"
+      value={value}
+      checked={selected === value}
+      readOnly
+      disabled={disabled}
+      className="h-3.5 w-3.5 accent-primary"
+    />
     <span className="flex-1 font-semibold">{label}</span>
-    {disabled && <span className="text-[9px] font-bold uppercase tracking-wide text-foreground/40">Soon</span>}
-    {badge && <span className="rounded-full bg-background px-2 py-1 text-[9px] font-extrabold text-primary shadow-sm dark:bg-white/10 dark:text-teal-300">{badge}</span>}
+    {disabled && (
+      <span className="text-[9px] font-bold uppercase tracking-wide text-foreground/40">
+        Soon
+      </span>
+    )}
+    {badge && (
+      <span className="rounded-full bg-background px-2 py-1 text-[9px] font-extrabold text-primary shadow-sm dark:bg-white/10 dark:text-teal-300">
+        {badge}
+      </span>
+    )}
   </label>
 );
 

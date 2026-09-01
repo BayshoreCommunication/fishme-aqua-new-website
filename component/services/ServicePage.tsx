@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ServicePage() {
   return (
     <section className="bg-background text-foreground py-20 sm:py-28 transition-colors duration-300">
-      <div className="container max-w-7xl mx-auto px-4">
+      <div className="container">
         {/* Centered Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground sm:text-4xl mb-3">

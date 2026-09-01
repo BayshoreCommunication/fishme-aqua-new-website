@@ -72,7 +72,7 @@ export default async function ServiceDetailPage({
       />
 
       <section className="bg-background text-foreground py-20 sm:py-28 transition-colors duration-300">
-        <div className="container max-w-7xl mx-auto px-4">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* LEFT COLUMN: Creative Animated Sidebar Tabs */}
             <aside className="lg:col-span-3 lg:sticky lg:top-28 p-2 rounded-2xl bg-foreground/[0.02] dark:bg-white/[0.03] backdrop-blur-xl border border-foreground/10 dark:border-white/10 transition-all duration-300">

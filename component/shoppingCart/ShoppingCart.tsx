@@ -63,7 +63,7 @@ const ShoppingCart = () => {
   if (cartProducts.length === 0) {
     return (
       <section className="bg-background py-12 text-foreground sm:py-16 lg:py-20">
-        <div className="container max-w-7xl">
+        <div className="container">
           <div className="flex min-h-96 flex-col items-center justify-center rounded-3xl border border-dashed border-foreground/15 bg-foreground/[0.02] px-6 text-center dark:border-white/15 dark:bg-white/[0.02]">
             <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/8 text-primary">
               <ShoppingBag aria-hidden="true" className="h-8 w-8" />
@@ -88,7 +88,7 @@ const ShoppingCart = () => {
 
   return (
     <section className="bg-background py-12 text-foreground sm:py-16 lg:py-20">
-      <div className="container max-w-7xl">
+      <div className="container">
         <header className="mb-8 sm:mb-10">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary dark:text-teal-400">
             Review your selection

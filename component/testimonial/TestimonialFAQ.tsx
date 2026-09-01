@@ -76,7 +76,7 @@ export default function TestimonialFAQ() {
 
   return (
     <section className="bg-background py-20 sm:py-28 text-foreground transition-colors duration-300">
-      <div className="container max-w-4xl mx-auto px-4">
+      <div className="container">
         {/* Section Header */}
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-14">

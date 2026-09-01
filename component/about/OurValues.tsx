@@ -96,7 +96,7 @@ const valuesData: ValueItem[] = [
 const OurValues = () => {
   return (
     <section className="bg-foreground/3 dark:bg-white/2 py-20 sm:py-28 overflow-hidden">
-      <div className="container max-w-6xl mx-auto px-4">
+      <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Big Rounded Image Showcase */}
           <div className="lg:col-span-5">
