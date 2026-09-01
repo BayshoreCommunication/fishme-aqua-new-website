@@ -37,7 +37,7 @@ const ShopAquaticEssentials = async () => {
             <h2 className="mt-2 font-heading text-3xl font-bold text-foreground sm:text-4xl">
               Shop Aquatic Essentials
             </h2>
-            <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-foreground/60">
+            <p className="mx-auto mt-3 max-w-lg text-base sm:text-lg leading-relaxed text-foreground/80">
               Premium products for maintaining your aquatic paradise
             </p>
           </header>

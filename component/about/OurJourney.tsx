@@ -157,14 +157,14 @@ const OurJourney = () => {
         />
       </div>
 
-      <div className="container relative z-10 x-auto px-4">
+      <div className="container relative z-10">
         {/* Section Header */}
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-20">
             <h2 className="font-heading text-3xl font-bold uppercase tracking-wider sm:text-4xl mb-2 text-foreground">
               Our Journey
             </h2>
-            <p className="text-xs sm:text-sm text-foreground/60 font-light">
+            <p className="text-base sm:text-lg text-foreground/80">
               Milestones That Define Our Growth
             </p>
           </div>
@@ -187,7 +187,7 @@ const OurJourney = () => {
                   <div className="flex flex-col items-center text-center group h-full">
                     {/* Year & Node point */}
                     <div className="flex flex-col items-center mb-3">
-                      <span className="text-xs font-bold text-foreground/70 mb-2">
+                      <span className="text-sm font-bold text-foreground/80 mb-2">
                         {item.year}
                       </span>
                       <div className="w-4 h-4 rounded-full bg-white border-2 border-foreground/40 shadow-md group-hover:scale-125 group-hover:border-[#006E5C] transition-all" />
@@ -207,7 +207,7 @@ const OurJourney = () => {
                         </h3>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed mt-auto">
+                      <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed mt-auto">
                         {item.description}
                       </p>
                     </div>
@@ -218,21 +218,21 @@ const OurJourney = () => {
           </div>
 
           {/* Bottom Row Timeline */}
-          <div className="relative max-w-3xl mx-auto">
-            <div className="hidden md:block absolute top-6 left-0 right-0 h-[2px] bg-foreground/20 z-0" />
+          <div className="relative">
+            <div className="hidden lg:block absolute top-6 left-0 right-0 h-[2px] bg-foreground/20 z-0" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10 items-stretch">
               {bottomJourney.map((item, index) => (
                 <Reveal
                   key={index}
                   direction="up"
-                  delay={600 + index * 150}
+                  delay={index * 150}
                   className="h-full flex flex-col"
                 >
                   <div className="flex flex-col items-center text-center group h-full">
                     {/* Year & Node point */}
                     <div className="flex flex-col items-center mb-3">
-                      <span className="text-xs font-bold text-foreground/70 mb-2">
+                      <span className="text-sm font-bold text-foreground/80 mb-2">
                         {item.year}
                       </span>
                       <div className="w-4 h-4 rounded-full bg-white border-2 border-foreground/40 shadow-md group-hover:scale-125 group-hover:border-[#006E5C] transition-all" />
@@ -252,7 +252,7 @@ const OurJourney = () => {
                         </h3>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed mt-auto">
+                      <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed mt-auto">
                         {item.description}
                       </p>
                     </div>

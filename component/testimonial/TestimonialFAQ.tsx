@@ -83,7 +83,7 @@ export default function TestimonialFAQ() {
             <h2 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground sm:text-4xl mb-3">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-foreground/60 font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
               Find answers to common questions about our services
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function TestimonialFAQ() {
                         <Icon className="h-5 w-5" />
                       </div>
 
-                      <h3 className="text-sm sm:text-base font-bold text-foreground dark:text-white tracking-tight">
+                      <h3 className="text-base sm:text-lg font-bold text-foreground dark:text-white tracking-tight">
                         {item.question}
                       </h3>
                     </div>
@@ -158,13 +158,13 @@ export default function TestimonialFAQ() {
                             />
                           </div>
                           <div className="md:col-span-7">
-                            <p className="text-xs sm:text-sm leading-relaxed text-foreground/75 dark:text-white/75 font-light">
+                            <p className="text-base leading-relaxed text-foreground/80 dark:text-white/80">
                               {item.answer}
                             </p>
                           </div>
                         </div>
                       ) : (
-                        <p className="text-xs sm:text-sm leading-relaxed text-foreground/75 dark:text-white/75 font-light">
+                        <p className="text-base leading-relaxed text-foreground/80 dark:text-white/80">
                           {item.answer}
                         </p>
                       )}

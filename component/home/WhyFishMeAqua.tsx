@@ -89,7 +89,7 @@ const WhyFishMeAqua = () => {
             <h2 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-white mb-3">
               Why Fish Me Aqua?
             </h2>
-            <p className="max-w-xl text-sm leading-relaxed text-gray-300 sm:text-base mx-auto font-light">
+            <p className="max-w-xl text-base sm:text-lg leading-relaxed text-gray-200 mx-auto">
               The trusted choice for premium aquatic design
             </p>
           </div>
@@ -108,7 +108,7 @@ const WhyFishMeAqua = () => {
                   <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                     {whyChooseData[0].title}
                   </h3>
-                  <p className="text-gray-300 text-xs sm:text-sm font-light leading-relaxed">
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                     {whyChooseData[0].description}
                   </p>
                 </div>
@@ -124,7 +124,7 @@ const WhyFishMeAqua = () => {
                   <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                     {whyChooseData[1].title}
                   </h3>
-                  <p className="text-gray-300 text-xs sm:text-sm font-light leading-relaxed">
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                     {whyChooseData[1].description}
                   </p>
                 </div>
@@ -141,28 +141,28 @@ const WhyFishMeAqua = () => {
                     src="https://www.w3schools.com/html/mov_bbb.mp4"
                     controls
                     autoPlay
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
-                  <div
-                    className="relative h-full w-full cursor-pointer"
-                    onClick={() => setIsPlaying(true)}
-                  >
+                  <>
                     <Image
                       src="/assets/home/WhyFishMeAqua-main.png"
-                      alt="Fish Me Aqua Showcase"
+                      alt="Why Fish Me Aqua - Featured Installation"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/40" />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
 
-                    {/* Glassmorphic Play Button */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="flex h-20 w-20 items-center justify-center rounded-full border border-white/40 bg-white/25 text-white backdrop-blur-md shadow-lg transition-transform duration-300 group-hover:scale-110">
-                        <Play className="h-8 w-8 fill-white translate-x-0.5" />
-                      </div>
-                    </div>
-                  </div>
+                    {/* Centered Large Play Button */}
+                    <button
+                      type="button"
+                      onClick={() => setIsPlaying(true)}
+                      aria-label="Play Why Fish Me Aqua showcase video"
+                      className="absolute inset-0 m-auto flex h-20 w-20 items-center justify-center rounded-full border-2 border-white/50 bg-white/20 text-white backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-white/40 cursor-pointer shadow-2xl"
+                    >
+                      <Play className="ml-1 h-8 w-8 fill-white text-white" />
+                    </button>
+                  </>
                 )}
               </div>
             </Reveal>
@@ -179,7 +179,7 @@ const WhyFishMeAqua = () => {
                   <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                     {whyChooseData[2].title}
                   </h3>
-                  <p className="text-gray-300 text-xs sm:text-sm font-light leading-relaxed">
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                     {whyChooseData[2].description}
                   </p>
                 </div>
@@ -195,7 +195,7 @@ const WhyFishMeAqua = () => {
                   <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                     {whyChooseData[3].title}
                   </h3>
-                  <p className="text-gray-300 text-xs sm:text-sm font-light leading-relaxed">
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                     {whyChooseData[3].description}
                   </p>
                 </div>

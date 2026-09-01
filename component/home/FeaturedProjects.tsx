@@ -71,10 +71,10 @@ const ProjectCard = ({ project, onPlayVideo }: ProjectCardProps) => (
 
       {/* Text Content */}
       <div className="px-1 text-left">
-        <h3 className="text-lg font-bold text-foreground mb-2 leading-snug">
+        <h3 className="text-xl font-bold text-foreground mb-2 leading-snug">
           {project.title}
         </h3>
-        <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+        <p className="text-foreground/80 text-base leading-relaxed mb-6">
           {project.description}
         </p>
       </div>
@@ -84,7 +84,7 @@ const ProjectCard = ({ project, onPlayVideo }: ProjectCardProps) => (
     <div className="px-1 pb-1 text-left">
       <Link
         href={`/projects/${project.id}`}
-        className="inline-flex items-center gap-1.5 text-[#006E5C] dark:text-teal-400 text-xs font-semibold hover:gap-2 transition-all duration-300 group/link"
+        className="inline-flex items-center gap-1.5 text-[#006E5C] dark:text-teal-400 text-sm font-semibold hover:gap-2 transition-all duration-300 group/link"
       >
         <span>Explore</span>
         <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-foreground/10">
@@ -143,7 +143,7 @@ const FeaturedProjects = () => {
             <h2 className="font-heading text-3xl font-bold uppercase tracking-widest text-foreground sm:text-4xl mb-4">
               Featured Projects
             </h2>
-            <p className="max-w-xl text-sm leading-relaxed text-foreground/60 sm:text-base mx-auto font-light">
+            <p className="max-w-xl text-base sm:text-lg leading-relaxed text-foreground/80 mx-auto">
               Explore our portfolio of stunning aquatic installations
             </p>
           </div>

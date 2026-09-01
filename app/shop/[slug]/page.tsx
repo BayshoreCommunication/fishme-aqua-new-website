@@ -6,9 +6,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import sanitizeHtml from "sanitize-html";
 
+type ShopDetailPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export const generateMetadata = async ({
   params,
-}: PageProps<"/shop/[slug]">): Promise<Metadata> => {
+}: ShopDetailPageProps): Promise<Metadata> => {
   const { slug } = await params;
   const productResult = await getProductAction(slug);
   if (!productResult.ok) return {};
@@ -37,7 +41,7 @@ export const generateMetadata = async ({
   };
 };
 
-const Page = async ({ params }: PageProps<"/shop/[slug]">) => {
+const Page = async ({ params }: ShopDetailPageProps) => {
   const { slug } = await params;
   const productResult = await getProductAction(slug);
 

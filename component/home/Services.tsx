@@ -11,10 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import Reveal from "@/component/motion/Reveal";
-import {
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { services as servicesData } from "@/data/services";
 
 const ArrowUpRightIcon = () => (
@@ -31,7 +28,6 @@ const ArrowUpRightIcon = () => (
     <path d="M7 17L17 7M17 7H8M17 7V16" />
   </svg>
 );
-
 
 const Services = () => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -76,13 +72,13 @@ const Services = () => {
 
       <div className="container relative z-10">
         <Reveal direction="up" delay={0}>
-          {/* Header Section matching reference image layout */}
+          {/* Header Section */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div className="max-w-xl">
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-3">
                 Our Services
               </h2>
-              <p className="text-gray-300 text-sm sm:text-base font-light leading-relaxed">
+              <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
                 Comprehensive aquatic design solutions tailored to your vision
                 and space
               </p>
@@ -98,7 +94,6 @@ const Services = () => {
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
-
               <button
                 onClick={() => swiperRef.current?.slideNext()}
                 disabled={isEnd}
@@ -111,10 +106,10 @@ const Services = () => {
           </div>
         </Reveal>
 
-        {/* 2. Services Swiper Slider */}
-        <Reveal direction="up" delay={150}>
+        {/* 2. Swiper Carousel with Glassmorphism Cards */}
+        <Reveal direction="up" delay={200}>
           <Swiper
-            onBeforeInit={(swiper: SwiperType) => {
+            onSwiper={(swiper: SwiperType) => {
               swiperRef.current = swiper;
             }}
             onInit={(swiper: SwiperType) => {
@@ -139,7 +134,7 @@ const Services = () => {
               const IconComponent = service.icon;
               return (
                 <SwiperSlide key={service.id} className="h-auto!">
-                  {/* Glassmorphism Card styled exactly like the reference image */}
+                  {/* Glassmorphism Card */}
                   <div className="h-full bg-white/5 backdrop-blur-xl border border-white/15 p-7 rounded-3xl flex flex-col justify-between hover:border-white/30 hover:bg-white/8 transition-all duration-300 group shadow-2xl">
                     <div>
                       {/* Icon Container */}
@@ -152,8 +147,8 @@ const Services = () => {
                         {service.title}
                       </h3>
 
-                      {/* Description */}
-                      <p className="text-gray-300 text-xs sm:text-sm font-light leading-relaxed mb-8">
+                      {/* Description (min 16px) */}
+                      <p className="text-gray-200 text-base leading-relaxed mb-8">
                         {service.description}
                       </p>
                     </div>
@@ -162,7 +157,7 @@ const Services = () => {
                     <div>
                       <Link
                         href={`/services/${service.slug}`}
-                        className="inline-flex items-center gap-2 bg-[#006E5C] hover:bg-[#008c75] text-white px-5 py-2.5 rounded-full text-xs font-medium transition-all duration-300 shadow-md hover:shadow-teal-500/20 group/btn"
+                        className="inline-flex items-center gap-2 bg-[#006E5C] hover:bg-[#008c75] text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-teal-500/20 group/btn"
                       >
                         <span>Explore</span>
                         <span className="ml-1 inline-flex h-4 w-4 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">

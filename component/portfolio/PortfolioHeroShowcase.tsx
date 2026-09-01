@@ -99,7 +99,7 @@ export default function PortfolioHeroShowcase() {
                       <h4 className="text-base font-bold text-white tracking-wide">
                         Dr. Jennifer Rivers
                       </h4>
-                      <p className="text-xs text-teal-300/80 font-medium">
+                      <p className="text-sm text-teal-300 font-medium">
                         Hospitality Director
                       </p>
                     </div>
@@ -132,10 +132,10 @@ export default function PortfolioHeroShowcase() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="text-xs text-foreground/50 dark:text-white/50 font-medium uppercase tracking-wider">
+                    <p className="text-xs sm:text-sm text-foreground/60 dark:text-white/60 font-semibold uppercase tracking-wider">
                       {spec.title}
                     </p>
-                    <p className="mt-0.5 text-sm sm:text-[15px] font-bold text-foreground dark:text-white tracking-tight">
+                    <p className="mt-0.5 text-base font-bold text-foreground dark:text-white tracking-tight">
                       {spec.value}
                     </p>
                   </div>

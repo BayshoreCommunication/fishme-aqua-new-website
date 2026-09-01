@@ -141,7 +141,7 @@ export default function BlogGrid() {
             <h2 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground sm:text-4xl mb-3">
               Blog & Knowledge Share
             </h2>
-            <p className="text-xs sm:text-sm text-foreground/60 font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
               Discover expert tips and stories from our aquatic specialists
             </p>
           </div>
@@ -188,7 +188,7 @@ export default function BlogGrid() {
                       <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">
                         {allBlogPosts[0].title}
                       </h3>
-                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed font-light line-clamp-2">
+                      <p className="text-gray-200 text-base leading-relaxed line-clamp-2">
                         {allBlogPosts[0].excerpt}
                       </p>
                     </div>
@@ -233,7 +233,7 @@ export default function BlogGrid() {
                       <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-1 group-hover:text-teal-300 transition-colors">
                         {allBlogPosts[1].title}
                       </h3>
-                      <p className="text-gray-300 text-xs leading-relaxed font-light line-clamp-1">
+                      <p className="text-gray-200 text-base leading-relaxed line-clamp-1">
                         {allBlogPosts[1].excerpt}
                       </p>
                     </div>
@@ -274,7 +274,7 @@ export default function BlogGrid() {
                       <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-1 group-hover:text-teal-300 transition-colors">
                         {allBlogPosts[2].title}
                       </h3>
-                      <p className="text-gray-300 text-xs leading-relaxed font-light line-clamp-1">
+                      <p className="text-gray-200 text-base leading-relaxed line-clamp-1">
                         {allBlogPosts[2].excerpt}
                       </p>
                     </div>
@@ -323,7 +323,7 @@ export default function BlogGrid() {
                       <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-1 group-hover:text-teal-300 transition-colors">
                         {allBlogPosts[3].title}
                       </h3>
-                      <p className="text-gray-300 text-xs leading-relaxed font-light line-clamp-1">
+                      <p className="text-gray-200 text-base leading-relaxed line-clamp-1">
                         {allBlogPosts[3].excerpt}
                       </p>
                     </div>
@@ -364,7 +364,7 @@ export default function BlogGrid() {
                       <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-1 group-hover:text-teal-300 transition-colors">
                         {allBlogPosts[4].title}
                       </h3>
-                      <p className="text-gray-300 text-xs leading-relaxed font-light line-clamp-1">
+                      <p className="text-gray-200 text-base leading-relaxed line-clamp-1">
                         {allBlogPosts[4].excerpt}
                       </p>
                     </div>
@@ -411,7 +411,7 @@ export default function BlogGrid() {
                       <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">
                         {allBlogPosts[5].title}
                       </h3>
-                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed font-light line-clamp-2">
+                      <p className="text-gray-200 text-base leading-relaxed line-clamp-2">
                         {allBlogPosts[5].excerpt}
                       </p>
                     </div>
@@ -464,7 +464,7 @@ export default function BlogGrid() {
                       <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">
                         {allBlogPosts[6].title}
                       </h3>
-                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed font-light line-clamp-2">
+                      <p className="text-gray-200 text-base leading-relaxed line-clamp-2">
                         {allBlogPosts[6].excerpt}
                       </p>
                     </div>
@@ -509,7 +509,7 @@ export default function BlogGrid() {
                       <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-1 group-hover:text-teal-300 transition-colors">
                         {allBlogPosts[7].title}
                       </h3>
-                      <p className="text-gray-300 text-xs leading-relaxed font-light line-clamp-1">
+                      <p className="text-gray-200 text-base leading-relaxed line-clamp-1">
                         {allBlogPosts[7].excerpt}
                       </p>
                     </div>
@@ -550,7 +550,7 @@ export default function BlogGrid() {
                       <h3 className="font-heading text-base sm:text-lg font-bold text-white mb-1 group-hover:text-teal-300 transition-colors">
                         {allBlogPosts[8].title}
                       </h3>
-                      <p className="text-gray-300 text-xs leading-relaxed font-light line-clamp-1">
+                      <p className="text-gray-200 text-base leading-relaxed line-clamp-1">
                         {allBlogPosts[8].excerpt}
                       </p>
                     </div>

@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import React, { useState, use } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -20,14 +19,7 @@ import Button from "@/component/shared/Button";
 type ProjectPageProps = { params: Promise<{ slug: string }> };
 
 export default function ProjectDetailPage({ params }: ProjectPageProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [slug, setSlug] = useState<string | null>(null);
-
-  useEffect(() => {
-    params.then((p) => setSlug(p.slug));
-  }, [params]);
-
-  if (!slug) return null;
+  const { slug } = use(params);
 
   const project = projects.find((item) => String(item.id) === slug);
   if (!project) notFound();

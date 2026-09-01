@@ -20,10 +20,10 @@ export default function ClientsPage() {
       <section className=" py-16 sm:py-20 bg-foreground/3 dark:bg-white/2">
         <div className="container">
           <div className="mx-auto mb-7 max-w-md text-center">
-            <h2 className="font-heading text-3xl font-bold text-black sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
               Our Valued Clients
             </h2>
-            <p className="mt-2 text-xs leading-relaxed text-black/55">
+            <p className="mt-2 text-base text-foreground/75 leading-relaxed">
               Proudly serving homeowners, businesses, resorts, and organizations
               with custom aquatic solutions and professional expertise.
             </p>

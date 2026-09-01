@@ -220,7 +220,7 @@ export default function ContactSection() {
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
               Let&apos;s Create Something Extraordinary
             </h2>
-            <p className="mt-4 text-xs sm:text-sm leading-relaxed text-foreground/65 font-light">
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-foreground/75">
               Connect with our team to discuss your project requirements,
               schedule a consultation, or request a site visit.
             </p>
@@ -247,10 +247,10 @@ export default function ContactSection() {
                         <MapPin className="h-6 w-6" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-foreground dark:text-white">
+                        <h4 className="text-base font-bold text-foreground dark:text-white">
                           Our Office
                         </h4>
-                        <p className="text-xs text-foreground/70 dark:text-white/70 font-light mt-0.5 leading-relaxed">
+                        <p className="text-base text-foreground/80 dark:text-white/80 mt-0.5 leading-relaxed">
                           123 Ocean Drive
                           <br />
                           Aqua City, AC 12345
@@ -264,10 +264,10 @@ export default function ContactSection() {
                         <Phone className="h-6 w-6" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-foreground dark:text-white">
+                        <h4 className="text-base font-bold text-foreground dark:text-white">
                           Phone
                         </h4>
-                        <p className="text-xs text-foreground/70 dark:text-white/70 font-light mt-0.5">
+                        <p className="text-base text-foreground/80 dark:text-white/80 mt-0.5">
                           +1 (555) 123-4567
                         </p>
                       </div>
@@ -279,10 +279,10 @@ export default function ContactSection() {
                         <Mail className="h-6 w-6" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-foreground dark:text-white">
+                        <h4 className="text-base font-bold text-foreground dark:text-white">
                           Email
                         </h4>
-                        <p className="text-xs text-foreground/70 dark:text-white/70 font-light mt-0.5">
+                        <p className="text-base text-foreground/80 dark:text-white/80 mt-0.5">
                           hello@fishmeaqua.com
                         </p>
                       </div>
@@ -294,10 +294,10 @@ export default function ContactSection() {
                         <Clock className="h-6 w-6" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-foreground dark:text-white">
+                        <h4 className="text-base font-bold text-foreground dark:text-white">
                           Business Hours
                         </h4>
-                        <p className="text-xs text-foreground/70 dark:text-white/70 font-light mt-0.5 leading-relaxed">
+                        <p className="text-base text-foreground/80 dark:text-white/80 mt-0.5 leading-relaxed">
                           Mon-Fri: 9:00 AM - 6:00 PM
                           <br />
                           Sat: 10:00 AM - 4:00 PM
@@ -310,7 +310,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="pt-8 border-t border-foreground/10 dark:border-white/10 mt-8">
-                  <p className="text-[11px] text-foreground/50 dark:text-white/50 leading-relaxed font-light">
+                  <p className="text-sm text-foreground/60 dark:text-white/60 leading-relaxed">
                     Professionally handling aquatic architecture and living
                     ecosystem projects, we&apos;re committed to protecting both
                     your property and your peace of mind in times of need.
@@ -330,7 +330,7 @@ export default function ContactSection() {
                   <h3 className="font-heading text-2xl font-bold text-foreground mb-2 pb-3 border-b-2 border-primary/40 inline-block">
                     Request a Free Consultation
                   </h3>
-                  <p className="text-xs text-foreground/60 dark:text-white/60 font-light mb-8 mt-1">
+                  <p className="text-base text-foreground/75 dark:text-white/75 mb-8 mt-1 leading-relaxed">
                     Professionally handling aquatic architecture projects,
                     we&apos;re committed to protecting both your property and
                     your peace of mind in times of need.

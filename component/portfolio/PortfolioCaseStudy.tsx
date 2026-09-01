@@ -16,7 +16,7 @@ export default function PortfolioCaseStudy() {
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
               Private Residence Aquascape
             </h2>
-            <p className="mt-4 text-sm sm:text-base leading-relaxed text-foreground/70 font-light max-w-2xl mx-auto">
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-foreground/75 max-w-2xl mx-auto">
               A comprehensive look at how we designed and installed a luxurious
               freshwater aquatic ecosystem for an exclusive private home.
             </p>
@@ -43,7 +43,7 @@ export default function PortfolioCaseStudy() {
               <h3 className="font-heading text-2xl font-bold text-foreground mb-2.5">
                 Challenge
               </h3>
-              <p className="text-sm leading-relaxed text-foreground/75 font-light">
+              <p className="text-base leading-relaxed text-foreground/80">
                 The client wanted a calming, natural focal point that integrated
                 seamlessly into a modern architecture. Challenges included
                 optimizing natural sunlight without causing algae blooms and
@@ -71,7 +71,7 @@ export default function PortfolioCaseStudy() {
               <h3 className="font-heading text-2xl font-bold text-foreground mb-2.5">
                 Solution
               </h3>
-              <p className="text-sm leading-relaxed text-foreground/75 font-light">
+              <p className="text-base leading-relaxed text-foreground/80">
                 We engineered a custom 2,500-liter rimless ultra-clear aquarium
                 with precision CO2 injection and automated LED lighting that
                 mimics sunrise to sunset. A concealed sump with biological
@@ -110,14 +110,14 @@ export default function PortfolioCaseStudy() {
             <h3 className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
               Installation & Outcome
             </h3>
-            <p className="text-sm sm:text-base leading-relaxed text-foreground/75 font-light">
+            <p className="text-base sm:text-lg leading-relaxed text-foreground/80">
               The final ecosystem includes 24 distinct aquatic plant species,
               hand-selected driftwood hardscapes, and a school of vibrant neon
               tetras and discus fish. The living system has established stable
               bio-parameters and has become the centerpiece of the client&apos;s
               home.
             </p>
-            <p className="text-sm sm:text-base leading-relaxed text-foreground/75 font-light">
+            <p className="text-base sm:text-lg leading-relaxed text-foreground/80">
               Our ongoing monthly maintenance service keeps the water pristine
               and the plants thriving, ensuring the installation remains as
               breathtaking as the day it was unveiled.

@@ -112,7 +112,7 @@ export default function TestimonialGrid() {
             <h2 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground sm:text-4xl mb-3">
               What Our Clients Say
             </h2>
-            <p className="text-xs sm:text-sm text-foreground/60 font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
               Real experiences from satisfied clients
             </p>
           </div>
@@ -126,7 +126,7 @@ export default function TestimonialGrid() {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                className={`shrink-0 rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
                   activeCategory === category
                     ? "border border-primary bg-primary/10 text-primary shadow-sm"
                     : "border border-foreground/15 text-foreground/70 hover:border-primary/40 hover:text-primary dark:border-white/15 dark:text-white/70"
@@ -172,7 +172,7 @@ export default function TestimonialGrid() {
 
                   {/* Quote Icon & Text */}
                   <Quote className="h-6 w-6 text-primary mb-3" />
-                  <p className="text-xs sm:text-sm leading-relaxed text-foreground/75 dark:text-white/75 font-light mb-6">
+                  <p className="text-base leading-relaxed text-foreground/80 dark:text-white/80 mb-6">
                     &ldquo;{item.quote}&rdquo;
                   </p>
                 </div>
@@ -210,10 +210,10 @@ export default function TestimonialGrid() {
                 <Star className="h-6 w-6 fill-amber-500" />
               </div>
               <div>
-                <h4 className="font-bold text-foreground text-lg tracking-tight">
+                <h4 className="font-bold text-foreground text-xl tracking-tight">
                   1500+
                 </h4>
-                <p className="text-foreground/60 text-xs">
+                <p className="text-foreground/70 text-sm">
                   Satisfied Clients love Our Services
                 </p>
               </div>
@@ -233,14 +233,14 @@ export default function TestimonialGrid() {
               <div>
                 <div className="flex items-center gap-1 text-amber-400 mb-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-amber-400" />
+                    <Star key={i} className="h-4 w-4 fill-amber-400" />
                   ))}
-                  <span className="text-foreground font-bold text-xs ml-1">
+                  <span className="text-foreground font-bold text-sm ml-1">
                     4.9
                   </span>
                 </div>
-                <p className="text-foreground/60 text-xs">
-                  Based on 1.5k review
+                <p className="text-foreground/70 text-sm">
+                  Based on 1.5k reviews
                 </p>
               </div>
             </div>

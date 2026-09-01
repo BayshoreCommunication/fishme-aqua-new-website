@@ -119,7 +119,7 @@ const OurValues = () => {
                 <h2 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground sm:text-4xl mb-2">
                   Our Values
                 </h2>
-                <p className="text-xs sm:text-sm text-foreground/60 font-light">
+                <p className="text-base sm:text-lg text-foreground/80">
                   The Principles Behind Every Project
                 </p>
               </div>
@@ -136,12 +136,12 @@ const OurValues = () => {
                     </div>
 
                     {/* Value Title */}
-                    <h3 className="font-heading text-lg font-bold text-foreground">
+                    <h3 className="font-heading text-xl font-bold text-foreground">
                       {item.title}
                     </h3>
 
                     {/* Value Description */}
-                    <p className="text-xs sm:text-sm leading-relaxed text-foreground/70 font-light">
+                    <p className="text-base leading-relaxed text-foreground/80">
                       {item.description}
                     </p>
                   </div>

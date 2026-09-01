@@ -33,7 +33,7 @@ const BlogSection = () => {
               <h2 className="font-heading text-3xl font-bold uppercase tracking-widest text-foreground sm:text-4xl mb-3">
                 Blog & Knowledge Share
               </h2>
-              <p className="max-w-xl text-sm leading-relaxed text-foreground/70 sm:text-base font-light">
+              <p className="max-w-xl text-base sm:text-lg leading-relaxed text-foreground/75">
                 Stay informed with expert analysis, industry trends, and
                 actionable tips from our aquarium care blog.
               </p>
@@ -44,7 +44,7 @@ const BlogSection = () => {
             <div>
               <Link
                 href="/blogs"
-                className="inline-flex items-center gap-2 border border-foreground/20 dark:border-white/20 hover:border-[#006E5C] bg-foreground/5 dark:bg-white/5 hover:bg-[#006E5C] hover:text-white text-foreground px-7 py-3.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm cursor-pointer group"
+                className="inline-flex items-center gap-2 border border-foreground/20 dark:border-white/20 hover:border-[#006E5C] bg-foreground/5 dark:bg-white/5 hover:bg-[#006E5C] hover:text-white text-foreground px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm cursor-pointer group"
               >
                 <span>Explore All Blogs</span>
                 <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-foreground/10 dark:bg-white/10 group-hover:bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -97,7 +97,7 @@ const BlogSection = () => {
                     <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-teal-300 transition-colors">
                       Beginner’s Guide to Aquascaping
                     </h3>
-                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed font-light line-clamp-2">
+                    <p className="text-gray-200 text-sm sm:text-base leading-relaxed line-clamp-2">
                       Learn the fundamentals of creating stunning underwater
                       landscapes with our comprehensive guide for beginners.
                     </p>
@@ -147,7 +147,7 @@ const BlogSection = () => {
                     <h3 className="font-heading text-lg sm:text-xl font-bold text-white mb-1.5 group-hover:text-teal-300 transition-colors">
                       How to Maintain a Healthy Koi Pond
                     </h3>
-                    <p className="text-gray-300 text-xs leading-relaxed font-light line-clamp-1">
+                    <p className="text-gray-200 text-sm leading-relaxed line-clamp-1">
                       Essential tips for keeping your koi pond clean, balanced,
                       and fish thriving.
                     </p>
@@ -177,12 +177,12 @@ const BlogSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-black/95 transition-colors" />
 
                 <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-medium bg-white/15 text-white backdrop-blur-md border border-white/20">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/15 text-white backdrop-blur-md border border-white/20">
                     <span>Plant Care</span>
                     <ArrowUpRightIcon />
                   </span>
 
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-medium bg-black/40 text-white backdrop-blur-md border border-white/20">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-black/40 text-white backdrop-blur-md border border-white/20">
                     <Clock className="w-3 h-3" />
                     <span>7 min Read</span>
                   </span>
@@ -193,7 +193,7 @@ const BlogSection = () => {
                     <h3 className="font-heading text-lg sm:text-xl font-bold text-white mb-1.5 group-hover:text-teal-300 transition-colors">
                       Choosing the Right Plants for Your Aquarium
                     </h3>
-                    <p className="text-gray-300 text-xs leading-relaxed font-light line-clamp-1">
+                    <p className="text-gray-200 text-sm leading-relaxed line-clamp-1">
                       Discover which aquatic plants work best for different tank
                       types and lighting.
                     </p>

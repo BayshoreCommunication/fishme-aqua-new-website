@@ -104,7 +104,7 @@ const OurStory = () => {
             <h2 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground sm:text-4xl text-left">
               Our Story
             </h2>
-            <p className="max-w-md text-xs sm:text-sm leading-relaxed text-foreground/70 sm:text-left font-light">
+            <p className="max-w-md text-base sm:text-lg leading-relaxed text-foreground/80 sm:text-left">
               Fish Me Aqua was founded with a simple vision: to transform
               ordinary spaces into extraordinary aquatic experiences.
             </p>
@@ -134,9 +134,9 @@ const OurStory = () => {
         </div>
 
         {/* Bottom Section: Descriptive Text & Left Aligned CTA Button */}
-        <div className="max-w-7xl mx-auto text-left flex flex-col items-center gap-8">
+        <div className="w-full text-left flex flex-col items-center gap-8">
           <Reveal direction="up" delay={450}>
-            <div className="space-y-4 text-xs sm:text-sm leading-relaxed text-foreground/70 font-light text-left">
+            <div className="space-y-4 text-base sm:text-lg leading-relaxed text-foreground/80 text-left">
               <p>
                 What began as a passion for aquatic ecosystems and custom
                 aquarium design has evolved into a trusted aquatic design
@@ -160,7 +160,7 @@ const OurStory = () => {
             <Button
               href="/contact-us"
               variant="primary"
-              className="px-8 py-3.5 rounded-full text-xs sm:text-sm font-medium bg-[#006E5C] hover:bg-[#008c75] text-white shadow-lg transition-all duration-300 inline-flex items-center gap-2 cursor-pointer"
+              className="px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold bg-[#006E5C] hover:bg-[#008c75] text-white shadow-lg transition-all duration-300 inline-flex items-center gap-2 cursor-pointer"
             >
               <span>Book Free Consultation</span>
               <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20">

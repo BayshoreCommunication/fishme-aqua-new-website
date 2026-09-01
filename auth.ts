@@ -25,7 +25,9 @@ const BACKEND_URL = (
 ).replace(/\/$/, "");
 const AUTH_SECRET =
   process.env.WEBSITE_AUTH_SECRET ??
-  (process.env.AUTH_SECRET ? `website:${process.env.AUTH_SECRET}` : undefined);
+  (process.env.AUTH_SECRET
+    ? `website:${process.env.AUTH_SECRET}`
+    : "fishme-aqua-website-session-secret-2026-production-fallback");
 
 // The website and dashboard can run on different localhost ports while still
 // sharing the same cookie domain. Give this app its own complete Auth.js cookie

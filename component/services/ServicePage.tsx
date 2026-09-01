@@ -18,7 +18,7 @@ export default function ServicePage() {
           <h2 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground sm:text-4xl mb-3">
             Our Services
           </h2>
-          <p className="text-xs sm:text-sm text-foreground/60 font-light leading-relaxed">
+          <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
             Comprehensive aquatic design solutions tailored to your vision and
             space
           </p>
@@ -40,12 +40,12 @@ export default function ServicePage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">
+                  <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2 leading-snug">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-400 font-light">
+                  <p className="text-base leading-relaxed text-slate-600 dark:text-slate-300">
                     {service.description}
                   </p>
                 </div>
@@ -53,7 +53,7 @@ export default function ServicePage() {
                 {/* Bottom Explore Button */}
                 <Link
                   href={`/services/${service.slug}`}
-                  className="mt-8 inline-flex items-center justify-between w-full px-5 py-2.5 rounded-full bg-[#006E5C] hover:bg-[#00584a] text-white text-xs sm:text-sm font-medium shadow-md transition-all duration-300 group-hover:scale-[1.02]"
+                  className="mt-8 inline-flex items-center justify-between w-full px-5 py-2.5 rounded-full bg-[#006E5C] hover:bg-[#00584a] text-white text-sm font-semibold shadow-md transition-all duration-300 group-hover:scale-[1.02]"
                 >
                   <span>Explore</span>
                   <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
