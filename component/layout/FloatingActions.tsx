@@ -67,19 +67,49 @@ const CartIcon = () => (
 );
 
 const CloseIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden="true">
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    aria-hidden="true"
+  >
     <path d="m6 6 12 12M18 6 6 18" />
   </svg>
 );
 
 const SendIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" />
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="m22 2-7 20-4-9-9-4Z" />
+    <path d="M22 2 11 13" />
   </svg>
 );
 
 const PaperclipIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
     <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
   </svg>
 );
@@ -169,7 +199,13 @@ const FloatingActions = () => {
   );
 };
 
-const ChatPanel = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
+const ChatPanel = ({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessageRecord[]>([]);
   const [loading, setLoading] = useState(true);
@@ -202,6 +238,8 @@ const ChatPanel = ({ open, onClose }: { open: boolean; onClose: () => void }) =>
       const socket = io(SOCKET_URL, {
         auth: { ticket: response.data.realtimeTicket },
         transports: ["websocket", "polling"],
+        reconnectionAttempts: 3,
+        timeout: 5000,
       });
       socket.on(
         "messages:new",
@@ -274,22 +312,37 @@ const ChatPanel = ({ open, onClose }: { open: boolean; onClose: () => void }) =>
                 <span className="absolute -bottom-0.5 -right-0.5 h-3.5 w-3.5 rounded-full border-2 border-primary bg-emerald-400" />
               </div>
               <div>
-                <h2 id="chat-title" className="font-sans text-base font-extrabold">Fish Me Aqua Support</h2>
+                <h2
+                  id="chat-title"
+                  className="font-sans text-base font-extrabold"
+                >
+                  Fish Me Aqua Support
+                </h2>
                 <p className="mt-0.5 flex items-center gap-1.5 text-xs text-white/80">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" /> Online · Usually replies instantly
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />{" "}
+                  Online · Usually replies instantly
                 </p>
               </div>
             </div>
-            <button type="button" onClick={onClose} aria-label="Close chat" className="rounded-full p-2 text-white/80 transition hover:bg-white/15 hover:text-white">
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close chat"
+              className="rounded-full p-2 text-white/80 transition hover:bg-white/15 hover:text-white"
+            >
               <CloseIcon />
             </button>
           </div>
         </header>
 
         <div className="flex-1 space-y-4 overflow-y-auto bg-[#f5f8f7] px-4 py-5 dark:bg-[#0b1210]">
-          <p className="text-center text-[10px] font-bold uppercase tracking-[0.18em] text-black/35 dark:text-white/35">Today</p>
+          <p className="text-center text-[10px] font-bold uppercase tracking-[0.18em] text-black/35 dark:text-white/35">
+            Today
+          </p>
           {loading ? (
-            <div className="flex h-32 items-center justify-center"><span className="h-7 w-7 animate-spin rounded-full border-2 border-primary/20 border-t-primary" /></div>
+            <div className="flex h-32 items-center justify-center">
+              <span className="h-7 w-7 animate-spin rounded-full border-2 border-primary/20 border-t-primary" />
+            </div>
           ) : (
             <div className="flex justify-start">
               <div className="max-w-[82%] rounded-2xl rounded-bl-md border border-black/[0.06] bg-white px-4 py-3 text-sm leading-5 text-black/75 shadow-sm dark:border-white/10 dark:bg-white/10 dark:text-white/80">
@@ -298,21 +351,40 @@ const ChatPanel = ({ open, onClose }: { open: boolean; onClose: () => void }) =>
             </div>
           )}
           {messages.map((item) => (
-            <div key={item._id} className={`flex ${item.sender !== "staff" ? "justify-end" : "justify-start"}`}>
-              <div className={`max-w-[82%] ${item.sender !== "staff" ? "items-end" : "items-start"} flex flex-col`}>
-                <div className={`rounded-2xl px-4 py-3 text-sm leading-5 shadow-sm ${item.sender !== "staff" ? "rounded-br-md bg-primary text-white" : "rounded-bl-md border border-black/[0.06] bg-white text-black/75 dark:border-white/10 dark:bg-white/10 dark:text-white/80"}`}>
+            <div
+              key={item._id}
+              className={`flex ${item.sender !== "staff" ? "justify-end" : "justify-start"}`}
+            >
+              <div
+                className={`max-w-[82%] ${item.sender !== "staff" ? "items-end" : "items-start"} flex flex-col`}
+              >
+                <div
+                  className={`rounded-2xl px-4 py-3 text-sm leading-5 shadow-sm ${item.sender !== "staff" ? "rounded-br-md bg-primary text-white" : "rounded-bl-md border border-black/[0.06] bg-white text-black/75 dark:border-white/10 dark:bg-white/10 dark:text-white/80"}`}
+                >
                   {item.text}
                 </div>
-                <span className="mt-1 px-1 text-[10px] text-black/35 dark:text-white/35">{new Date(item.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
+                <span className="mt-1 px-1 text-[10px] text-black/35 dark:text-white/35">
+                  {new Date(item.createdAt).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </span>
               </div>
             </div>
           ))}
           <div ref={messagesEndRef} />
         </div>
 
-        <form onSubmit={sendMessage} className="border-t border-black/[0.07] bg-white p-3 dark:border-white/10 dark:bg-[#101917]">
+        <form
+          onSubmit={sendMessage}
+          className="border-t border-black/[0.07] bg-white p-3 dark:border-white/10 dark:bg-[#101917]"
+        >
           <div className="flex items-end gap-2 rounded-2xl border border-black/10 bg-black/[0.025] p-2 focus-within:border-primary/50 focus-within:ring-4 focus-within:ring-primary/10 dark:border-white/10 dark:bg-white/5">
-            <button type="button" aria-label="Attach a file" className="mb-0.5 shrink-0 rounded-xl p-2 text-black/40 transition hover:bg-black/5 hover:text-primary dark:text-white/40 dark:hover:bg-white/10">
+            <button
+              type="button"
+              aria-label="Attach a file"
+              className="mb-0.5 shrink-0 rounded-xl p-2 text-black/40 transition hover:bg-black/5 hover:text-primary dark:text-white/40 dark:hover:bg-white/10"
+            >
               <PaperclipIcon />
             </button>
             <textarea
@@ -330,11 +402,24 @@ const ChatPanel = ({ open, onClose }: { open: boolean; onClose: () => void }) =>
               placeholder="Write your message…"
               className="max-h-24 min-h-10 flex-1 resize-none bg-transparent px-1 py-2.5 text-sm text-black outline-none placeholder:text-black/35 dark:text-white dark:placeholder:text-white/35"
             />
-            <button type="submit" disabled={!message.trim() || sending || loading} aria-label="Send message" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-white transition hover:bg-[#008d77] disabled:cursor-not-allowed disabled:opacity-40">
-              {sending ? <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" /> : <SendIcon />}
+            <button
+              type="submit"
+              disabled={!message.trim() || sending || loading}
+              aria-label="Send message"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-white transition hover:bg-[#008d77] disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              {sending ? (
+                <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+              ) : (
+                <SendIcon />
+              )}
             </button>
           </div>
-          <p className={`mt-2 text-center text-[10px] ${error ? "text-red-500" : "text-black/35 dark:text-white/30"}`}>{error || "Your conversation is saved securely"}</p>
+          <p
+            className={`mt-2 text-center text-[10px] ${error ? "text-red-500" : "text-black/35 dark:text-white/30"}`}
+          >
+            {error || "Your conversation is saved securely"}
+          </p>
         </form>
       </section>
     </>

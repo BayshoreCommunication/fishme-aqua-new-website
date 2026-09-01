@@ -40,7 +40,7 @@ const variantStyles: Record<Variant, string> = {
 };
 
 const baseStyles =
-  "inline-flex items-center justify-center rounded-full px-6 py-3 font-sans font-semibold transition-colors duration-200 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50";
+  "inline-flex items-center justify-center rounded-full px-6 py-3 font-sans font-semibold transition-all duration-150 cursor-pointer select-none active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-50";
 
 export default function Button({
   children,

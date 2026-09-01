@@ -29,12 +29,37 @@ const offsetFor = (direction: Direction, distance: number) => {
   }
 };
 
+// Shared singleton IntersectionObserver for high performance & zero main-thread lag
+let sharedObserver: IntersectionObserver | null = null;
+const observerCallbacks = new Map<Element, () => void>();
+
+const getSharedObserver = () => {
+  if (!sharedObserver && typeof window !== "undefined") {
+    sharedObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const callback = observerCallbacks.get(entry.target);
+            if (callback) {
+              callback();
+              observerCallbacks.delete(entry.target);
+              sharedObserver?.unobserve(entry.target);
+            }
+          }
+        });
+      },
+      { rootMargin: "50px", threshold: 0.05 }
+    );
+  }
+  return sharedObserver;
+};
+
 const Reveal = ({
   children,
   direction = "up",
   delay = 0,
-  duration = 700,
-  distance = 24,
+  duration = 500,
+  distance = 18,
   className = "",
 }: RevealProps) => {
   const [visible, setVisible] = useState(false);
@@ -44,17 +69,19 @@ const Reveal = ({
     const node = nodeRef.current;
     if (!node) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setVisible(true);
-        observer.disconnect();
-      },
-      { threshold: 0.2 }
-    );
+    const observer = getSharedObserver();
+    if (!observer) {
+      setVisible(true);
+      return;
+    }
 
+    observerCallbacks.set(node, () => setVisible(true));
     observer.observe(node);
-    return () => observer.disconnect();
+
+    return () => {
+      observerCallbacks.delete(node);
+      observer.unobserve(node);
+    };
   }, []);
 
   return (
@@ -64,7 +91,8 @@ const Reveal = ({
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "none" : offsetFor(direction, distance),
-        transition: `opacity ${duration}ms ease-out ${delay}ms, transform ${duration}ms ease-out ${delay}ms`,
+        transition: `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
+        willChange: visible ? "auto" : "opacity, transform",
       }}
     >
       {children}
