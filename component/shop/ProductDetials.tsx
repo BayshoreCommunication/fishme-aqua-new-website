@@ -17,8 +17,8 @@ import {
   Heart,
   HelpCircle,
   Link2,
-  Minus,
   LoaderCircle,
+  Minus,
   PackageCheck,
   Plus,
   ShieldCheck,
@@ -170,9 +170,9 @@ const ProductDetials = ({
           </span>
         </nav>
 
-        <div className="mx-auto grid max-w-[1370px] items-stretch gap-9 lg:grid-cols-[88px_minmax(0,1fr)_minmax(360px,1fr)] lg:gap-4 xl:gap-10">
-          <div className="grid min-w-0 gap-4 sm:grid-cols-[88px_minmax(0,1fr)] lg:contents">
-            <div className="group order-1 aspect-square cursor-zoom-in overflow-hidden rounded-3xl border border-foreground/10 bg-white shadow-sm dark:border-white/10 sm:order-2 lg:col-start-2 lg:row-start-1">
+        <div className="mx-auto grid max-w-[1370px] items-stretch gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(360px,1fr)] lg:gap-12 xl:gap-16">
+          <div className="grid min-w-0 gap-2 sm:grid-cols-[88px_minmax(0,1fr)] sm:gap-3">
+            <div className="group order-1 h-80 cursor-zoom-in overflow-hidden rounded-3xl border border-foreground/10 bg-white shadow-sm dark:border-white/10 sm:order-2 sm:h-105 lg:h-130 lg:self-start xl:h-145">
               <div className="relative h-full w-full">
                 <Image
                   src={selectedImage}
@@ -180,12 +180,12 @@ const ProductDetials = ({
                   fill
                   priority
                   sizes="(max-width: 1023px) 100vw, 55vw"
-                  className="object-contain p-8 transition-transform duration-500 ease-out group-hover:scale-110 sm:p-12"
+                  className="object-contain p-4 transition-transform duration-500 ease-out group-hover:scale-110 sm:p-6"
                 />
               </div>
             </div>
 
-            <div className="order-2 flex gap-3 overflow-x-auto pb-1 sm:order-1 sm:flex-col sm:overflow-visible lg:col-start-1 lg:row-start-1">
+            <div className="order-2 flex gap-3 self-start overflow-x-auto pb-1 sm:order-1 sm:flex-col sm:overflow-visible">
               {gallery.map((image, index) => (
                 <button
                   key={`${image}-${index}`}
@@ -211,7 +211,7 @@ const ProductDetials = ({
             </div>
           </div>
 
-          <div className="flex h-full flex-col lg:col-start-3 lg:row-start-1">
+          <div className="flex h-full flex-col">
             <p className="text-base font-semibold text-primary dark:text-teal-400">
               {product.category.name}
             </p>
@@ -262,7 +262,7 @@ const ProductDetials = ({
             </div>
 
             {product.shortDescription && (
-              <p className="mt-3 line-clamp-1 text-base leading-7 text-foreground/70">
+              <p className="mt-3 line-clamp-3 text-base leading-7 text-foreground/70">
                 {product.shortDescription}
               </p>
             )}
@@ -599,7 +599,10 @@ const ProductInformationTabs = ({
       )}
 
       {reviewError && (
-        <div role="alert" className="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700 dark:border-red-400/20 dark:bg-red-400/10 dark:text-red-300">
+        <div
+          role="alert"
+          className="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700 dark:border-red-400/20 dark:bg-red-400/10 dark:text-red-300"
+        >
           <span>{reviewError}</span>
           <button
             type="button"
@@ -613,8 +616,13 @@ const ProductInformationTabs = ({
 
       {reviewsData.reviews.length === 0 ? (
         <div className="rounded-3xl border border-dashed border-foreground/15 px-6 py-12 text-center dark:border-white/15">
-          <Star aria-hidden="true" className="mx-auto h-9 w-9 text-foreground/20" />
-          <h2 className="mt-4 font-heading text-2xl font-bold">No approved reviews yet</h2>
+          <Star
+            aria-hidden="true"
+            className="mx-auto h-9 w-9 text-foreground/20"
+          />
+          <h2 className="mt-4 font-heading text-2xl font-bold">
+            No approved reviews yet
+          </h2>
           <p className="mt-2 text-base text-foreground/55">
             Verified customer reviews will appear here after moderation.
           </p>
@@ -625,7 +633,10 @@ const ProductInformationTabs = ({
             <p className="font-heading text-5xl font-bold text-primary">
               {reviewsData.summary.averageRating.toFixed(1)}
             </p>
-            <div className="mt-3 flex justify-center gap-1 text-amber-400" aria-label={`${reviewsData.summary.averageRating} out of 5 stars`}>
+            <div
+              className="mt-3 flex justify-center gap-1 text-amber-400"
+              aria-label={`${reviewsData.summary.averageRating} out of 5 stars`}
+            >
               {[1, 2, 3, 4, 5].map((rating) => (
                 <Star
                   key={rating}
@@ -639,7 +650,8 @@ const ProductInformationTabs = ({
               ))}
             </div>
             <p className="mt-3 text-sm font-semibold text-foreground/55">
-              Based on {reviewsData.summary.totalReviews} verified {reviewsData.summary.totalReviews === 1 ? "review" : "reviews"}
+              Based on {reviewsData.summary.totalReviews} verified{" "}
+              {reviewsData.summary.totalReviews === 1 ? "review" : "reviews"}
             </p>
           </aside>
 
@@ -657,21 +669,29 @@ const ProductInformationTabs = ({
                   .toUpperCase();
 
                 return (
-                  <article key={review._id} className="rounded-2xl border border-foreground/[0.09] bg-background p-5 shadow-sm dark:border-white/10">
+                  <article
+                    key={review._id}
+                    className="rounded-2xl border border-foreground/[0.09] bg-background p-5 shadow-sm dark:border-white/10"
+                  >
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex min-w-0 items-center gap-3">
                         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-extrabold text-primary">
                           {initials || "VC"}
                         </span>
                         <div className="min-w-0">
-                          <h3 className="truncate text-sm font-extrabold">{customerName}</h3>
+                          <h3 className="truncate text-sm font-extrabold">
+                            {customerName}
+                          </h3>
                           <p className="mt-0.5 flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-300">
                             <Check className="h-3 w-3" aria-hidden="true" />
                             Verified purchase
                           </p>
                         </div>
                       </div>
-                      <time className="shrink-0 text-[10px] text-foreground/35" dateTime={review.createdAt}>
+                      <time
+                        className="shrink-0 text-[10px] text-foreground/35"
+                        dateTime={review.createdAt}
+                      >
                         {new Intl.DateTimeFormat("en-BD", {
                           day: "2-digit",
                           month: "short",
@@ -680,7 +700,10 @@ const ProductInformationTabs = ({
                       </time>
                     </div>
 
-                    <div className="mt-4 flex items-center gap-1 text-amber-400" aria-label={`${review.rating} out of 5 stars`}>
+                    <div
+                      className="mt-4 flex items-center gap-1 text-amber-400"
+                      aria-label={`${review.rating} out of 5 stars`}
+                    >
                       {[1, 2, 3, 4, 5].map((rating) => (
                         <Star
                           key={rating}
@@ -709,7 +732,13 @@ const ProductInformationTabs = ({
                               className="relative h-14 w-14 overflow-hidden rounded-lg border border-foreground/10 bg-white"
                               aria-label={`Open ${attachment.name}`}
                             >
-                              <Image src={attachment.url} alt="" fill sizes="56px" className="object-cover" />
+                              <Image
+                                src={attachment.url}
+                                alt=""
+                                fill
+                                sizes="56px"
+                                className="object-cover"
+                              />
                             </a>
                           ) : (
                             <a
@@ -719,8 +748,13 @@ const ProductInformationTabs = ({
                               rel="noreferrer"
                               className="inline-flex h-14 max-w-40 items-center gap-2 rounded-lg border border-foreground/10 px-3 text-[10px] font-bold text-primary"
                             >
-                              <FileText className="h-4 w-4 shrink-0" aria-hidden="true" />
-                              <span className="truncate">{attachment.name}</span>
+                              <FileText
+                                className="h-4 w-4 shrink-0"
+                                aria-hidden="true"
+                              />
+                              <span className="truncate">
+                                {attachment.name}
+                              </span>
                             </a>
                           ),
                         )}
@@ -735,20 +769,29 @@ const ProductInformationTabs = ({
               <div className="mt-6 flex items-center justify-between border-t border-foreground/10 pt-5 dark:border-white/10">
                 <button
                   type="button"
-                  disabled={!reviewsData.pagination.hasPreviousPage || reviewsLoading}
-                  onClick={() => onReviewPageChange(reviewsData.pagination.page - 1)}
+                  disabled={
+                    !reviewsData.pagination.hasPreviousPage || reviewsLoading
+                  }
+                  onClick={() =>
+                    onReviewPageChange(reviewsData.pagination.page - 1)
+                  }
                   className="inline-flex items-center gap-1.5 rounded-full border border-foreground/15 px-4 py-2 text-xs font-bold transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-35"
                 >
                   <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                   Previous
                 </button>
                 <span className="text-xs font-semibold text-foreground/45">
-                  Page {reviewsData.pagination.page} of {reviewsData.pagination.totalPages}
+                  Page {reviewsData.pagination.page} of{" "}
+                  {reviewsData.pagination.totalPages}
                 </span>
                 <button
                   type="button"
-                  disabled={!reviewsData.pagination.hasNextPage || reviewsLoading}
-                  onClick={() => onReviewPageChange(reviewsData.pagination.page + 1)}
+                  disabled={
+                    !reviewsData.pagination.hasNextPage || reviewsLoading
+                  }
+                  onClick={() =>
+                    onReviewPageChange(reviewsData.pagination.page + 1)
+                  }
                   className="inline-flex items-center gap-1.5 rounded-full border border-foreground/15 px-4 py-2 text-xs font-bold transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-35"
                 >
                   Next
