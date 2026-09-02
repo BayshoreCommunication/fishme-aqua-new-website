@@ -7,8 +7,6 @@ const SunIcon = ({ className = "" }: { className?: string }) => (
     className={className}
     width="18"
     height="18"
-    width="19"
-    height="19"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -26,8 +24,6 @@ const MoonIcon = ({ className = "" }: { className?: string }) => (
     className={className}
     width="18"
     height="18"
-    width="19"
-    height="19"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -64,7 +60,6 @@ const ThemeToggle = ({ className = "" }: { className?: string }) => {
       onClick={toggleTheme}
       aria-label="Toggle theme"
       className={`flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white/90 transition-colors hover:border-primary hover:text-primary ${className}`}
-      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/5 text-white/90 transition-all hover:border-primary hover:bg-primary/10 hover:text-primary active:scale-95 ${className}`}
     >
       {mounted && isDark ? <SunIcon /> : <MoonIcon />}
     </button>

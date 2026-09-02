@@ -92,15 +92,11 @@ const MenuIcon = ({ className = "" }: { className?: string }) => (
     className={className}
     width="24"
     height="24"
-    width="20"
-    height="20"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth={2}
-    strokeWidth={2.2}
     strokeLinecap="round"
-    strokeLinejoin="round"
   >
     <path d="M3 6h18M3 12h18M3 18h18" />
   </svg>
@@ -111,15 +107,11 @@ const CloseIcon = ({ className = "" }: { className?: string }) => (
     className={className}
     width="24"
     height="24"
-    width="20"
-    height="20"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth={2}
-    strokeWidth={2.2}
     strokeLinecap="round"
-    strokeLinejoin="round"
   >
     <path d="M6 6l12 12M18 6L6 18" />
   </svg>
@@ -364,14 +356,12 @@ const Navbar = ({ user = null }: NavbarProps) => {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0 lg:hidden">
           <CustomerMenu user={user} compact />
           <ThemeToggle />
           <button
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
             className="flex items-center justify-center rounded-full p-2 text-white active:scale-90"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/5 text-white transition-all hover:border-primary hover:bg-primary/10 hover:text-primary active:scale-95 cursor-pointer"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <CloseIcon /> : <MenuIcon />}
@@ -506,20 +496,11 @@ const CustomerMenu = ({
         prefetch={true}
         aria-label="Sign in"
         className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-3 text-xs font-bold text-white transition hover:border-primary hover:bg-primary/10 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-95"
-        className={`inline-flex h-10 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/5 text-white transition-all hover:border-primary hover:bg-primary/10 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-95 ${
-          compact ? "w-10" : "gap-2 px-3.5 text-xs font-bold"
-        }`}
       >
         <LogIn aria-hidden="true" className="h-4 w-4" />
         <span className={compact ? "sr-only" : "hidden 2xl:inline"}>
           Sign in
         </span>
-        <LogIn aria-hidden="true" className="h-[19px] w-[19px]" />
-        {!compact && (
-          <span className="hidden 2xl:inline">
-            Sign in
-          </span>
-        )}
       </Link>
     );
   }
