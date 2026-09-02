@@ -96,11 +96,11 @@ const WhyFishMeAqua = () => {
         </Reveal>
 
         {/* Grid Layout: Left Cards (2) -> Center Video/Image -> Right Cards (2) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Column Cards */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
-            <Reveal direction="up" delay={100}>
-              <div className="h-full bg-white/5 backdrop-blur-xl rounded-3xl p-5 border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all duration-300 shadow-2xl flex flex-col justify-between group">
+          <div className="lg:col-span-4 flex flex-col gap-6 justify-between h-full">
+            <Reveal direction="up" delay={100} className="flex-1 flex flex-col">
+              <div className="h-full w-full bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all duration-300 shadow-2xl flex flex-col justify-between group min-h-[220px]">
                 <div className="w-14 h-14 rounded-2xl bg-white text-slate-900 flex items-center justify-center mb-6 shadow-md transition-transform duration-300 group-hover:scale-110">
                   <Award className="w-7 h-7 text-slate-800" />
                 </div>
@@ -108,15 +108,15 @@ const WhyFishMeAqua = () => {
                   <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                     {whyChooseData[0].title}
                   </h3>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-300 text-base leading-relaxed">
                     {whyChooseData[0].description}
                   </p>
                 </div>
               </div>
             </Reveal>
 
-            <Reveal direction="up" delay={200}>
-              <div className="h-full bg-white/5 backdrop-blur-xl rounded-3xl p-5 border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all duration-300 shadow-2xl flex flex-col justify-between group">
+            <Reveal direction="up" delay={200} className="flex-1 flex flex-col">
+              <div className="h-full w-full bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all duration-300 shadow-2xl flex flex-col justify-between group min-h-[220px]">
                 <div className="w-14 h-14 rounded-2xl bg-white text-slate-900 flex items-center justify-center mb-6 shadow-md transition-transform duration-300 group-hover:scale-110">
                   <ShieldCheck className="w-7 h-7 text-slate-800" />
                 </div>
@@ -124,7 +124,7 @@ const WhyFishMeAqua = () => {
                   <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                     {whyChooseData[1].title}
                   </h3>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-300 text-base leading-relaxed">
                     {whyChooseData[1].description}
                   </p>
                 </div>
@@ -133,9 +133,13 @@ const WhyFishMeAqua = () => {
           </div>
 
           {/* Center Column: Featured Interactive Video/Image Card */}
-          <div className="lg:col-span-4">
-            <Reveal direction="up" delay={300}>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-black shadow-2xl border border-white/20 group">
+          <div className="lg:col-span-4 h-full flex flex-col">
+            <Reveal
+              direction="up"
+              delay={300}
+              className="h-full flex-1 flex flex-col"
+            >
+              <div className="relative h-full min-h-[460px] lg:min-h-[500px] w-full overflow-hidden rounded-3xl bg-black shadow-2xl border border-white/20 group">
                 {isPlaying ? (
                   <video
                     src="https://www.w3schools.com/html/mov_bbb.mp4"
@@ -169,9 +173,9 @@ const WhyFishMeAqua = () => {
           </div>
 
           {/* Right Column Cards */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
-            <Reveal direction="up" delay={400}>
-              <div className="h-full bg-white/5 backdrop-blur-xl rounded-3xl p-5 border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all duration-300 shadow-2xl flex flex-col justify-between group">
+          <div className="lg:col-span-4 flex flex-col gap-6 justify-between h-full">
+            <Reveal direction="up" delay={400} className="flex-1 flex flex-col">
+              <div className="h-full w-full bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all duration-300 shadow-2xl flex flex-col justify-between group min-h-[220px]">
                 <div className="w-14 h-14 rounded-2xl bg-white text-slate-900 flex items-center justify-center mb-6 shadow-md transition-transform duration-300 group-hover:scale-110">
                   <Sparkles className="w-7 h-7 text-slate-800" />
                 </div>
@@ -179,15 +183,15 @@ const WhyFishMeAqua = () => {
                   <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                     {whyChooseData[2].title}
                   </h3>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-300 text-base leading-relaxed">
                     {whyChooseData[2].description}
                   </p>
                 </div>
               </div>
             </Reveal>
 
-            <Reveal direction="up" delay={500}>
-              <div className="h-full bg-white/5 backdrop-blur-xl rounded-3xl p-5 border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all duration-300 shadow-2xl flex flex-col justify-between group">
+            <Reveal direction="up" delay={500} className="flex-1 flex flex-col">
+              <div className="h-full w-full bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all duration-300 shadow-2xl flex flex-col justify-between group min-h-[220px]">
                 <div className="w-14 h-14 rounded-2xl bg-white text-slate-900 flex items-center justify-center mb-6 shadow-md transition-transform duration-300 group-hover:scale-110">
                   <Headphones className="w-7 h-7 text-slate-800" />
                 </div>
@@ -195,7 +199,7 @@ const WhyFishMeAqua = () => {
                   <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                     {whyChooseData[3].title}
                   </h3>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-300 text-base leading-relaxed">
                     {whyChooseData[3].description}
                   </p>
                 </div>

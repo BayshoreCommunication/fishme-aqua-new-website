@@ -1,9 +1,10 @@
 import { listProductsAction } from "@/app/actions/product";
 import Link from "next/link";
-
 import Reveal from "@/component/motion/Reveal";
 import ProductGrid from "@/component/shop/ProductGrid";
 import { toShopProduct } from "@/component/shop/productAdapter";
+import { staticProducts } from "@/component/shop/staticProducts";
+import type { ShopProduct } from "@/component/shop/types";
 
 const ArrowUpRightIcon = () => (
   <svg
@@ -21,10 +22,25 @@ const ArrowUpRightIcon = () => (
 );
 
 const ShopAquaticEssentials = async () => {
-  const result = await listProductsAction({ featured: true, limit: 4 });
-  const featuredProducts = result.ok
-    ? result.data.products.map(toShopProduct)
-    : [];
+  let productsToDisplay: ShopProduct[] = [];
+
+  try {
+    const result = await listProductsAction({ featured: true, limit: 4 });
+    if (result.ok && result.data.products.length > 0) {
+      productsToDisplay = result.data.products.map(toShopProduct);
+    } else {
+      const allProducts = await listProductsAction({ limit: 4 });
+      if (allProducts.ok && allProducts.data.products.length > 0) {
+        productsToDisplay = allProducts.data.products.map(toShopProduct);
+      }
+    }
+  } catch (error) {
+    console.error("Failed to load featured products from API:", error);
+  }
+
+  if (productsToDisplay.length === 0) {
+    productsToDisplay = staticProducts.slice(0, 4);
+  }
 
   return (
     <section className="bg-background py-16 text-foreground transition-colors duration-300 md:py-20">
@@ -43,9 +59,9 @@ const ShopAquaticEssentials = async () => {
           </header>
         </Reveal>
 
-        {featuredProducts.length ? (
+        {productsToDisplay.length ? (
           <ProductGrid
-            products={featuredProducts}
+            products={productsToDisplay}
             viewMode="grid"
             desktopColumns={4}
           />

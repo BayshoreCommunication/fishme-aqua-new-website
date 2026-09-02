@@ -103,7 +103,7 @@ const About = () => {
             <h2 className="font-heading text-3xl font-bold uppercase tracking-widest text-foreground sm:text-4xl">
               About Us
             </h2>
-            <p className="max-w-xl text-base sm:text-lg leading-relaxed text-foreground/75 sm:text-right">
+            <p className="max-w-4xl text-base sm:text-lg leading-relaxed text-foreground/75 sm:text-left">
               FishMeAqua designs and builds premium aquariums, aquascapes,
               ponds, and nature-inspired environments, creating beautiful living
               ecosystems for homes, businesses, and commercial spaces.
@@ -134,7 +134,7 @@ const About = () => {
 
         <Reveal direction="up" delay={450}>
           <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-xl text-base sm:text-lg leading-relaxed text-foreground/75">
+            <p className="max-w-4xl text-base sm:text-lg leading-relaxed text-foreground/75">
               At FishMeAqua, we believe nature is more than decoration—it is an
               experience. Our mission is to transform ordinary spaces into
               inspiring environments that promote relaxation, wellness, and a
@@ -143,7 +143,7 @@ const About = () => {
             <Button
               href="/about"
               variant="primary"
-              className="shrink-0 text-sm sm:text-base font-semibold"
+              className="shrink-0  text-base font-semibold"
             >
               Explore More About Fish Me Aqua
               <span className="ml-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20">

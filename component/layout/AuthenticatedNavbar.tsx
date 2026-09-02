@@ -12,8 +12,14 @@ const AuthenticatedNavbar = async () => {
         image: session.user.image ?? null,
       };
     }
-  } catch (error) {
-    console.error("AuthenticatedNavbar auth check failed:", error);
+  } catch (error: unknown) {
+    const err = error as { digest?: string; message?: string };
+    if (
+      err?.digest === "DYNAMIC_SERVER_USAGE" ||
+      err?.message?.includes("DYNAMIC_SERVER_USAGE")
+    ) {
+      throw error;
+    }
     user = null;
   }
 

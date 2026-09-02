@@ -227,7 +227,9 @@ const OurJourney = () => {
                   key={index}
                   direction="up"
                   delay={index * 150}
-                  className="h-full flex flex-col"
+                  className={`h-full flex flex-col ${
+                    index === 0 ? "lg:col-start-2" : ""
+                  }`}
                 >
                   <div className="flex flex-col items-center text-center group h-full">
                     {/* Year & Node point */}

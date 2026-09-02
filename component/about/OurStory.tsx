@@ -100,11 +100,11 @@ const OurStory = () => {
       <div className="container ">
         {/* Top Header Section: Heading on Left, Subtitle on Left/Right properly aligned */}
         <Reveal direction="up" delay={0}>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-10 text-left">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-10 text-left">
             <h2 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground sm:text-4xl text-left">
               Our Story
             </h2>
-            <p className="max-w-md text-base sm:text-lg leading-relaxed text-foreground/80 sm:text-left">
+            <p className="max-w-2xl text-base sm:text-lg leading-relaxed text-foreground/80 sm:text-left">
               Fish Me Aqua was founded with a simple vision: to transform
               ordinary spaces into extraordinary aquatic experiences.
             </p>
@@ -134,7 +134,7 @@ const OurStory = () => {
         </div>
 
         {/* Bottom Section: Descriptive Text & Left Aligned CTA Button */}
-        <div className="w-full text-left flex flex-col items-center gap-8">
+        <div className="w-full max-w-7xl mx-auto text-left flex flex-col items-center gap-8">
           <Reveal direction="up" delay={450}>
             <div className="space-y-4 text-base sm:text-lg leading-relaxed text-foreground/80 text-left">
               <p>
