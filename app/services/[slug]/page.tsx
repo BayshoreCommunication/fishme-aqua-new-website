@@ -23,46 +23,14 @@ export async function generateMetadata({
     : {};
 }
 
-// Sub-features specific to Aquarium Solutions
-const aquariumSubFeatures = [
-  {
-    title: "Residential Aquariums",
-    description:
-      "Enhance your home with stunning aquatic displays designed to complement your interior style while creating a relaxing and captivating atmosphere.",
-    image: "/assets/services/residential.png",
-  },
-  {
-    title: "Commercial Aquariums",
-    description:
-      "Create a memorable experience for clients, guests, and visitors with professionally designed aquariums for offices, hotels, restaurants, hospitals, and commercial spaces.",
-    image: "/assets/services/commercial.png",
-  },
-  {
-    title: "Wall Aquariums",
-    description:
-      "Space-saving built-in aquarium systems that seamlessly integrate into walls, adding elegance and a modern architectural feature to any environment.",
-    image: "/assets/services/wall.png",
-  },
-  {
-    title: "Room Divider Aquariums",
-    description:
-      "Functional living displays that beautifully separate spaces while maintaining openness, visibility, and visual impact.",
-    image: "/assets/services/divider.png",
-  },
-  {
-    title: "Luxury Custom Aquariums",
-    description:
-      "Fully bespoke aquarium solutions crafted to the highest standards, featuring premium materials, advanced filtration systems, and unique designs tailored to your lifestyle or brand.",
-    image: "/assets/services/luxury.png",
-  },
-];
-
 export default async function ServiceDetailPage({
   params,
 }: ServiceDetailPageProps) {
   const resolvedParams = await params;
   const service = getService(resolvedParams.slug);
   if (!service) notFound();
+
+  const subFeatures = service.subFeatures || [];
 
   return (
     <>
@@ -72,7 +40,7 @@ export default async function ServiceDetailPage({
       />
 
       <section className="bg-background text-foreground py-20 sm:py-28 transition-colors duration-300">
-        <div className="container mx-auto px-4">
+        <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* LEFT COLUMN: Creative Animated Sidebar Tabs */}
             <aside className="lg:col-span-3 lg:sticky lg:top-28 p-2 rounded-2xl bg-foreground/[0.02] dark:bg-white/[0.03] backdrop-blur-xl border border-foreground/10 dark:border-white/10 transition-all duration-300">
@@ -155,15 +123,15 @@ export default async function ServiceDetailPage({
                 <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   {service.title}
                 </h2>
-                <p className="text-sm sm:text-base leading-relaxed text-foreground/70 font-light">
+                <p className="text-base sm:text-lg leading-relaxed text-foreground/80 font-normal">
                   {service.overview}
                 </p>
               </div>
 
               {/* Featured Banner with Rounded Play Button */}
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-black border border-foreground/10 dark:border-white/10 group cursor-pointer">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl bg-black border border-foreground/10 dark:border-white/10 group cursor-pointer shadow-2xl">
                 <Image
-                  src={service.image || "/assets/home/about-1.png"}
+                  src={service.image || "/assets/services/residential.png"}
                   alt={service.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -172,37 +140,41 @@ export default async function ServiceDetailPage({
                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/45 transition-colors" />
 
                 {/* Fully Rounded Play Button */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-20 w-20 items-center justify-center rounded-full border border-white/40 bg-white/20 text-white backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-20 w-20 items-center justify-center rounded-full border border-white/40 bg-white/20 text-white backdrop-blur-md transition-transform duration-300 group-hover:scale-110 shadow-2xl">
                   <Play size={28} className="fill-white ml-1" />
                 </div>
               </div>
 
-              {/* Sub-features Grid Section (No padding, no shadow, no border) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
-                {aquariumSubFeatures.map((feat, index) => (
-                  <div
-                    key={index}
-                    className={`flex flex-col bg-transparent ${
-                      index === 4 ? "md:col-span-2" : ""
-                    }`}
-                  >
-                    <div className="relative aspect-[16/10] w-full overflow-hidden mb-4 bg-black/10">
-                      <Image
-                        src={feat.image}
-                        alt={feat.title}
-                        fill
-                        className="object-cover transition-transform duration-500 hover:scale-105"
-                      />
+              {/* Sub-features Grid Section */}
+              {subFeatures.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+                  {subFeatures.map((feat, index) => (
+                    <div
+                      key={index}
+                      className={`flex flex-col bg-foreground/[0.02] dark:bg-white/[0.02] border border-foreground/10 dark:border-white/10 p-5 rounded-3xl shadow-md transition-all hover:border-primary/40 hover:shadow-xl ${
+                        index === 4 && subFeatures.length === 5
+                          ? "md:col-span-2"
+                          : ""
+                      }`}
+                    >
+                      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl mb-4 bg-black/10 shadow-inner">
+                        <Image
+                          src={feat.image}
+                          alt={feat.title}
+                          fill
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                      </div>
+                      <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground mb-2">
+                        {feat.title}
+                      </h3>
+                      <p className="text-base text-foreground/75 leading-relaxed">
+                        {feat.description}
+                      </p>
                     </div>
-                    <h3 className="font-heading text-lg font-bold text-slate-900 dark:text-white mb-2">
-                      {feat.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                      {feat.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
 
               {/* What's Included Highlights Section */}
               <div className="   ">
