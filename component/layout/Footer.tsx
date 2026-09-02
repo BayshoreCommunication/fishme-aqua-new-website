@@ -286,7 +286,8 @@ const Footer = () => {
       <div className="bg-[#1b1b1b] pb-10 pt-16 transition-colors duration-300 dark:bg-black">
         <div className="container">
           <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.45fr_0.9fr_0.9fr_0.75fr_1.25fr] lg:gap-0">
-            <div className="flex flex-col items-center px-4 text-center sm:items-start sm:text-left lg:pr-10">
+            {/* Logo & About Column */}
+            <div className="flex flex-col items-start text-left lg:pr-10">
               <Image
                 src="/assets/logo/fishme-logo.svg"
                 alt="Fish Me Aqua"
@@ -294,12 +295,12 @@ const Footer = () => {
                 height={505}
                 className="h-14 w-auto"
               />
-              <p className="mt-4 max-w-xs text-xs leading-5 text-white/65 sm:text-sm">
+              <p className="mt-4 max-w-xs text-xs leading-5 text-white/65 sm:text-sm text-left">
                 Transform your space with premium aquatic design. Creating
                 living art through custom aquariums, aquascaping, and water
                 features.
               </p>
-              <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5 sm:justify-start">
+              <div className="mt-5 flex flex-wrap items-center justify-start gap-2.5">
                 {socialLinks.map(({ label, href, icon: Icon }) => (
                   <a
                     key={label}
@@ -315,7 +316,8 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="text-center sm:text-left lg:border-l lg:border-primary/15 lg:px-7">
+            {/* Services Links Column */}
+            <div className="text-left lg:border-l lg:border-primary/15 lg:px-7">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-white underline decoration-white/50 underline-offset-4">
                 Services
               </h3>
@@ -333,7 +335,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="text-center sm:text-left lg:border-l lg:border-primary/15 lg:px-7">
+            {/* Quick Links Column */}
+            <div className="text-left lg:border-l lg:border-primary/15 lg:px-7">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-white underline decoration-white/50 underline-offset-4">
                 Quick Links
               </h3>
@@ -351,7 +354,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="text-center sm:text-left lg:border-l lg:border-primary/15 lg:px-7">
+            {/* Legal Links Column */}
+            <div className="text-left lg:border-l lg:border-primary/15 lg:px-7">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-white underline decoration-white/50 underline-offset-4">
                 Legal
               </h3>
@@ -369,13 +373,14 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="text-center sm:text-left lg:border-l lg:border-primary/15 lg:pl-7">
+            {/* Address Column */}
+            <div className="text-left lg:border-l lg:border-primary/15 lg:pl-7">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-white underline decoration-white/50 underline-offset-4">
                 Address
               </h3>
-              <ul className="mt-5 flex flex-col items-center gap-4 sm:items-stretch">
-                <li className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:text-left">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary sm:h-8 sm:w-8">
+              <ul className="mt-5 flex flex-col items-start gap-4">
+                <li className="flex items-start gap-3 text-left">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary mt-0.5">
                     <LocationIcon />
                   </span>
                   <div>
@@ -387,8 +392,8 @@ const Footer = () => {
                     </p>
                   </div>
                 </li>
-                <li className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:text-left">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary sm:h-8 sm:w-8">
+                <li className="flex items-start gap-3 text-left">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary mt-0.5">
                     <PhoneIcon />
                   </span>
                   <div>
@@ -398,8 +403,8 @@ const Footer = () => {
                     <p className="text-sm text-white/70">+1 (555) 123-4567</p>
                   </div>
                 </li>
-                <li className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:text-left">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary sm:h-8 sm:w-8">
+                <li className="flex items-start gap-3 text-left">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary mt-0.5">
                     <MailIcon />
                   </span>
                   <div>
@@ -415,9 +420,11 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-white/50 sm:flex-row">
-            <p>{new Date().getFullYear()} Fish Me Aqua © All Rights Reserved</p>
-            <p>
+          <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-sm text-white/50 sm:flex-row sm:items-center">
+            <p className="text-left">
+              {new Date().getFullYear()} Fish Me Aqua © All Rights Reserved
+            </p>
+            <p className="text-left">
               Design &amp; Development{" "}
               <span className="font-medium text-primary">
                 Bayshore Communication

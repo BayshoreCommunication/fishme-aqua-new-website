@@ -158,7 +158,7 @@ const FeaturedProjects = () => {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-5 py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-all duration-300 cursor-pointer ${
+                  className={`px-5 py-1 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-all duration-300 cursor-pointer ${
                     isActive
                       ? "bg-foreground text-background font-semibold shadow-md"
                       : "bg-foreground/5 text-foreground/80 border border-foreground/15 hover:border-foreground/40 hover:text-foreground"

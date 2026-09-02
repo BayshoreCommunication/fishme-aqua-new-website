@@ -16,13 +16,13 @@ export default function ProjectsPage() {
         lastWord="Projects"
         backgroundImage="/assets/home/hero-section-background.png"
       />
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-background text-foreground transition-colors duration-300 py-16 sm:py-24">
         <div className="container">
-          <div className="mx-auto mb-7 max-w-md text-center">
-            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+          <div className="mx-auto mb-10 max-w-xl text-center">
+            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
               Featured Projects
             </h2>
-            <p className="mt-2 text-base text-foreground/75 leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-foreground/80 leading-relaxed font-normal">
               Explore our portfolio of stunning aquatic installations
             </p>
           </div>

@@ -38,7 +38,6 @@ export const services: Service[] = [
       "Bespoke aquarium design and installation for residential and commercial spaces.",
     overview:
       "Transform your space with expertly designed aquarium systems that combine beauty, functionality, and long-term sustainability. From luxury residential installations to large-scale commercial displays, FishMeAqua delivers custom aquarium solutions tailored to your environment and vision.",
-    image: "/assets/services/residential.png",
     image: "/assets/service-details/AquariumSolutionsVideo.png",
     icon: Fish,
     highlights: [
@@ -52,35 +51,30 @@ export const services: Service[] = [
         title: "Residential Aquariums",
         description:
           "Enhance your home with stunning aquatic displays designed to complement your interior style while creating a relaxing and captivating atmosphere.",
-        image: "/assets/services/residential.png",
         image: "/assets/service-details/ResidentialAquariums.png",
       },
       {
         title: "Commercial Aquariums",
         description:
           "Create a memorable experience for clients, guests, and visitors with professionally designed aquariums for offices, hotels, restaurants, and hospitals.",
-        image: "/assets/services/commercial.png",
         image: "/assets/service-details/CommercialAquariums.png",
       },
       {
         title: "Wall Aquariums",
         description:
           "Space-saving built-in aquarium systems that seamlessly integrate into walls, adding elegance and a modern architectural feature to any environment.",
-        image: "/assets/services/wall.png",
         image: "/assets/service-details/WallAquariums.png",
       },
       {
         title: "Room Divider Aquariums",
         description:
           "Functional living displays that beautifully separate spaces while maintaining openness, visibility, and dramatic visual impact.",
-        image: "/assets/services/divider.png",
         image: "/assets/service-details/RoomDividerAquariums.png",
       },
       {
         title: "Luxury Custom Aquariums",
         description:
           "Fully bespoke aquarium solutions crafted to the highest standards, featuring ultra-clear opti-white glass, titanium heaters, and tailored cabinetry.",
-        image: "/assets/services/luxury.png",
         image: "/assets/service-details/LuxuryCustomAquariums.png",
       },
     ],

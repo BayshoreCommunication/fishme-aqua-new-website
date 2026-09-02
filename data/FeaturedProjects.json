@@ -1,91 +1,101 @@
-
 [
   {
     "id": 1,
+    "slug": "luxury-hotel-lobby-aquarium",
     "title": "Luxury Hotel Lobby Aquarium",
-    "description": "30-foot custom-built aquarium featuring exotic tropical fish and live coral reef.",
+    "description": "30-foot custom-built aquarium featuring exotic tropical fish, live coral reef, and automated life-support systems.",
     "category": "Resort",
-    "image": "/images/home/projects/project-1.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-1.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 2,
+    "slug": "island-resort-underwater-lounge",
     "title": "Island Resort Underwater Lounge",
-    "description": "An immersive underwater glass enclosure with panoramic marine ecosystem view.",
+    "description": "An immersive underwater glass enclosure with panoramic marine ecosystem view and natural acoustic dampening.",
     "category": "Resort",
-    "image": "/images/home/projects/project-2.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-2.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 3,
+    "slug": "private-residence-aquascape",
     "title": "Private Residence Aquascape",
-    "description": "Nature-style aquascape with rare aquatic plants and custom lighting system.",
+    "description": "Nature-style freshwater aquascape with rare aquatic plants, driftwood hardscape, and custom LED sunrise lighting.",
     "category": "Residential",
-    "image": "/images/home/projects/project-2.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-2.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 4,
+    "slug": "penthouse-builtin-reef-tank",
     "title": "Penthouse Built-in Reef Tank",
-    "description": "Modern wall-embedded saltwater tank designed seamlessly into interior living space.",
+    "description": "Modern wall-embedded saltwater tank designed seamlessly into interior living space with smart mobile monitoring.",
     "category": "Residential",
-    "image": "/images/home/projects/project-3.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-3.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 5,
+    "slug": "corporate-hq-atrium-waterfall",
     "title": "Corporate HQ Atrium Waterfall",
-    "description": "A multi-story indoor waterfall and living plant wall creating a serene environment.",
+    "description": "A multi-story indoor waterfall and living plant wall creating a serene, biophilic environment for employees.",
     "category": "Corporate",
-    "image": "/images/home/projects/project-1.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-1.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 6,
+    "slug": "executive-boardroom-aquascape",
     "title": "Executive Boardroom Aquascape",
-    "description": "High-end custom planted aquascape designed for a tranquil corporate experience.",
+    "description": "High-end custom planted aquascape designed for a tranquil corporate experience and executive meeting wellness.",
     "category": "Corporate",
-    "image": "/images/home/projects/project-3.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-3.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 7,
+    "slug": "tech-campus-central-feature-tank",
     "title": "Tech Campus Central Feature Tank",
-    "description": "Sleek minimalist aquarium integration providing biometric stress reduction for employees.",
+    "description": "Sleek minimalist aquarium integration providing biometric stress reduction for tech developers and visitors.",
     "category": "Office Spaces",
-    "image": "/images/home/projects/project-2.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-2.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 8,
+    "slug": "zen-garden-japanese-koi-pond",
     "title": "Zen Garden Japanese Koi Pond",
-    "description": "Traditional outdoor koi pond with custom bio-filtration and stone bridge aesthetics.",
+    "description": "Traditional outdoor koi pond with custom bio-filtration, stepping stones, and natural rock waterfall cascades.",
     "category": "Koi Ponds",
-    "image": "/images/home/projects/project-3.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-3.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 9,
+    "slug": "modern-courtyard-reflecting-koi-pond",
     "title": "Modern Courtyard Reflecting Koi Pond",
-    "description": "Architectural geometric koi pond with glass viewing walls and LED mood lights.",
+    "description": "Architectural geometric koi pond with glass viewing walls, floating walkways, and underwater LED mood lighting.",
     "category": "Koi Ponds",
-    "image": "/images/home/projects/project-1.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-1.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 10,
+    "slug": "city-botanical-garden-paludarium",
     "title": "City Botanical Garden Paludarium",
-    "description": "Large-scale public exhibition displaying rainforest plants and freshwater aquatic species.",
+    "description": "Large-scale public exhibition displaying rainforest flora, emerse mosses, and freshwater aquatic species.",
     "category": "Public Spaces",
-    "image": "/images/home/projects/project-2.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-2.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     "id": 11,
+    "slug": "sky-lounge-infinity-water-cascade",
     "title": "Sky Lounge Infinity Water Cascade",
-    "description": "Custom rooftop fountain feature with infinity spillway overlooking the city skyline.",
+    "description": "Custom rooftop fountain feature with infinity spillway overlooking the panoramic city skyline.",
     "category": "Rooftop Water Features",
-    "image": "/images/home/projects/project-3.png",
-    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "image": "/assets/projects/project-3.png",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   }
 ]
