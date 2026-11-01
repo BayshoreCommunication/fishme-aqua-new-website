@@ -268,7 +268,12 @@ export default function ContactSection() {
                           Phone
                         </h4>
                         <p className="text-base text-foreground/80 dark:text-white/80 mt-0.5">
-                          +1 (555) 123-4567
+                          <a
+                            href="tel:+8801789915735"
+                            className="transition-colors hover:text-primary"
+                          >
+                            01789-915735
+                          </a>
                         </p>
                       </div>
                     </div>

@@ -577,7 +577,7 @@ const ProductInformationTabs = ({
     >
       <h2 className="font-heading text-3xl font-bold">Product Description</h2>
       <div
-        className="mt-6 text-base leading-8 text-foreground/70 [&_b]:font-bold [&_b]:text-foreground [&_em]:italic [&_h2]:mb-4 [&_h2]:mt-9 [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-foreground [&_h4]:mb-3 [&_h4]:mt-7 [&_h4]:text-lg [&_h4]:font-bold [&_li]:mb-2 [&_ol]:my-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_p]:mb-5 [&_strong]:font-bold [&_strong]:text-foreground [&_ul]:my-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6"
+        className="mt-6 text-base leading-8 text-foreground/70 [&_a]:break-words [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:opacity-80 [&_b]:font-bold [&_b]:text-foreground [&_em]:italic [&_h2]:mb-4 [&_h2]:mt-9 [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-foreground [&_h4]:mb-3 [&_h4]:mt-7 [&_h4]:text-lg [&_h4]:font-bold [&_li]:mb-2 [&_ol]:my-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_p]:mb-5 [&_strong]:font-bold [&_strong]:text-foreground [&_ul]:my-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6"
         dangerouslySetInnerHTML={{ __html: descriptionHtml }}
       />
     </div>

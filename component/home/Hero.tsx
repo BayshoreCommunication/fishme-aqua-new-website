@@ -119,7 +119,7 @@ const Hero = () => {
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
                 <WhatsAppIcon className="h-4 w-4" />
               </span>
-              <span className="font-semibold text-white">+880 123456789</span>
+              <span className="font-semibold text-white">01789-915735</span>
             </p>
           </Reveal>
         </div>

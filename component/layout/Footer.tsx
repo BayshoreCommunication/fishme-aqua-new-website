@@ -145,18 +145,6 @@ const InstagramIcon = () => (
   </svg>
 );
 
-const LinkedInIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M6.94 8.5H3.56V20.4h3.38ZM5.25 3.6a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM20.4 20.4h-3.37v-6.1c0-1.46-.03-3.33-2.03-3.33-2.04 0-2.35 1.6-2.35 3.22v6.21H9.28V8.5h3.24v1.63h.05c.45-.86 1.56-1.77 3.2-1.77 3.43 0 4.06 2.25 4.06 5.18Z" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6Zm-1.2 18h1.7L6.4 3.9H4.6Z" />
-  </svg>
-);
-
 const YouTubeIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
     <path d="M22 12s0-3.4-.43-5A2.78 2.78 0 0 0 19.6 5c-2-.5-9.6-.5-9.6-.5S2.4 4.5.4 5A2.78 2.78 0 0 0 .43 7C0 8.6 0 12 0 12s0 3.4.43 5A2.78 2.78 0 0 0 2.4 19c2 .5 9.6.5 9.6.5s7.6 0 9.6-.5a2.78 2.78 0 0 0 1.97-2c.43-1.6.43-5 .43-5ZM9.6 15.5v-7l6.4 3.5Z" />
@@ -164,11 +152,17 @@ const YouTubeIcon = () => (
 );
 
 const socialLinks = [
-  { label: "Facebook", href: "https://facebook.com", icon: FacebookIcon },
-  { label: "Instagram", href: "https://instagram.com", icon: InstagramIcon },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: LinkedInIcon },
-  { label: "X", href: "https://x.com", icon: XIcon },
-  { label: "YouTube", href: "https://youtube.com", icon: YouTubeIcon },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/Fish.me.Aqua",
+    icon: FacebookIcon,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/fish.me.aqua",
+    icon: InstagramIcon,
+  },
+  { label: "YouTube", href: "https://www.youtube.com/@FishMe", icon: YouTubeIcon },
 ];
 
 const serviceLinks = [
@@ -249,7 +243,7 @@ const Footer = () => {
                   </span>
                 </Button>
                 <Button
-                  href="https://wa.me/880123456789"
+                  href="https://wa.me/8801789915735"
                   variant="outline"
                   className="justify-center !border-white/35 bg-black/15 px-6 text-sm !text-white backdrop-blur-sm hover:!bg-white hover:!text-black"
                 >
@@ -400,7 +394,14 @@ const Footer = () => {
                     <p className="text-xs uppercase tracking-wide text-primary">
                       Contact
                     </p>
-                    <p className="text-sm text-white/70">+1 (555) 123-4567</p>
+                    <p className="text-sm text-white/70">
+                      <a
+                        href="tel:+8801789915735"
+                        className="transition-colors hover:text-white"
+                      >
+                        01789-915735
+                      </a>
+                    </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 text-left">

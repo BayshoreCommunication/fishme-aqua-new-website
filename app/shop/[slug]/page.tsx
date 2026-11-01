@@ -6,6 +6,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import sanitizeHtml from "sanitize-html";
 
+// http(s) URLs in already-escaped text; stops at whitespace, quotes and tags.
+const PLAIN_URL_PATTERN = /\bhttps?:\/\/[^\s<>"']+/g;
+
 type ShopDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
@@ -78,8 +81,26 @@ const Page = async ({ params }: ShopDetailPageProps) => {
         "ul",
         "ol",
         "li",
+        "a",
       ],
-      allowedAttributes: {},
+      allowedAttributes: { a: ["href", "target", "rel"] },
+      allowedSchemes: ["http", "https", "mailto", "tel"],
+      // Every link opens in a new tab.
+      transformTags: {
+        a: sanitizeHtml.simpleTransform("a", {
+          target: "_blank",
+          rel: "noopener noreferrer",
+        }),
+      },
+      // Plain-text URLs (no <a> tag) become clickable links too.
+      textFilter: (text, tagName) =>
+        tagName === "a"
+          ? text
+          : text.replace(PLAIN_URL_PATTERN, (url) => {
+              const trailing = url.match(/[.,;:!?)]+$/)?.[0] ?? "";
+              const href = url.slice(0, url.length - trailing.length);
+              return `<a href="${href}" target="_blank" rel="noopener noreferrer">${href}</a>${trailing}`;
+            }),
     },
   );
 
