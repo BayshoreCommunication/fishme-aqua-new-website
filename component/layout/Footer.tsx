@@ -298,12 +298,6 @@ const Footer = () => {
                 Bring aquatic art into your space with custom aquariums,
                 aquascaping and water features.
               </p>
-              <p className="mt-2 max-w-xs text-xs leading-5 text-white/65 sm:text-sm text-left">
-                Enjoy the beauty of water life in your environment with bespoke
-                aquariums, bespoke aquascaping and water features. We design
-                living spaces that are considered and aesthetically pleasing
-                with the addition of water.
-              </p>
               <div className="mt-5 flex flex-wrap items-center justify-start gap-2.5">
                 {socialLinks.map(({ label, href, icon: Icon }) => (
                   <a
