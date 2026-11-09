@@ -239,7 +239,7 @@ const Footer = () => {
                   variant="primary"
                   className="justify-center px-6 text-sm shadow-lg shadow-primary/20"
                 >
-                  Book Free Consultation
+                  Book for Consultation
                   <span className="ml-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20">
                     <CalendarIcon />
                   </span>
@@ -291,9 +291,18 @@ const Footer = () => {
                 height={505}
                 className="h-14 w-auto"
               />
-              <p className="mt-4 max-w-xs text-xs leading-5 text-white/65 sm:text-sm text-left">
+              <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-teal-300">
+                Bonding with Nature
+              </p>
+              <p className="mt-2 max-w-xs text-xs leading-5 text-white/65 sm:text-sm text-left">
                 Bring aquatic art into your space with custom aquariums,
                 aquascaping and water features.
+              </p>
+              <p className="mt-2 max-w-xs text-xs leading-5 text-white/65 sm:text-sm text-left">
+                Enjoy the beauty of water life in your environment with bespoke
+                aquariums, bespoke aquascaping and water features. We design
+                living spaces that are considered and aesthetically pleasing
+                with the addition of water.
               </p>
               <div className="mt-5 flex flex-wrap items-center justify-start gap-2.5">
                 {socialLinks.map(({ label, href, icon: Icon }) => (

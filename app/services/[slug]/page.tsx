@@ -198,6 +198,14 @@ export default async function ServiceDetailPage({
 
               {/* Bottom Consultation CTA */}
               <div className="text-center pt-8">
+                <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-3">
+                  Ready to Transform Your Space?
+                </h2>
+                <p className="mx-auto max-w-2xl text-sm sm:text-base leading-relaxed text-foreground/75 mb-6">
+                  Sharing your creativity together is what we&apos;re here for.
+                  Schedule a complimentary consultation with your aquatic design
+                  experts today.
+                </p>
                 <Button
                   href="/contact-us"
                   variant="primary"
