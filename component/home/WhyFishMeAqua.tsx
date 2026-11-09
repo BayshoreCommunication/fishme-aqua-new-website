@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Play, Award, Sparkles, ShieldCheck, Headphones } from "lucide-react";
 
 import Reveal from "@/component/motion/Reveal";
+import YouTubeEmbed from "@/component/shared/YouTubeEmbed";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 
 interface WhyChooseItem {
   id: number;
@@ -18,33 +20,42 @@ const whyChooseData: WhyChooseItem[] = [
     id: 1,
     title: "15+ Years Expertise",
     description:
-      "Industry-leading experience in aquatic design and installation with hundreds of successful projects across residential and commercial sectors.",
+      "Our expert team has over 15 years of experience in aquatic design and installation and has successfully carried out hundreds of commercial and residential installations.",
     icon: Award,
   },
   {
     id: 2,
     title: "Premium Materials",
     description:
-      "We source only the highest quality equipment, fish, plants, and materials to ensure longevity and stunning visual impact.",
+      "We select the best equipment, the brightest fish, the healthiest plants, and the strongest materials to make sure it will last and be beautiful.",
     icon: ShieldCheck,
   },
   {
     id: 3,
     title: "Custom Solutions",
     description:
-      "Every project is uniquely designed to match your vision, space, and budget. No two installations are ever the same.",
+      "Each project is derived from your original idea, sized and designed to comply with your available space, your specific needs and your existing budget.",
     icon: Sparkles,
   },
   {
     id: 4,
     title: "Lifetime Support",
     description:
-      "Our commitment doesn't end at installation. We provide ongoing maintenance, emergency support, and expert guidance whenever you need it.",
+      "We don't just stop at the installation. We also provide advice, maintenance and emergencies as and when you need.",
     icon: Headphones,
   },
 ];
 
-const WhyFishMeAqua = () => {
+interface WhyFishMeAquaProps {
+  // Each page passes its own channel video so no video repeats across pages.
+  videoUrl?: string;
+  videoTitle?: string;
+}
+
+const WhyFishMeAqua = ({
+  videoUrl = "https://www.youtube.com/embed/Y0toBjqf22Q",
+  videoTitle = "Transform Your Space with Living Art | FishMe Project Showreel",
+}: WhyFishMeAquaProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -90,7 +101,7 @@ const WhyFishMeAqua = () => {
               Why Fish Me Aqua?
             </h2>
             <p className="max-w-xl text-base sm:text-lg leading-relaxed text-gray-200 mx-auto">
-              The trusted choice for premium aquatic design
+              A trusted team for custom aquatic design.
             </p>
           </div>
         </Reveal>
@@ -141,16 +152,11 @@ const WhyFishMeAqua = () => {
             >
               <div className="relative h-full min-h-[460px] lg:min-h-[500px] w-full overflow-hidden rounded-3xl bg-black shadow-2xl border border-white/20 group">
                 {isPlaying ? (
-                  <video
-                    src="https://www.w3schools.com/html/mov_bbb.mp4"
-                    controls
-                    autoPlay
-                    className="w-full h-full object-cover"
-                  />
+                  <YouTubeEmbed src={videoUrl} title={videoTitle} />
                 ) : (
                   <>
                     <Image
-                      src="/assets/home/WhyFishMeAqua-main.png"
+                      src={youtubeThumbnail(videoUrl)}
                       alt="Why Fish Me Aqua - Featured Installation"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

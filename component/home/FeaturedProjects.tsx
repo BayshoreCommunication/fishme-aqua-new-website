@@ -12,6 +12,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import Reveal from "@/component/motion/Reveal";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 import projectsData from "@/data/FeaturedProjects.json";
 
 // Categories List
@@ -52,7 +53,7 @@ const ProjectCard = ({ project, onPlayVideo }: ProjectCardProps) => (
       {/* Image & Video Play Container */}
       <div className="relative h-64 sm:h-72 w-full rounded-2xl overflow-hidden mb-5">
         <Image
-          src={project.image}
+          src={youtubeThumbnail(project.videoUrl)}
           alt={project.title}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -144,7 +145,7 @@ const FeaturedProjects = () => {
               Featured Projects
             </h2>
             <p className="max-w-xl text-base sm:text-lg leading-relaxed text-foreground/80 mx-auto">
-              Explore our portfolio of stunning aquatic installations
+              Check out our gallery of beautiful underwater works.
             </p>
           </div>
         </Reveal>

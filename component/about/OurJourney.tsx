@@ -16,7 +16,7 @@ const topJourney: JourneyItem[] = [
     year: "2010",
     title: "Fish Me Aqua Founded",
     description:
-      "Started with a passion for creating custom aquatic environments and personalized aquarium designs.",
+      "Fish Me Aqua began with a passion for custom aquariums and creating aquatic spaces that suit each client's needs.",
     icon: (
       <svg
         className="w-6 h-6 text-slate-900 dark:text-slate-100"
@@ -37,7 +37,7 @@ const topJourney: JourneyItem[] = [
     year: "2013",
     title: "First Commercial Installation",
     description:
-      "Successfully completed our first large-scale hotel aquarium project.",
+      "We completed our first large hotel aquarium project, marking an important step in taking our work beyond residential spaces.",
     icon: (
       <svg
         className="w-6 h-6 text-slate-900 dark:text-slate-100"
@@ -58,7 +58,7 @@ const topJourney: JourneyItem[] = [
     year: "2016",
     title: "Expanded Service Portfolio",
     description:
-      "Introduced pond construction, water features, and landscape aquatic solutions.",
+      "We added pond construction, water features, and aquatic landscaping to our range of services.",
     icon: (
       <svg
         className="w-6 h-6 text-slate-900 dark:text-slate-100"
@@ -79,7 +79,7 @@ const topJourney: JourneyItem[] = [
     year: "2019",
     title: "Industry Recognition",
     description:
-      "Received recognition for excellence in aquascaping and custom aquatic design.",
+      "Our work in aquascaping and custom aquarium design received industry recognition.",
     icon: (
       <svg
         className="w-6 h-6 text-slate-900 dark:text-slate-100"
@@ -103,7 +103,7 @@ const bottomJourney: JourneyItem[] = [
     year: "2022",
     title: "500th Project Completed",
     description:
-      "Reached a major milestone by completing over 500 successful installations.",
+      "We achieved our 500th project milestone by building on the trust and confidence of our clients in our ability to create aquatic spaces for them.",
     icon: (
       <svg
         className="w-6 h-6 text-slate-900 dark:text-slate-100"
@@ -124,7 +124,7 @@ const bottomJourney: JourneyItem[] = [
     year: "2025",
     title: "Regional Expansion",
     description:
-      "Expanded operations to serve clients across multiple cities and regions.",
+      "We expanded our operations to reach clients in more cities and regions.",
     icon: (
       <svg
         className="w-6 h-6 text-slate-900 dark:text-slate-100"
@@ -165,7 +165,7 @@ const OurJourney = () => {
               Our Journey
             </h2>
             <p className="text-base sm:text-lg text-foreground/80">
-              Milestones That Define Our Growth
+              Milestones That Mark Our Progress
             </p>
           </div>
         </Reveal>

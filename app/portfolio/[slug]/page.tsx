@@ -54,7 +54,10 @@ export default async function PortfolioDetailPage({
       />
       <PortfolioHeroShowcase item={item} />
       <PortfolioCaseStudy item={item} />
-      <WhyFishMeAqua />
+      <WhyFishMeAqua
+        videoUrl="https://www.youtube.com/embed/T4p5eHfR4Uc"
+        videoTitle="Terrarium vs Aquarium || Mystery in the Mountains"
+      />
       <WhatOurClientsSay />
     </>
   );

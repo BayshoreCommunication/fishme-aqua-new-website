@@ -3,9 +3,11 @@ import ProjectsGrid from "@/component/projects/ProjectsGrid";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Featured Projects",
+  title: {
+    absolute: "Aquarium Projects Gallery | Fish Me Aqua Installations",
+  },
   description:
-    "Explore Fish Me Aqua's portfolio of stunning aquatic installations.",
+    "Browse our latest aquatic installations. From luxury hotel marine tanks to peaceful home aquascapes we build environments that captivate and inspire.",
 };
 
 export default function ProjectsPage() {
@@ -23,7 +25,7 @@ export default function ProjectsPage() {
               Featured Projects
             </h2>
             <p className="mt-3 text-base sm:text-lg text-foreground/80 leading-relaxed font-normal">
-              Explore our portfolio of stunning aquatic installations
+              Check out our gallery of beautiful underwater works.
             </p>
           </div>
           <ProjectsGrid />

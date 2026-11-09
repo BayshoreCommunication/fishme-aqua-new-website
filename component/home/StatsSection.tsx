@@ -13,9 +13,9 @@ interface StatItem {
 }
 
 const statsData: StatItem[] = [
-  { value: 100, suffix: "+", label: "Projects Completed" },
+  { value: 500, suffix: "+", label: "Projects Completed" },
   { value: 50, suffix: "+", label: "Maintenance Clients" },
-  { value: 6, suffix: "+", label: "Years Experience" },
+  { value: 15, suffix: "+", label: "Years Experience" },
   { value: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 

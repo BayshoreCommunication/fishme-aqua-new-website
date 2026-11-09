@@ -5,9 +5,11 @@ import WhyFishMeAqua from "@/component/home/WhyFishMeAqua";
 import WhatOurClientsSay from "@/component/home/WhatOurClientsSay";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Living Ecosystems & Aquatic Design",
+  title: {
+    absolute: "Custom Aquarium and Aquascape Portfolio | Fish Me Aqua",
+  },
   description:
-    "Transforming spaces through living ecosystems. Explore custom aquariums, aquascaping, and bespoke water features by Fish Me Aqua.",
+    "Explore Fish Me Aqua's portfolio of breathtaking living ecosystems. View our signature projects from luxury hotel marine tanks to private nature aquascapes.",
 };
 
 export default function PortfolioPage() {
@@ -29,8 +31,9 @@ export default function PortfolioPage() {
               Our Signature Portfolio
             </h2>
             <p className="mt-3 text-base sm:text-lg text-foreground/80 leading-relaxed font-normal">
-              Explore our handpicked signature aquatic installations, bespoke
-              living ecosystems, and custom nature aquascapes.
+              Take a look at some of our favorite recent builds from bespoke
+              living ecosystems and custom nature aquascapes to large scale
+              marine installations.
             </p>
           </div>
 
@@ -38,7 +41,10 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <WhyFishMeAqua />
+      <WhyFishMeAqua
+        videoUrl="https://www.youtube.com/embed/OdPQycGtzB4"
+        videoTitle="Relaxing Paludarium with Waterfall Sounds"
+      />
       <WhatOurClientsSay />
     </>
   );

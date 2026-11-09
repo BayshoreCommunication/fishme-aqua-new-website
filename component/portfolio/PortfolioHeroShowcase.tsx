@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Calendar, MapPin, Maximize2, Play, Waves } from "lucide-react";
 import Reveal from "@/component/motion/Reveal";
 import type { PortfolioItem } from "@/data/portfolio";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 
 interface PortfolioHeroShowcaseProps {
   item?: PortfolioItem;
@@ -70,8 +71,7 @@ export default function PortfolioHeroShowcase({
   const role = item?.testimonial?.role || "CTO & Homeowner";
   const avatar = item?.testimonial?.avatar || "/assets/home/DavidCallahan.png";
   const image = item?.image || "/assets/home/about-1.png";
-  const videoUrl =
-    item?.videoUrl || "https://www.youtube.com/embed/dQw4w9WgXcQ";
+  const videoUrl = item?.videoUrl ?? "";
 
   return (
     <section className="bg-background py-12 sm:py-16 text-foreground transition-colors duration-300">
@@ -83,7 +83,7 @@ export default function PortfolioHeroShowcase({
             <Reveal direction="up" delay={100} className="h-full">
               <div className="group relative h-full min-h-[360px] sm:min-h-[440px] lg:min-h-[480px] w-full overflow-hidden rounded-[2.5rem] border border-foreground/10 dark:border-white/15 bg-black shadow-2xl">
                 <Image
-                  src={image}
+                  src={youtubeThumbnail(videoUrl) || image}
                   alt={item?.title || "Featured Portfolio Project"}
                   fill
                   priority

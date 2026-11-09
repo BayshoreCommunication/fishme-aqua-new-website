@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Reveal from "@/component/motion/Reveal";
 import Image from "next/image";
 import Button from "../shared/Button";
+import YouTubeEmbed from "@/component/shared/YouTubeEmbed";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 
 const ArrowUpRightIcon = () => (
   <svg
@@ -27,7 +29,6 @@ const PlayIcon = () => (
 );
 
 interface MediaCardProps {
-  imageSrc: string;
   videoSrc: string;
   alt: string;
   isPlaying: boolean;
@@ -35,7 +36,6 @@ interface MediaCardProps {
 }
 
 const MediaCard = ({
-  imageSrc,
   videoSrc,
   alt,
   isPlaying,
@@ -44,16 +44,11 @@ const MediaCard = ({
   return (
     <div className="group relative aspect-[16/10] overflow-hidden rounded-[2rem] bg-black shadow-xl">
       {isPlaying ? (
-        <video
-          src={videoSrc}
-          controls
-          autoPlay
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <YouTubeEmbed src={videoSrc} title={alt} />
       ) : (
         <div className="relative h-full w-full cursor-pointer" onClick={onPlay}>
           <Image
-            src={imageSrc}
+            src={youtubeThumbnail(videoSrc)}
             alt={alt}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -105,8 +100,9 @@ const OurStory = () => {
               Our Story
             </h2>
             <p className="max-w-2xl text-base sm:text-lg leading-relaxed text-foreground/80 sm:text-left">
-              Fish Me Aqua was founded with a simple vision: to transform
-              ordinary spaces into extraordinary aquatic experiences.
+              Fish Me Aqua started with a love for aquatic life and a desire to
+              bring thoughtfully designed water environments into everyday
+              spaces.
             </p>
           </div>
         </Reveal>
@@ -115,18 +111,16 @@ const OurStory = () => {
         <div className="grid gap-6 sm:grid-cols-2 mb-12">
           <Reveal direction="up" delay={150}>
             <MediaCard
-              imageSrc="/assets/home/about-1.png"
-              videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
-              alt="Our Story - Team"
+              videoSrc="https://www.youtube.com/embed/O7JFnO6bZ3s"
+              alt="Recreating Alikodom, Bandarban - 17 Months Terrarium Journey"
               isPlaying={activeVideoIndex === 0}
               onPlay={() => setActiveVideoIndex(0)}
             />
           </Reveal>
           <Reveal direction="up" delay={300}>
             <MediaCard
-              imageSrc="/assets/home/about-2.png"
-              videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
-              alt="Our Story - Showcase"
+              videoSrc="https://www.youtube.com/embed/Ou47JCWFC1Q"
+              alt="Bangladeshi native fish aquarium | Fish Me"
               isPlaying={activeVideoIndex === 1}
               onPlay={() => setActiveVideoIndex(1)}
             />
@@ -138,20 +132,19 @@ const OurStory = () => {
           <Reveal direction="up" delay={450}>
             <div className="space-y-4 text-base sm:text-lg leading-relaxed text-foreground/80 text-left">
               <p>
-                What began as a passion for aquatic ecosystems and custom
-                aquarium design has evolved into a trusted aquatic design
-                company serving residential and commercial clients. Over the
-                years, we have combined creativity, technical expertise, and a
-                deep understanding of aquatic life to design stunning aquariums,
-                ponds, and water features that inspire and captivate. Every
-                project is carefully crafted to reflect our clients&apos; unique
-                vision while maintaining the highest standards of quality and
-                sustainability.
+                An interest in aquatic ecosystems and custom aquarium design has
+                expanded to an aquatic design company with residential and
+                commercial clients. We combine creativity, skills and knowledge
+                of aquatic life. Whether it&apos;s an aquarium, pond or custom
+                water feature, we focus on quality, function and sustainability
+                and create an environment that is designed around the
+                client&apos;s preferences.
               </p>
               <p>
-                Today, Fish Me Aqua is proud to be recognized for exceptional
-                craftsmanship, innovative designs, and long-term client
-                partnerships that continue to drive our success.
+                Fish Me Aqua still continues to create a reputation for itself
+                today with meticulous craftsmanship, unique designs and
+                long-lasting client relationships. We are proud of all our
+                projects and the trust in us that our clients place.
               </p>
             </div>
           </Reveal>

@@ -79,8 +79,9 @@ const Services = () => {
                 Our Services
               </h2>
               <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
-                Comprehensive aquatic design solutions tailored to your vision
-                and space
+                Recreate your surroundings with breathtaking aquatic art with
+                custom aquariums, sophisticated aquascaping and revolutionary
+                water functions.
               </p>
             </div>
 

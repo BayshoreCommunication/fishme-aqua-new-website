@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import projects from "@/data/FeaturedProjects.json";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 
 const categories = [
   "All",
@@ -74,7 +75,7 @@ export default function ProjectsGrid() {
               {/* Media Preview & Play Button */}
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black mb-5 shadow-md">
                 <Image
-                  src={project.image}
+                  src={youtubeThumbnail(project.videoUrl)}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -89,12 +90,7 @@ export default function ProjectsGrid() {
                 {/* Play Button Trigger */}
                 <button
                   type="button"
-                  onClick={() =>
-                    setSelectedVideo(
-                      project.videoUrl ||
-                        "https://www.youtube.com/embed/dQw4w9WgXcQ",
-                    )
-                  }
+                  onClick={() => setSelectedVideo(project.videoUrl)}
                   aria-label={`Play video for ${project.title}`}
                   className="absolute inset-0 m-auto flex h-12 w-12 items-center justify-center rounded-full border border-white/55 bg-white/25 text-white backdrop-blur-md shadow-lg transition-transform group-hover:scale-110 cursor-pointer"
                 >

@@ -5,9 +5,11 @@ import StatsSection from "@/component/home/StatsSection";
 import OurJourney from "@/component/about/OurJourney";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: {
+    absolute: "Aquarium Design and Maintenance Services | Fish Me Aqua",
+  },
   description:
-    "Explore Fish Me Aqua's tailored aquatic design, installation, and maintenance services.",
+    "Explore our complete range of services including custom aquarium design professional installation and ongoing maintenance to keep your aquatic life thriving.",
 };
 
 const ServicesPage = () => {

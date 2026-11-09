@@ -227,8 +227,10 @@ const Footer = () => {
                 Your Space?
               </h2>
               <p className="max-w-xl text-base leading-8 text-white/75 sm:text-lg">
-                Let&apos;s create something extraordinary together. Book a free
-                consultation with our aquatic design experts today.
+                Create a unique aquarium, water feature, or pond to your design
+                for your space. We will discuss your needs and preferences with
+                you and present the most appropriate design. Schedule a free
+                consultation to get started.
               </p>
 
               <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
@@ -290,9 +292,8 @@ const Footer = () => {
                 className="h-14 w-auto"
               />
               <p className="mt-4 max-w-xs text-xs leading-5 text-white/65 sm:text-sm text-left">
-                Transform your space with premium aquatic design. Creating
-                living art through custom aquariums, aquascaping, and water
-                features.
+                Bring aquatic art into your space with custom aquariums,
+                aquascaping and water features.
               </p>
               <div className="mt-5 flex flex-wrap items-center justify-start gap-2.5">
                 {socialLinks.map(({ label, href, icon: Icon }) => (

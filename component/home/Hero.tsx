@@ -4,9 +4,9 @@ import Button from "@/component/shared/Button";
 import Image from "next/image";
 
 const stats = [
-  { value: 100, suffix: "+", label: "Projects Completed" },
+  { value: 500, suffix: "+", label: "Projects Completed" },
   { value: 50, suffix: "+", label: "Maintenance Clients" },
-  { value: 6, suffix: "+", label: "Years Experience" },
+  { value: 15, suffix: "+", label: "Years Experience" },
   { value: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 
@@ -81,9 +81,9 @@ const Hero = () => {
 
           <Reveal direction="up" delay={150}>
             <p className="max-w-lg text-base leading-relaxed text-white/75 sm:text-lg text-left">
-              Premium aquatic design solutions for luxury homes, corporate
-              offices, and commercial spaces. From custom aquariums to
-              breathtaking aquascapes.
+              Fish Me Aqua creates aquatic spaces for luxury homes, offices
+              and businesses. We build custom aquariums and underwater
+              landscapes.
             </p>
           </Reveal>
 

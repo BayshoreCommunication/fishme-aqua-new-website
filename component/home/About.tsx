@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Button from "@/component/shared/Button";
 import Reveal from "@/component/motion/Reveal";
 import Image from "next/image";
+import YouTubeEmbed from "@/component/shared/YouTubeEmbed";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 
 const ArrowUpRightIcon = () => (
   <svg
@@ -27,7 +29,6 @@ const PlayIcon = () => (
 );
 
 interface MediaCardProps {
-  imageSrc: string;
   videoSrc: string;
   alt: string;
   isPlaying: boolean;
@@ -35,7 +36,6 @@ interface MediaCardProps {
 }
 
 const MediaCard = ({
-  imageSrc,
   videoSrc,
   alt,
   isPlaying,
@@ -44,16 +44,11 @@ const MediaCard = ({
   return (
     <div className="group relative aspect-video overflow-hidden rounded-2xl bg-black shadow-xl">
       {isPlaying ? (
-        <video
-          src={videoSrc}
-          controls
-          autoPlay
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <YouTubeEmbed src={videoSrc} title={alt} />
       ) : (
         <div className="relative h-full w-full cursor-pointer" onClick={onPlay}>
           <Image
-            src={imageSrc}
+            src={youtubeThumbnail(videoSrc)}
             alt={alt}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -104,9 +99,10 @@ const About = () => {
               About Us
             </h2>
             <p className="max-w-4xl text-base sm:text-lg leading-relaxed text-foreground/75 sm:text-left">
-              FishMeAqua designs and builds premium aquariums, aquascapes,
-              ponds, and nature-inspired environments, creating beautiful living
-              ecosystems for homes, businesses, and commercial spaces.
+              Fish Me Aqua designs beautiful aquariums, fantastic aquascapes,
+              peaceful ponds and nature environments for homes, offices and
+              public spaces. We combine color, movement, water and natural
+              materials to create a lively, warm, calm environment for you.
             </p>
           </div>
         </Reveal>
@@ -114,18 +110,16 @@ const About = () => {
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           <Reveal direction="up" delay={150}>
             <MediaCard
-              imageSrc="/assets/home/about-1.png"
-              videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
-              alt="About FishMeAqua - 1"
+              videoSrc="https://www.youtube.com/embed/_Q7qM_-lUEE"
+              alt="Transform Your Space With Living Art | Fish Me"
               isPlaying={activeVideoIndex === 0}
               onPlay={() => setActiveVideoIndex(0)}
             />
           </Reveal>
           <Reveal direction="up" delay={300}>
             <MediaCard
-              imageSrc="/assets/home/about-2.png"
-              videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
-              alt="About FishMeAqua - 2"
+              videoSrc="https://www.youtube.com/embed/R2-zSOArGdc"
+              alt="Journey of transformation - Hardscape to green oasis"
               isPlaying={activeVideoIndex === 1}
               onPlay={() => setActiveVideoIndex(1)}
             />
@@ -135,10 +129,9 @@ const About = () => {
         <Reveal direction="up" delay={450}>
           <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-4xl text-base sm:text-lg leading-relaxed text-foreground/75">
-              At FishMeAqua, we believe nature is more than decoration—it is an
-              experience. Our mission is to transform ordinary spaces into
-              inspiring environments that promote relaxation, wellness, and a
-              deeper connection with the natural world.
+              Why settle for decor when you can live in a natural surrounding?
+              We turn the average into a peaceful sanctuary with the potential
+              for rest, relaxation and well being.
             </p>
             <Button
               href="/about"

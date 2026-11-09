@@ -39,10 +39,10 @@ export const portfolioItems: PortfolioItem[] = [
     slug: "luxury-hotel-lobby-aquarium",
     title: "Luxury Hotel Lobby Aquarium",
     description:
-      "30-foot custom-built aquarium featuring exotic tropical fish, live coral reef, and automated life-support systems.",
+      "A 30 foot custom build packed with exotic marine life, a thriving live coral reef and a fully automated life support system working quietly behind the scenes.",
     category: "Resort",
     image: "/assets/home/about-1.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/OOAg7wpsl84",
     specs: {
       aquariumType: "Saltwater Reef & Marine Biotope",
       scale: "12,000 Liters / 3,170 Gallons",
@@ -59,13 +59,13 @@ export const portfolioItems: PortfolioItem[] = [
     challenge: {
       title: "Massive Structural Load & Live Coral Stability",
       description:
-        "Engineers faced the challenge of supporting over 14 tons of water weight above a subterranean garage while maintaining pristine chemical parameters for delicate stony corals under intense public illumination.",
+        "We had to safely support over 14 tons of water directly above an underground parking garage. On top of that, we needed to keep the water chemistry perfectly balanced for delicate stony corals sitting under intense, all day lobby lighting.",
       image: "/assets/home/about-1.png",
     },
     solution: {
       title: "Reinforced Titanium Frame & Precision Life Support",
       description:
-        "We implemented a bespoke vibration-damped structural steel cradle paired with a multi-stage bio-filtration sump, commercial protein skimmers, and automated trace element dosing.",
+        "Our engineers designed a custom, vibration damped steel cradle to handle the massive weight load safely. For water quality, we installed a multi stage bio filtration sump, heavy duty commercial protein skimmers, and a system that automatically doses trace elements to keep the reef healthy.",
       image: "/assets/home/about-2.png",
     },
     gallery: [
@@ -73,19 +73,19 @@ export const portfolioItems: PortfolioItem[] = [
       "/assets/projects/project-1.png",
     ],
     installation:
-      "The installation proceeded in scheduled night phases to minimize guest disturbance. Custom acrylic panels were bonded on-site, followed by dry rock aquascaping and bio-cycling.",
+      "To keep the hotel running smoothly, we handled the heavy installation during scheduled night shifts. We bonded the massive acrylic panels on site, built out the dry rock framework, and carefully bio cycled the water.",
     outcome:
-      "The lobby centerpiece has become the hotel's signature visual landmark, elevating guest check-in satisfaction and social media impressions.",
+      "Today, the aquarium is the hotel's defining visual feature giving guests a memorable check in experience and acting as a major draw for social media photos.",
   },
   {
     id: 2,
     slug: "island-resort-underwater-lounge",
     title: "Island Resort Underwater Lounge",
     description:
-      "An immersive underwater glass enclosure with panoramic marine ecosystem view and natural acoustic dampening.",
+      "The full acrylic enclosure allows visitors a bird's eye view of a lively marine world that's soundproofed from the outside world.",
     category: "Resort",
     image: "/assets/projects/project-2.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/5gIfi6zq59U",
     specs: {
       aquariumType: "Panoramic Marine Habitat Enclosure",
       scale: "8,500 Liters / 2,245 Gallons",
@@ -102,13 +102,13 @@ export const portfolioItems: PortfolioItem[] = [
     challenge: {
       title: "Submerged Pressure Seals & Acoustic Resonance",
       description:
-        "Integrating a curved 80mm thermoformed acrylic viewing cylinder with zero water refraction distortion while damping all pump vibrations from the guest relaxation lounge.",
+        "The main hurdle was installing a curved, 80mm thermoformed acrylic cylinder without any visual distortion. We also had to figure out how to completely silence the heavy duty pump vibrations so the lounge remained a quiet, relaxing space for guests.",
       image: "/assets/projects/project-2.png",
     },
     solution: {
       title: "Isolated Mechanical Chamber & Ultra-Clear Acrylic",
       description:
-        "We decoupled the filtration pumps into an acoustic-shielded basement vault and utilized optical-grade seamless acrylic sealed with elastomeric silicone joints.",
+        "We moved the entire filtration system into an acoustically shielded basement vault, entirely separate from the lounge area. For the viewing portal itself, we used optical grade, smooth acrylic locked in with high strength elastomeric silicone.",
       image: "/assets/home/about-2.png",
     },
     gallery: [
@@ -116,19 +116,19 @@ export const portfolioItems: PortfolioItem[] = [
       "/assets/projects/project-3.png",
     ],
     installation:
-      "The cylindrical viewing portal was lowered into place via crane and sealed against hydrostatic pressure using redundant fail-safe gaskets.",
+      "We brought the main viewing cylinder in by crane, lowering it carefully into place before locking it down with redundant, fail safe pressure gaskets.",
     outcome:
-      "Guests enjoy a tranquil 360-degree perspective of marine life while dining, creating an unforgettable hospitality experience.",
+      "What emerges is a stunning 360 degree dining experience in which diners can unwind and enjoy the action of the reef expanding around them.",
   },
   {
     id: 3,
     slug: "private-residence-aquascape",
     title: "Private Residence Aquascape",
     description:
-      "Nature-style freshwater aquascape with rare aquatic plants, driftwood hardscape, and custom LED sunrise lighting.",
+      "A stunning natural style fresh water aquarium with rare plants, driftwood designs and a custom lighting system to create a natural sunrise every morning.",
     category: "Residential",
     image: "/assets/home/about-2.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/RPKQpYx56Z0",
     specs: {
       aquariumType: "Planted Freshwater Nature Aquascape",
       scale: "2,500 Liters / 660 Gallons",
@@ -145,13 +145,13 @@ export const portfolioItems: PortfolioItem[] = [
     challenge: {
       title: "Algae-Free Sunlight Integration & Cabinetry",
       description:
-        "The client wanted a natural focal point next to floor-to-ceiling windows. Optimizing natural illumination without triggering algae blooms while concealing a high-flow filtration loop was essential.",
+        "The homeowner wanted the tank positioned right next to floor to ceiling windows. The trick was taking advantage of that natural sunlight without turning the tank into an algae farm, all while hiding a high capacity filtration system inside custom cabinetry.",
       image: "/assets/home/about-1.png",
     },
     solution: {
       title: "Pressurized CO2 Balancing & Ultra-Quiet Sump",
       description:
-        "We calibrated a pressurized CO2 delivery system and dual high-PAR LED strips to outcompete algae with vigorous plant growth, alongside an insulated silent sump.",
+        "We dialed in a pressurized CO2 delivery system and paired it with high PAR LED lighting. This forces the plants to grow vigorously, which naturally starves out any algae. We also installed a fully insulated, whisper quiet sump underneath to keep the living room completely silent.",
       image: "/assets/home/about-2.png",
     },
     gallery: [
@@ -159,19 +159,19 @@ export const portfolioItems: PortfolioItem[] = [
       "/assets/home/about-1.png",
     ],
     installation:
-      "Handcrafted driftwood root formations and volcanic soil terraces were built dry, flooded under gentle misting, and cycled with beneficial nitrifying bacteria.",
+      "The driftwood hardscape and volcanic soil raised garden beds were installed into a dry tank. The tank was slowly filled with water using a fine mist system, and the water cycled with good bacteria.",
     outcome:
-      "The lush underwater forest provides continuous relaxation and natural beauty, supported by our ongoing monthly maintenance program.",
+      "The homeowner now has a beautiful underwater forest in their living room, and we provide a monthly maintenance service to keep it looking amazing.",
   },
   {
     id: 4,
     slug: "penthouse-builtin-reef-tank",
     title: "Penthouse Built-in Reef Tank",
     description:
-      "Modern wall-embedded saltwater tank designed seamlessly into interior living space with smart mobile monitoring.",
+      "A custom saltwater aquarium built into a penthouse wall, complete with smart mobile monitoring.",
     category: "Residential",
     image: "/assets/projects/project-3.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/yIxVEyBaUyU",
     specs: {
       aquariumType: "In-Wall Saltwater Living Reef",
       scale: "3,800 Liters / 1,000 Gallons",
@@ -186,15 +186,15 @@ export const portfolioItems: PortfolioItem[] = [
       avatar: "/assets/home/DavidCallahan.png",
     },
     challenge: {
-      title: "Narrow In-Wall Cavity & Humidity Management",
+      title: "Limited Wall Space and Humidity Control",
       description:
-        "Fitting full biological filtration, skimmers, and dosing reactors inside a restricted wall partition without allowing humidity to penetrate drywall.",
+        "The narrow wall cavity needed to house biological filtration, skimmers and dosing reactors while keeping moisture away from the drywall.",
       image: "/assets/projects/project-3.png",
     },
     solution: {
-      title: "Sealed Extraction Ducting & Automated Top-Off",
+      title: "Sealed Ventilation and Automatic Water Top Off",
       description:
-        "We incorporated positive-pressure humidity extraction fans, insulated rear access panels, and reverse-osmosis automated water replenishment.",
+        "We installed positive pressure extraction fans, insulated rear access panels and an automated reverse osmosis water replenishment system.",
       image: "/assets/home/about-1.png",
     },
     gallery: [
@@ -202,19 +202,19 @@ export const portfolioItems: PortfolioItem[] = [
       "/assets/home/WhyFishMeAqua-Main.png",
     ],
     installation:
-      "Precision cabinetry with flush-mount soft-close magnetic doors allowed seamless front viewing with complete rear servicing access.",
+      "We fitted custom cabinetry with flush mounted, soft close magnetic doors. The design provides a clear front view and full access for rear maintenance.",
     outcome:
-      "A stunning architectural living room divider that blends technology with aquatic elegance.",
+      "The finished aquarium serves as an architectural living room divider, combining modern design with aquatic beauty.",
   },
   {
     id: 5,
     slug: "corporate-hq-atrium-waterfall",
     title: "Corporate HQ Atrium Waterfall",
     description:
-      "A multi-story indoor waterfall and living plant wall creating a serene, biophilic environment for employees.",
+      "A multi story indoor waterfall and living plant wall designed to create a calm natural setting for employees.",
     category: "Corporate",
     image: "/assets/projects/project-1.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/B8DJZaeq70A",
     specs: {
       aquariumType: "Biophilic Waterfall & Living Eco-Wall",
       scale: "4-Story Vertical Cascade",
@@ -229,15 +229,15 @@ export const portfolioItems: PortfolioItem[] = [
       avatar: "/assets/home/JaneCooper.png",
     },
     challenge: {
-      title: "Splash Prevention & Uniform Sheer Water Flow",
+      title: "Splash Control and Consistent Water Flow",
       description:
-        "Maintaining a consistent laminar water sheet down a 45-foot vertical textured stone facade without mist drifting into reception seating areas.",
+        "We needed to maintain an even sheet of water across a 45 foot textured stone wall without allowing mist to reach the reception seating area.",
       image: "/assets/projects/project-1.png",
     },
     solution: {
-      title: "Engineered Weir Baffles & Sub-Floor Catch Basin",
+      title: "Precision Weir Baffles and a Subfloor Catch Basin",
       description:
-        "Precision laser-cut stainless-steel weir manifolds and anti-splash baffles coupled with variable-frequency pumps ensured zero droplet dispersal.",
+        "We installed laser cut stainless steel weir manifolds, anti splash baffles and variable frequency pumps to control water flow and prevent droplet dispersal.",
       image: "/assets/home/about-2.png",
     },
     gallery: [
@@ -245,19 +245,19 @@ export const portfolioItems: PortfolioItem[] = [
       "/assets/projects/project-2.png",
     ],
     installation:
-      "Integrated with the building's central BMS for automated pump scheduling, UV sterilization, and automated chemical sanitization.",
+      "We connected the system to the building's central BMS for scheduled pump operation, UV sterilization and automatic chemical sanitization.",
     outcome:
-      "Significantly improved indoor air humidity, reduced ambient acoustic echoes, and earned LEED platinum biophilic design credits.",
+      "The installation significantly improved indoor air humidity, reduced acoustic echoes and earned LEED Platinum biophilic design credits.",
   },
   {
     id: 6,
     slug: "executive-boardroom-aquascape",
     title: "Executive Boardroom Aquascape",
     description:
-      "High-end custom planted aquascape designed for a tranquil corporate experience and executive meeting wellness.",
+      "A custom planted aquarium designed to create a calm setting for corporate meetings and executive presentations.",
     category: "Corporate",
     image: "/assets/projects/project-3.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/ziotru-2clI",
     specs: {
       aquariumType: "Ultra-Clear Rimless Boardroom Aquascape",
       scale: "1,800 Liters / 475 Gallons",
@@ -272,15 +272,15 @@ export const portfolioItems: PortfolioItem[] = [
       avatar: "/assets/home/DavidCallahan.png",
     },
     challenge: {
-      title: "Whisper-Quiet Operation in Soundproof Room",
+      title: "Silent Operation in a Soundproof Room",
       description:
-        "Ensuring complete acoustic silence during critical executive conferences and remote video calls.",
+        "The aquarium needed to operate without audible noise during executive meetings and remote video calls.",
       image: "/assets/projects/project-3.png",
     },
     solution: {
-      title: "Magnetic Levitation DC Pumps & Submerged Inlets",
+      title: "Magnetic Levitation DC Pumps and Submerged Inlets",
       description:
-        "We deployed mag-lev DC return pumps, silicone hose dampeners, and submerged siphon overflow boxes rated at less than 18 decibels.",
+        "We installed magnetic levitation DC return pumps, silicone hose dampeners and submerged siphon overflow boxes rated below 18 decibels.",
       image: "/assets/home/about-1.png",
     },
     gallery: [
@@ -288,19 +288,19 @@ export const portfolioItems: PortfolioItem[] = [
       "/assets/home/about-2.png",
     ],
     installation:
-      "Assembled during weekend hours, fully hardscaped with petrified wood and carpet plants, and tested for zero audible vibration.",
+      "We completed the hardscape with petrified wood and carpet plants over the weekend. Our team tested the system for zero audible vibration.",
     outcome:
-      "An inspiring natural focal point that elevates corporate presentations and provides a calm, focused ambiance.",
+      "The finished aquascape adds a natural focal point to the boardroom and creates a calm, focused atmosphere for corporate presentations.",
   },
   {
     id: 7,
     slug: "tech-campus-central-feature-tank",
     title: "Tech Campus Central Feature Tank",
     description:
-      "Sleek minimalist aquarium integration providing biometric stress reduction for tech developers and visitors.",
+      "A simple, modern aquarium for providing a natural mental respite for staff. The massive filtration system was hidden behind special acoustic panels, ensuring a completely silent workspace, despite crystal-clear water.",
     category: "Office Spaces",
     image: "/assets/projects/project-2.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/NWsuP_bheSY",
     specs: {
       aquariumType: "Minimalist High-Tech Ecosystem",
       scale: "4,200 Liters / 1,110 Gallons",
@@ -340,10 +340,10 @@ export const portfolioItems: PortfolioItem[] = [
     slug: "zen-garden-japanese-koi-pond",
     title: "Zen Garden Japanese Koi Pond",
     description:
-      "Traditional outdoor koi pond with custom bio-filtration, stepping stones, and natural rock waterfall cascades.",
+      "A natural waterfall that creates a low noise level in the neighborhood, hidden bio-filtration, and hand-placed stepping stones make for a traditional outdoor koi habitat. The plumbing is completely concealed and hidden to maintain the aesthetic and clarity of the water for the imported fish all year round.",
     category: "Koi Ponds",
     image: "/assets/projects/project-3.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/-rXM16UX6Pg",
     specs: {
       aquariumType: "Traditional Japanese Koi Ecosystem",
       scale: "25,000 Liters / 6,600 Gallons",
@@ -383,10 +383,10 @@ export const portfolioItems: PortfolioItem[] = [
     slug: "modern-courtyard-reflecting-koi-pond",
     title: "Modern Courtyard Reflecting Koi Pond",
     description:
-      "Architectural geometric koi pond with glass viewing walls, floating walkways, and underwater LED mood lighting.",
+      "Architectural, geometric pond with structure built of glass experience walls, floating concrete walkways and integrated smart lighting. Guests will be able to see the fishes from below the water surface, and this will make the fish a focal point of the courtyard and the whole event, transforming the typical corporate courtyard into an interactive area.",
     category: "Koi Ponds",
     image: "/assets/projects/project-1.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/wRDTxjKUJBU",
     specs: {
       aquariumType: "Contemporary Glass-Sided Pond",
       scale: "15,000 Liters / 3,960 Gallons",
@@ -426,10 +426,10 @@ export const portfolioItems: PortfolioItem[] = [
     slug: "city-botanical-garden-paludarium",
     title: "City Botanical Garden Paludarium",
     description:
-      "Large-scale public exhibition displaying rainforest flora, emerse mosses, and freshwater aquatic species.",
+      "A tremendous public exhibition that merges land and water. It is an area of dense rainforest vegetation, submerged mosses and native Amazonian fish. We designed an automatic misting system to maintain a stable humidity level in the enclosure, so that the land-dwelling orchids are as healthy as the aquatic plants that live below them.",
     category: "Public Spaces",
     image: "/assets/projects/project-2.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/iKiYlps-Bm0",
     specs: {
       aquariumType: "Public Biotope Paludarium & Mist Wall",
       scale: "7,000 Liters / 1,850 Gallons",
@@ -469,10 +469,10 @@ export const portfolioItems: PortfolioItem[] = [
     slug: "sky-lounge-infinity-water-cascade",
     title: "Sky Lounge Infinity Water Cascade",
     description:
-      "Custom rooftop fountain feature with infinity spillway overlooking the panoramic city skyline.",
+      "A personalized roof top cascade that cascades into the view of the downtown cityscape. The basin was constructed of lightweight fiberglass composites and fitted with a wind sensing pump system to prevent any splash out due to high winds and strict structural weight restrictions.",
     category: "Rooftop Water Features",
     image: "/assets/projects/project-3.png",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/VlqnpLRPd3Q",
     specs: {
       aquariumType: "Infinity Spillway Water Feature",
       scale: "5,000 Liters / 1,320 Gallons",

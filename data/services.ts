@@ -35,46 +35,46 @@ export const services: Service[] = [
     slug: "aquarium-solutions",
     title: "Aquarium Solutions",
     description:
-      "Bespoke aquarium design and installation for residential and commercial spaces.",
+      "We design and install aquariums for homes and businesses.",
     overview:
-      "Transform your space with expertly designed aquarium systems that combine beauty, functionality, and long-term sustainability. From luxury residential installations to large-scale commercial displays, FishMeAqua delivers custom aquarium solutions tailored to your environment and vision.",
+      "We build aquarium systems with beauty, function and long term care in mind. Fish Me Aqua plans custom installations for luxury homes and large commercial displays to suit your space and vision. Our team plans tank size, filtration, lighting and access for routine care.",
     image: "/assets/service-details/AquariumSolutionsVideo.png",
     icon: Fish,
     highlights: [
-      "Residential & Commercial Aquariums",
-      "Wall & Room Divider Systems",
-      "Made-to-measure tank design",
-      "Filtration and lighting planning",
+      "Residential and commercial aquariums",
+      "Wall and room divider systems",
+      "Tanks made to measure",
+      "Filtration and lighting plans",
     ],
     subFeatures: [
       {
         title: "Residential Aquariums",
         description:
-          "Enhance your home with stunning aquatic displays designed to complement your interior style while creating a relaxing and captivating atmosphere.",
+          "We add aquatic displays to homes, with designs suited to your interior style and a calm, engaging atmosphere.",
         image: "/assets/service-details/ResidentialAquariums.png",
       },
       {
         title: "Commercial Aquariums",
         description:
-          "Create a memorable experience for clients, guests, and visitors with professionally designed aquariums for offices, hotels, restaurants, and hospitals.",
+          "We design amazing in-office, hotel, restaurant and hospital aquariums and create special experiences for your guests. We consider visitor flow, available space and other needs.",
         image: "/assets/service-details/CommercialAquariums.png",
       },
       {
         title: "Wall Aquariums",
         description:
-          "Space-saving built-in aquarium systems that seamlessly integrate into walls, adding elegance and a modern architectural feature to any environment.",
+          "Our built in tanks save floor space and fit into walls. They add elegance and a modern architectural detail.",
         image: "/assets/service-details/WallAquariums.png",
       },
       {
         title: "Room Divider Aquariums",
         description:
-          "Functional living displays that beautifully separate spaces while maintaining openness, visibility, and dramatic visual impact.",
+          "These living displays separate spaces while keeping rooms open and views clear.",
         image: "/assets/service-details/RoomDividerAquariums.png",
       },
       {
         title: "Luxury Custom Aquariums",
         description:
-          "Fully bespoke aquarium solutions crafted to the highest standards, featuring ultra-clear opti-white glass, titanium heaters, and tailored cabinetry.",
+          "We build custom aquariums with opti white glass, titanium heaters and cabinetry made for each space.",
         image: "/assets/service-details/LuxuryCustomAquariums.png",
       },
     ],
@@ -84,40 +84,40 @@ export const services: Service[] = [
     slug: "aquascaping",
     title: "Aquascaping",
     description:
-      "Artistic underwater landscapes using plants, rocks, and driftwood.",
+      "We create underwater scenes with plants, rocks and driftwood.",
     overview:
-      "We compose balanced underwater landscapes with living plants, natural hardscape, and a long-term plan for healthy growth. Inspired by natural riverbeds and mountains, each aquascape is a living work of art.",
+      "We create balanced underwater scenes with live plants, natural stone, wood and a plan for healthy growth. Each aquascape takes inspiration from rivers and mountains to create a natural underwater display.",
     image: "/assets/services/aquascaping.png",
     icon: Waves,
     highlights: [
-      "Nature-inspired compositions",
+      "Nature inspired layouts",
       "Plant and hardscape selection",
-      "Growth and care guidance",
-      "Pressurized CO2 & high-PAR lighting",
+      "Plant care and growth advice",
+      "Pressurized CO2 and high PAR lighting",
     ],
     subFeatures: [
       {
         title: "Nature Aquarium Landscapes",
         description:
-          "Lush underwater forests and riverbank scenes with layered stem plants and driftwood branches.",
+          "We sculpt our stems and driftwood into oases of water with dense underwater forests and tranquil river banks.",
         image: "/assets/services/aquascaping.png",
       },
       {
         title: "Iwagumi Stone Formations",
         description:
-          "Minimalist Japanese layouts centered around ancient stone formations and dense green carpet flora.",
+          "We create simple Japanese layouts with natural stones and dense green carpet plants.",
         image: "/assets/services/wall.png",
       },
       {
         title: "Dutch Terraced Plant Displays",
         description:
-          "Vibrant terraced plant gardens showcasing high contrast in color, leaf texture, and botanical variety.",
+          "We arrange colorful plant terraces with varied leaf shapes, textures and tones.",
         image: "/assets/services/residential.png",
       },
       {
         title: "Hardscape & Wood Compositions",
         description:
-          "Intricate structural layouts using Seiryu stone, Malaysian driftwood, and nutrient-dense volcanic substrates.",
+          "We use Seiryu stone, Malaysian driftwood and volcanic substrate in structured layouts.",
         image: "/assets/services/luxury.png",
       },
     ],
@@ -127,40 +127,40 @@ export const services: Service[] = [
     slug: "landscaping",
     title: "Landscaping",
     description:
-      "Complete outdoor garden planning and nature-inspired structural designs.",
+      "We plan outdoor gardens and nature inspired structures.",
     overview:
-      "We shape outdoor spaces with cohesive planting, structural features, and water elements that feel intimately connected to nature and enhance property aesthetics.",
+      "We create contemporary gardens through cohesive planting, dramatic features and soothing water features. Every garden is built into the landscape and tailored to the individual style of the property.",
     image: "/assets/services/paludarium.png",
     icon: Trees,
     highlights: [
       "Garden layout planning",
       "Nature-led materials",
-      "Water feature coordination",
-      "Sustainable exterior planting",
+      "Water feature planning",
+      "Sustainable outdoor planting",
     ],
     subFeatures: [
       {
-        title: "Nature-Inspired Garden Spaces",
+        title: "Nature Inspired Garden Spaces",
         description:
-          "Harmonious outdoor environments blending lush vegetation with organic stone pathways and borders.",
+          "We pair lush plants with natural stone paths and borders.",
         image: "/assets/services/paludarium.png",
       },
       {
         title: "Outdoor Water Courses",
         description:
-          "Connecting streams, small ponds, and natural bio-swales that bring dynamic movement into outdoor gardens.",
+          "We add streams, ponds and natural bio swales to bring movement to gardens.",
         image: "/assets/services/pond.png",
       },
       {
         title: "Architectural Stone Accents",
         description:
-          "Natural stone retaining walls, rock gardens, and paving designed to age gracefully alongside living plants.",
+          "We build stone walls, rock gardens and paths beside living plants.",
         image: "/assets/services/wall.png",
       },
       {
         title: "Ambient Landscape Illumination",
         description:
-          "Energy-efficient low-voltage lighting that highlights botanical textures and water reflections after sunset.",
+          "Our low voltage lights bring out plant textures and water reflections after sunset.",
         image: "/assets/services/fountain.png",
       },
     ],
@@ -170,40 +170,40 @@ export const services: Service[] = [
     slug: "pond-design",
     title: "Pond Design",
     description:
-      "Stunning koi ponds and garden water features for outdoor spaces.",
+      "We build koi ponds and garden water features for outdoor areas.",
     overview:
-      "Turn an outdoor area into a calm focal point with a pond designed for its setting, its inhabitants, and the seasons. Featuring heavy-duty biological filtration for crystal-clear water year-round.",
+      "A peaceful pond a suitable size for your garden, your fish and the seasons. Our unique bio filtration system guarantees clear water throughout the year. We measure your pond's depth, circulation and fish requirements and seasonal exposure to start work.",
     image: "/assets/services/pond.png",
     icon: TreePine,
     highlights: [
-      "Koi pond planning & construction",
-      "Natural biological filtration systems",
-      "Bottom drains & surface skimmers",
-      "Garden integration & waterfalls",
+      "Koi pond planning and construction",
+      "Biological filtration systems",
+      "Bottom drains and surface skimmers",
+      "Garden features and waterfalls",
     ],
     subFeatures: [
       {
         title: "Custom Koi Ponds",
         description:
-          "Deep, insulated ponds designed to provide optimal swimming depth, shade, and thermal stability for Nishikigoi.",
+          "We construct deep, insulated ponds which offer room to swim, shade and temperature stability for your cherished Nishikigoi.",
         image: "/assets/services/pond.png",
       },
       {
         title: "Advanced Biological Filtration",
         description:
-          "Moving bed biofilm reactors, bead filters, and UV clarifiers that ensure continuous zero-ammonia water purity.",
+          "Using moving bed biofilm reactors, bead filters and UV clarifiers, we are able to achieve and maintain the perfect water quality along with the best possible ammonia control.",
         image: "/assets/services/maintenance.png",
       },
       {
         title: "Natural Rock Waterfalls",
         description:
-          "Dynamic multi-tier cascade waterfalls that aerate pond water while adding relaxing ambient acoustic textures.",
+          "We build tiered cascades to aerate pond water and create the sound of flowing water.",
         image: "/assets/services/fountain.png",
       },
       {
         title: "Predator Protection & Netting",
         description:
-          "Subtle underwater ledges, caves, and protective features that safeguard prize fish from birds and wildlife.",
+          "We add underwater ledges, caves and covers to protect valuable fish from birds and wildlife.",
         image: "/assets/services/commercial.png",
       },
     ],
@@ -213,40 +213,40 @@ export const services: Service[] = [
     slug: "fountain-designs",
     title: "Fountain Designs",
     description:
-      "Indoor and outdoor fountain installations that create tranquil ambiance.",
+      "We install indoor and outdoor fountains for a peaceful setting.",
     overview:
-      "Our fountain installations bring gentle movement and soothing sound to interiors, entryways, courtyards, and commercial lobbies with custom water flow controls.",
+      "We provide softly flowing water and the relaxation, stimulation and the acoustic impact to your interior, your entrance, your courtyard and your commercial lobby. We adjust the flow rate of the water.",
     image: "/assets/services/fountain.png",
     icon: Droplets,
     highlights: [
-      "Indoor and outdoor options",
-      "Whisper-quiet water circulation",
-      "Durable architectural finishing details",
-      "Submersible LED illumination",
+      "Indoor and outdoor fountains",
+      "Quiet water circulation",
+      "Durable architectural finishes",
+      "Submersible LED lighting",
     ],
     subFeatures: [
       {
         title: "Architectural Wall Fountains",
         description:
-          "Vertical sheer-descent water walls crafted from slate, granite, and tempered glass with zero-splash basins.",
+          "We construct water walls from vertically installed marble, granite and tempered glass, with basins to contain splash.",
         image: "/assets/services/fountain.png",
       },
       {
         title: "Interior Tranquil Water Features",
         description:
-          "Calming desktop and lobby fountains designed to humidify air and provide relaxing acoustics.",
+          "Our desktop and lobby fountains create a calm setting with the sound of flowing water.",
         image: "/assets/services/divider.png",
       },
       {
         title: "Outdoor Tiered Cascade Fountains",
         description:
-          "Grand multi-tier stone fountains designed as centerpiece installations for gardens and courtyard entrances.",
+          "We install multi tier stone fountains as garden and courtyard centerpieces.",
         image: "/assets/services/pond.png",
       },
       {
         title: "Variable Flow Submersible Pumps",
         description:
-          "Commercial-grade pumps equipped with electronic speed control and automated low-water safety cutoff.",
+          "Our commercial pumps have electronic speed controls and automatic low water shutoff.",
         image: "/assets/services/maintenance.png",
       },
     ],
@@ -256,9 +256,9 @@ export const services: Service[] = [
     slug: "rainforest-design",
     title: "Rainforest Design",
     description:
-      "Lush tropical environments with high humidity plants and specialized lighting.",
+      "We create tropical spaces with humidity loving plants and special lighting.",
     overview:
-      "Create an immersive tropical environment with layered planting, automated humidity control, micro-rain systems, and specialized full-spectrum plant lighting.",
+      "Add the ambiance of a tropical rainforest to your interior by creating a multi-level planting scheme, a humid environment, a soothing rainforest sound system and tropical full-spectrum lighting.",
     image: "/assets/services/rainforest.png",
     icon: CloudRain,
     highlights: [
@@ -271,25 +271,25 @@ export const services: Service[] = [
       {
         title: "Tropical Vivariums & Biomes",
         description:
-          "Enclosed tropical microclimates housing exotic ferns, bromeliads, mosses, and miniature jungle orchids.",
+          "We establish enclosed tropical environments using exotic ferns, bromeliads, mosses and miniature jungle orchids to name a few. Each setup is to be used for an appropriate growing environment.",
         image: "/assets/services/rainforest.png",
       },
       {
         title: "Automated Misting & Fogging",
         description:
-          "High-pressure nozzle mist systems that replicate morning jungle dew and maintain precise 85%+ relative humidity.",
+          "We have misting systems with a high pressure nozzle that spray a natural look mist. They keep the humidity in the air above 85%, so moisture-loving tropical plants can get the moisture they need.",
         image: "/assets/services/paludarium.png",
       },
       {
         title: "Living Epiphyte Bio-Walls",
         description:
-          "Vertical cork bark and hygrolon panels supporting climbing vines, creeping figs, and tropical moss carpets.",
+          "The vertical panels are constructed of cork bark and Hygrolon to support climbing vines, creeping figs and tropical mosses. These living walls are an addition to the depth and greenery and utilise vertical space.",
         image: "/assets/services/terrarium.png",
       },
       {
         title: "Full-Spectrum PAR Lighting",
         description:
-          "Programmable sunrise, midday peak, and twilight LED cycles tailored for dense tropical canopy penetration.",
+          "Programmable LED lighting mimics sunrise, midday and sunset. The set-up is designed to offer appropriate light levels for plants under the canopy of dense tropical vegetation.",
         image: "/assets/services/aquascaping.png",
       },
     ],
@@ -299,40 +299,40 @@ export const services: Service[] = [
     slug: "paludarium-design",
     title: "Paludarium Design",
     description:
-      "A stunning combination of terrestrial land and aquatic habitats.",
+      "We combine land and water habitats in one environment.",
     overview:
-      "Our paludariums blend land and water into one vivid habitat, with every transition designed for visual impact, biological balance, and effortless maintenance.",
+      "Composed by land and water, each of our paludariums creates a single, rich environment that is both visually striking and ecologically balanced and easy to maintain.",
     image: "/assets/services/paludarium.png",
     icon: Mountain,
     highlights: [
-      "Land-and-water habitat design",
+      "Land and water habitat design",
       "Waterfall and circulation options",
       "Natural material selection",
-      "Semi-aquatic fauna compatibility",
+      "Semi aquatic fauna compatibility",
     ],
     subFeatures: [
       {
         title: "Dual Aquatic & Terrestrial Biotopes",
         description:
-          "Seamless transitions between crystal-clear underwater shoals and lush emerse terrestrial moss riverbanks.",
+          "Smooth passage from crystal clear underwater shoals to rich, emergent landside moss river banks.",
         image: "/assets/services/paludarium.png",
       },
       {
         title: "Integrated Waterfall Inflows",
         description:
-          "Natural stone waterfalls that trickle over hardscape, irrigating terrestrial plants while oxygenating water.",
+          "The natural stone hardscape gently cascades water over the plants, ensuring they are always watered and providing natural oxygen to the water below.",
         image: "/assets/services/fountain.png",
       },
       {
         title: "Semi-Aquatic Fauna Habitats",
         description:
-          "Carefully engineered basking areas, shallow shallows, and safe climbing roots for crabs, frogs, and newts.",
+          "Special care has been taken to ensure that basking areas, shallows and safe climbing spots for crabs, frogs and newts are well designed.",
         image: "/assets/services/rainforest.png",
       },
       {
         title: "Custom Glass Biotope Enclosures",
         description:
-          "Heavy-duty rimless glass tanks with rear drainage bulkheads, ventilation grilles, and sliding glass access.",
+          "These habitats are made of sturdy, edgeless glass and are designed to facilitate a healthy environment. They are equipped with easy to slide doors, built-in ventilation and smooth drainage on the back.",
         image: "/assets/services/luxury.png",
       },
     ],
@@ -342,40 +342,40 @@ export const services: Service[] = [
     slug: "terrarium-designs",
     title: "Terrarium Designs",
     description:
-      "Self-sustaining mini ecosystems enclosed in beautiful glass containers.",
+      "We build small plant ecosystems inside glass containers.",
     overview:
-      "Small in footprint and rich in detail, our terrariums are carefully planted glass ecosystems made to thrive indoors with minimal care and maximum visual charm.",
+      "Though small in size, our terrariums are bursting with intricate details. Each glass ecosystem is carefully planted to grow indoors. They add easy elegance to your home and require little maintenance.",
     image: "/assets/services/terrarium.png",
     icon: Flower2,
     highlights: [
       "Custom glass compositions",
       "Humidity-loving plant selection",
-      "Bio-active soil & springtail colonies",
+      "Bio active soil & springtail colonies",
       "Simple care instructions",
     ],
     subFeatures: [
       {
         title: "Enclosed Self-Sustaining Spheres",
         description:
-          "Sealed glass vessels with complete water and nutrient cycles that require watering only once every few months.",
+          "Each of these enclosed glass containers has its own natural nutrient and water cycle. Very independent and only require light watering once or twice a month.",
         image: "/assets/services/terrarium.png",
       },
       {
         title: "Desktop Micro-Terrariums",
         description:
-          "Compact geometric glass displays ideal for desks, reception counters, and contemporary bookshelf styling.",
+          "Take nature to the office with these mini geometric decorations. They fit just fine on an office desk or onto a reception counter and will give a new modern appearance to any bookshelf.",
         image: "/assets/services/residential.png",
       },
       {
         title: "Bioactive Forest Terrariums",
         description:
-          "Complete micro-ecosystems featuring live moss carpets, micro-fauna clean-up crews, and dwarf tropical ferns.",
+          "Discover a very small forest world. These full ecosystems have abundant live moss and delicate dwarf tropical ferns. A natural cleanup crew is working efficiently in the background to maintain the good health and balance of the environment.",
         image: "/assets/services/wall.png",
       },
       {
         title: "Artisan Glass Vessels",
         description:
-          "Handblown recycled glass carboys, apothecary jars, and bespoke geometric showcases with cork stoppers.",
+          "Unique habitats are formed within hand blown recycled glass carboys and lovely apothecary jars. Custom geometric showcases with traditional natural cork stoppers are also available.",
         image: "/assets/services/aquascaping.png",
       },
     ],
@@ -385,9 +385,9 @@ export const services: Service[] = [
     slug: "maintenance",
     title: "Maintenance",
     description:
-      "Professional cleaning, water testing, and ecosystem upkeep services.",
+      "We thoroughly clean aquariums, monitor water quality and help create stunning aquatic environments.",
     overview:
-      "Keep your aquatic ecosystem clear, stable, and beautiful with dependable ongoing care from our certified team of aquarists and pond technicians.",
+      "A healthy tank or pond requires proper maintenance. Our certified aquarists and technicians take care of the dirty and technical aspects allowing you to sit back and enjoy the show. Weekly, we do what's necessary to maintain the water clear and the environment totally stable.",
     image: "/assets/services/maintenance.png",
     icon: Wrench,
     highlights: [
@@ -400,25 +400,25 @@ export const services: Service[] = [
       {
         title: "Routine Water Chemistry Balancing",
         description:
-          "Comprehensive multi-parameter testing for ammonia, nitrite, nitrate, pH, GH, KH, and TDS with certified lab kits.",
+          "All the vital signs are checked to ensure that the water is in fact safe for the animals. We use all the water levels, from ammonia, nitrites, nitrates, pH, full water hardness tests with a professional lab kit.",
         image: "/assets/services/maintenance.png",
       },
       {
         title: "Filter & Pump Overhauls",
         description:
-          "Deep cleansing of impellers, biological media rinsing in tank water, and UV lamp replacements.",
+          "Over time, the equipment is covered with debris. The pumps are disassembled to remove the impellers and to gently rinse your filter media in old tank water. We also change out old UV lamps when they are not working as well as they used to be.",
         image: "/assets/services/commercial.png",
       },
       {
         title: "Botanical Trimming & Algae Control",
         description:
-          "Precision plant pruning, aquasoil vacuuming, glass polishing with non-scratch pads, and natural algae control.",
+          "Live plants grow wild and algae just grows. We intervene and carefully cut back overgrown stems and gently vacuum the substrate. Once the glass is shiny and free of any scratches, we address any remaining algae problem in a natural way.",
         image: "/assets/services/aquascaping.png",
       },
       {
         title: "Emergency Support & Rapid Response",
         description:
-          "Priority 24/7 technician callouts for equipment failure, leaks, or sudden water parameter emergencies.",
+          "Sometimes it's just not working. No matter if the pump goes down in the middle of the night, a seal leaks or the water chemistry all of a sudden runs out of the woods, our staff is available 24 hours a day. We are always available to resolve the issue before it escalates to a disaster.",
         image: "/assets/services/residential.png",
       },
     ],

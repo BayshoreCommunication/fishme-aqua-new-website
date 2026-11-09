@@ -14,6 +14,9 @@ import {
 } from "lucide-react";
 import { notFound } from "next/navigation";
 import projects from "@/data/FeaturedProjects.json";
+import { getPortfolioItem } from "@/data/portfolio";
+import YouTubeEmbed from "@/component/shared/YouTubeEmbed";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import Button from "@/component/shared/Button";
 
@@ -26,8 +29,9 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
   const project = projects.find((item) => String(item.id) === slug);
   if (!project) notFound();
 
-  // Dummy video source for demo
-  const videoSrc = "https://www.w3schools.com/html/mov_bbb.mp4";
+  // Each project's case study text lives in the portfolio data (same slug).
+  const details = getPortfolioItem(project.slug);
+  if (!details) notFound();
 
   return (
     <>
@@ -52,19 +56,14 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             {/* Left Video Banner */}
             <div className="lg:col-span-8 relative aspect-[16/10] w-full overflow-hidden bg-black border border-foreground/10 dark:border-white/10 group">
               {isPlaying ? (
-                <video
-                  src={videoSrc}
-                  controls
-                  autoPlay
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
+                <YouTubeEmbed src={project.videoUrl} title={project.title} />
               ) : (
                 <div
                   className="relative h-full w-full cursor-pointer"
                   onClick={() => setIsPlaying(true)}
                 >
                   <Image
-                    src={project.image}
+                    src={youtubeThumbnail(project.videoUrl)}
                     alt={project.title}
                     fill
                     priority
@@ -90,9 +89,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                   &ldquo;
                 </span>
                 <p className="text-xs sm:text-sm leading-relaxed text-white/90 font-light italic">
-                  A strategic marketing partner that delivers measurable growth.
-                  Transparent communication, data-driven decisions, and results
-                  that consistently exceed expectations.
+                  {details.testimonial.quote}
                 </p>
               </div>
 
@@ -100,15 +97,17 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                 <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white/20">
                   <Image
                     src={project.image}
-                    alt="Eleanor Pena"
+                    alt={details.testimonial.author}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-white">ELEANOR PENA</h4>
+                  <h4 className="font-bold text-sm text-white">
+                    {details.testimonial.author}
+                  </h4>
                   <p className="text-[11px] text-[#76dbc4] uppercase tracking-wider">
-                    CTO
+                    {details.testimonial.role}
                   </p>
                 </div>
               </div>
@@ -123,10 +122,10 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
               <div>
                 <p className="text-[11px] uppercase tracking-wider text-foreground/50 font-medium">
-                  Project Type
+                  Aquarium Type
                 </p>
                 <p className="text-xs sm:text-sm font-bold text-foreground">
-                  Residential Aquascape
+                  {details.specs.aquariumType}
                 </p>
               </div>
             </div>
@@ -137,10 +136,10 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
               <div>
                 <p className="text-[11px] uppercase tracking-wider text-foreground/50 font-medium">
-                  Style
+                  Scale
                 </p>
                 <p className="text-xs sm:text-sm font-bold text-foreground">
-                  Nature Aquarium
+                  {details.specs.scale}
                 </p>
               </div>
             </div>
@@ -154,7 +153,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                   Location
                 </p>
                 <p className="text-xs sm:text-sm font-bold text-foreground">
-                  Private Residence
+                  {details.specs.location}
                 </p>
               </div>
             </div>
@@ -165,10 +164,10 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
               <div>
                 <p className="text-[11px] uppercase tracking-wider text-foreground/50 font-medium">
-                  Service
+                  Timeline
                 </p>
                 <p className="text-xs sm:text-sm font-bold text-foreground">
-                  Design • Installation • Maintenance
+                  {details.specs.timeline}
                 </p>
               </div>
             </div>
@@ -180,11 +179,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               {project.title}
             </h2>
             <p className="text-sm sm:text-base leading-relaxed text-foreground/70 font-light">
-              {project.description} The client wanted a nature-inspired
-              aquascape aquarium that would serve as a living centerpiece within
-              their residence, bringing tranquility, elegance, and a stronger
-              connection to nature while complementing the home&apos;s modern
-              interior design.
+              {details.description}
             </p>
           </div>
 
@@ -201,14 +196,10 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                 />
               </div>
               <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground">
-                Challenge
+                Challenge: {details.challenge.title}
               </h3>
               <p className="text-xs sm:text-sm leading-relaxed text-foreground/70 font-light">
-                The project required balancing aesthetic appeal with long-term
-                sustainability. Limited installation space, proper equipment
-                integration, and creating a natural underwater landscape that
-                remained visually stunning from multiple viewing angles were key
-                challenges.
+                {details.challenge.description}
               </p>
             </div>
 
@@ -223,14 +214,10 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                 />
               </div>
               <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground">
-                Solution
+                Solution: {details.solution.title}
               </h3>
               <p className="text-xs sm:text-sm leading-relaxed text-foreground/70 font-light">
-                Our team designed a custom Nature Aquarium featuring carefully
-                selected driftwood, mineral stones, aquatic plants, and a
-                harmonious fish population. The layout was crafted to create
-                depth, balance, and a realistic ecosystem while seamlessly
-                integrating with the interior environment.
+                {details.solution.description}
               </p>
             </div>
           </div>
@@ -255,15 +242,13 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
             <div className="md:col-span-2 space-y-4 max-w-4xl mx-auto text-center">
               <h3 className="font-heading text-2xl font-bold text-foreground">
-                Installation
+                Installation &amp; Outcome
               </h3>
               <p className="text-xs sm:text-sm leading-relaxed text-foreground/70 font-light">
-                The project was completed through a full-service process
-                including site assessment, custom tank setup, hardscape
-                construction, planting, equipment installation, water
-                conditioning, and livestock introduction. Following
-                installation, the aquarium was stabilized and supported with a
-                tailored maintenance plan to ensure long-term health and beauty.
+                {details.installation}
+              </p>
+              <p className="text-xs sm:text-sm leading-relaxed text-foreground/70 font-light">
+                {details.outcome}
               </p>
             </div>
           </div>

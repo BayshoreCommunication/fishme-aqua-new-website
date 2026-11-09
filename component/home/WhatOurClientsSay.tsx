@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Play, Quote, Star } from "lucide-react";
 
 import Reveal from "@/component/motion/Reveal";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 
 const ArrowUpRightIcon = () => (
   <svg
@@ -24,40 +25,36 @@ const ArrowUpRightIcon = () => (
 
 const largeTestimonials = [
   {
-    videoThumbnail: "/assets/home/DavidCallahan-Video.png",
     authorImage: "/assets/home/DavidCallahan.png",
     name: "David Callahan",
     role: "Marketing Director, Spotify",
     quote:
       "FishMeAqua transformed our office reception into a calm, memorable space. The installation was flawless, and visitors now mention the aquarium every single day.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/1rCm5iigm5Q",
   },
   {
-    videoThumbnail: "/assets/home/JaneCooper-Video.png",
     authorImage: "/assets/home/JaneCooper.png",
     name: "Jane Cooper",
     role: "Operations Manager, Northstar",
     quote:
       "From the first design sketch to the final setup, the team understood exactly what we wanted. Our aquarium is now the highlight of our welcoming lounge.",
-    videoUrl: "https://www.youtube.com/embed/aqz-KE-bpKQ",
+    videoUrl: "https://www.youtube.com/embed/DLpels0akHw",
   },
   {
-    videoThumbnail: "/assets/home/about-1.png",
     authorImage: "/assets/home/avatar1.png",
     name: "Sarah Mitchel",
     role: "Founder, Green Haven",
     quote:
       "The aquascape feels like a living piece of art. Their maintenance support keeps everything pristine, effortless, and beautiful for us every single day.",
-    videoUrl: "https://www.youtube.com/embed/Scxs7L0vhZ4",
+    videoUrl: "https://www.youtube.com/embed/75bmBog41dI",
   },
   {
-    videoThumbnail: "/assets/home/about-2.png",
     authorImage: "/assets/home/avatar2.png",
     name: "Michael Brown",
     role: "Director, Urban Retreat",
     quote:
       "Our guests love the atmosphere FishMeAqua created. The project finished professionally, on schedule, with exceptional attention to every important detail.",
-    videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
+    videoUrl: "https://www.youtube.com/embed/6byR_RuGGjk",
   },
 ];
 
@@ -102,7 +99,7 @@ const WhatOurClientsSay = () => {
                 <div>
                   <div className="relative h-64 sm:h-72 w-full rounded-3xl overflow-hidden mb-6 bg-black">
                     <Image
-                      src={testimonial.videoThumbnail}
+                      src={youtubeThumbnail(testimonial.videoUrl)}
                       alt={testimonial.name}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -315,7 +312,7 @@ const WhatOurClientsSay = () => {
             <Reveal direction="up" delay={500} className="h-full">
               <div className="relative h-full min-h-[220px] lg:min-h-[304px] rounded-[2rem] overflow-hidden border border-foreground/10 dark:border-white/15 group shadow-lg">
                 <Image
-                  src="/assets/home/JaneCooper-Video.png"
+                  src={youtubeThumbnail("https://www.youtube.com/embed/2LWsf-aNkGc")}
                   alt="Jane Cooper Testimonial"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -325,7 +322,7 @@ const WhatOurClientsSay = () => {
                 <button
                   onClick={() =>
                     setSelectedVideo(
-                      "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                      "https://www.youtube.com/embed/2LWsf-aNkGc",
                     )
                   }
                   aria-label="Play Testimonial Video"

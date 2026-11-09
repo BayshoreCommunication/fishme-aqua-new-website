@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Play, Quote, Star } from "lucide-react";
 import Reveal from "@/component/motion/Reveal";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 
 interface TestimonialCardItem {
   id: number;
   category: string;
-  thumbnail: string;
   authorImage: string;
   name: string;
   role: string;
@@ -29,68 +29,62 @@ const testimonialsData: TestimonialCardItem[] = [
   {
     id: 1,
     category: "Commercial",
-    thumbnail: "/assets/home/DavidCallahan-Video.png",
     authorImage: "/assets/home/DavidCallahan.png",
     name: "Cameron Williamson",
     role: "Corporate Director, FinTech",
     quote:
       "Fish Me Aqua transformed our reception into a breathtaking living centerpiece. The craftsmanship and attention to detail surpassed all expectations.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/dBmLkUQ5VCU",
   },
   {
     id: 2,
     category: "Residential",
-    thumbnail: "/assets/home/JaneCooper-Video.png",
     authorImage: "/assets/home/JaneCooper.png",
     name: "Darrell Steward",
     role: "Private Homeowner, Gulshan",
     quote:
       "The custom freshwater aquascape brings an unmatched sense of calm to our living room. Their team handled everything from design to monthly care.",
-    videoUrl: "https://www.youtube.com/embed/aqz-KE-bpKQ",
+    videoUrl: "https://www.youtube.com/embed/YsyCDY6gidQ",
   },
   {
     id: 3,
     category: "Living Ecosystem",
-    thumbnail: "/assets/home/about-1.png",
     authorImage: "/assets/home/avatar1.png",
     name: "Ralph Edwards",
     role: "Head of Marketing, GreenSpace",
     quote:
       "From rare aquatic plant species to automated lighting, every detail is engineered to perfection. Our guests are captivated every single visit.",
-    videoUrl: "https://www.youtube.com/embed/Scxs7L0vhZ4",
+    videoUrl: "https://www.youtube.com/embed/hFEz7gtJS7I",
   },
   {
     id: 4,
     category: "Resort",
-    thumbnail: "/assets/home/about-2.png",
     authorImage: "/assets/home/avatar2.png",
     name: "Jane Cooper",
     role: "Hospitality Lead, Azure Resort",
     quote:
       "Our resort atrium needed a focal attraction that felt connected to nature. Fish Me Aqua delivered a world-class paludarium ahead of schedule.",
-    videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
+    videoUrl: "https://www.youtube.com/embed/0yE2pozdB1w",
   },
   {
     id: 5,
     category: "Commercial",
-    thumbnail: "/assets/home/WhyFishMeAqua-Main.png",
     authorImage: "/assets/home/avatar3.png",
     name: "David Callahan",
     role: "Managing Partner, Creative Studio",
     quote:
       "The ongoing maintenance service keeps our ecosystem crystal clear and thriving. It has truly become the signature visual of our office space.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/Jhy1S3XfXaE",
   },
   {
     id: 6,
     category: "Maintenance",
-    thumbnail: "/assets/home/WhyFishMeAqua-bg.png",
     authorImage: "/assets/home/DavidCallahan.png",
     name: "Arlene McCoy",
     role: "Interior Architect, McCoy Design",
     quote:
       "Working with Fish Me Aqua makes integrating high-end aquatic architecture seamless. Their technical expertise and aesthetics are second to none.",
-    videoUrl: "https://www.youtube.com/embed/aqz-KE-bpKQ",
+    videoUrl: "https://www.youtube.com/embed/98067t6Y6N8",
   },
 ];
 
@@ -152,7 +146,7 @@ export default function TestimonialGrid() {
                   {/* Video Thumbnail */}
                   <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black mb-5 shadow-md">
                     <Image
-                      src={item.thumbnail}
+                      src={youtubeThumbnail(item.videoUrl)}
                       alt={item.name}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

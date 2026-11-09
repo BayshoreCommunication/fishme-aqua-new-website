@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Play } from "lucide-react";
 import { getAllPortfolioItems, type PortfolioItem } from "@/data/portfolio";
+import { youtubeThumbnail } from "@/component/shared/youtube";
 import Reveal from "@/component/motion/Reveal";
 
 export default function PortfolioProjectsGrid() {
@@ -23,7 +24,7 @@ export default function PortfolioProjectsGrid() {
                 {/* Media Image & Play Trigger */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black mb-5 shadow-md">
                   <Image
-                    src={project.image}
+                    src={youtubeThumbnail(project.videoUrl)}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"

@@ -14,7 +14,7 @@ const valuesData: ValueItem[] = [
   {
     title: "Innovation",
     description:
-      "By embracing new technologies, materials, and creative approaches, we continuously push the boundaries of aquatic design.",
+      "We welcome new technologies, materials and design concepts and look for solutions to incorporate new thinking into our aquatic projects.",
     iconSvg: (
       <svg
         className="w-5 h-5 text-teal-600 dark:text-teal-400"
@@ -34,7 +34,7 @@ const valuesData: ValueItem[] = [
   {
     title: "Partnership",
     description:
-      "We believe great projects are built through collaboration, transparency, and long-lasting relationships with our clients.",
+      "We are very close to our clients during every project. Effective communication, honest dialogue, and trust are essential to developing relationships that extend well past installation.",
     iconSvg: (
       <svg
         className="w-5 h-5 text-teal-600 dark:text-teal-400"
@@ -54,7 +54,7 @@ const valuesData: ValueItem[] = [
   {
     title: "Passion",
     description:
-      "Our love for aquatic life and design inspires us to create unique environments that bring beauty and tranquility to every space.",
+      "We value the nature of the water and design that reflect it. We love designing natural looking aquatic spaces that enhance the beauty and tranquillity of their environment.",
     iconSvg: (
       <svg
         className="w-5 h-5 text-teal-600 dark:text-teal-400"
@@ -74,7 +74,7 @@ const valuesData: ValueItem[] = [
   {
     title: "Excellence",
     description:
-      "We strive for exceptional quality in every detail, ensuring every installation exceeds expectations from concept to completion.",
+      "From the initial design to the end installation, we pay attention to the details. Quality workmanship and reliable results that meet our clients' expectations is our focus.",
     iconSvg: (
       <svg
         className="w-5 h-5 text-teal-600 dark:text-teal-400"
