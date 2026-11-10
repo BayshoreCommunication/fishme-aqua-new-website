@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import TestimonialGrid from "@/component/testimonial/TestimonialGrid";
 import ClientLogosSlider from "@/component/home/ClientLogosSlider";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: "Testimonials",
   description:
     "Read real reviews and client experiences from homeowners, businesses, and resorts that trust Fish Me Aqua.",
+  alternates: { canonical: canonicalUrl("/testimonial") },
 };
 
 export default function TestimonialPage() {

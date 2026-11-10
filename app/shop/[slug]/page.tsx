@@ -3,6 +3,7 @@ import { getApprovedProductReviewsAction } from "@/app/actions/review";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import ProductDetials from "@/component/shop/ProductDetials";
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import sanitizeHtml from "sanitize-html";
 
@@ -24,10 +25,14 @@ export const generateMetadata = async ({
   const description =
     product.shortDescription || `${product.title} — available at Fish Me Aqua.`;
 
+  const url = canonicalUrl(`/shop/${encodeURIComponent(product.slug)}`);
+
   return {
     title: product.title,
     description,
+    alternates: { canonical: url },
     openGraph: {
+      url,
       title: product.title,
       description,
       type: "website",

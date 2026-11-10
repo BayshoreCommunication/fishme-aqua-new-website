@@ -55,9 +55,8 @@ export const metadata: Metadata = {
   creator: siteName,
   publisher: siteName,
   category: "Aquarium services and supplies",
-  alternates: {
-    canonical: primarySiteUrl,
-  },
+  // Canonical URLs are set per page (see lib/seo.ts). Setting one here would
+  // make every page that forgets its own point to the homepage.
   icons: {
     icon: "/favicon.ico",
   },
@@ -69,7 +68,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description: siteDescription,
-    url: primarySiteUrl,
     siteName,
     locale: "en_US",
     type: "website",

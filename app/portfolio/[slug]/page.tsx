@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import PortfolioHeroShowcase from "@/component/portfolio/PortfolioHeroShowcase";
@@ -32,6 +33,11 @@ export async function generateMetadata({
   return {
     title: `${item.title} | Portfolio Case Study`,
     description: item.description,
+    alternates: {
+      canonical: canonicalUrl(
+        `/portfolio/${encodeURIComponent(resolvedParams.slug)}`,
+      ),
+    },
   };
 }
 

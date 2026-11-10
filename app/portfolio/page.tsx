@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import PortfolioProjectsGrid from "@/component/portfolio/PortfolioProjectsGrid";
 import WhyFishMeAqua from "@/component/home/WhyFishMeAqua";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     "Explore Fish Me Aqua's portfolio of breathtaking living ecosystems. View our signature projects from luxury hotel marine tanks to private nature aquascapes.",
+  alternates: { canonical: canonicalUrl("/portfolio") },
 };
 
 export default function PortfolioPage() {

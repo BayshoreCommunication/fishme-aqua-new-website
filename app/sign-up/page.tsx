@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import { auth } from "@/auth";
 import Signup from "@/component/auth/Signup";
 import { redirect } from "next/navigation";
+
+export const metadata: Metadata = {
+  alternates: { canonical: canonicalUrl("/sign-up") },
+};
 
 const getCallbackUrl = (value: string | string[] | undefined) => {
   const callbackUrl = Array.isArray(value) ? value[0] : value;

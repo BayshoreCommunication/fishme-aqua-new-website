@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import Reveal from "@/component/motion/Reveal";
 import Link from "next/link";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
   title: "Cookie Policy",
   description:
     "Understand how Fish Me Aqua uses browser cookies, localStorage, session tokens, and tracking technologies to enhance your aquarium shopping and browsing experience.",
+  alternates: { canonical: canonicalUrl("/cookie-policy") },
 };
 
 const sections = [

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import BlogGrid from "@/component/blog/BlogGrid";
 import WhatOurClientsSay from "@/component/home/WhatOurClientsSay";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Aquatic inspiration & expert advice. Read guides, maintenance tips, and aquascaping ideas from Fish Me Aqua.",
+  alternates: { canonical: canonicalUrl("/blog") },
 };
 
 export default function BlogPage() {

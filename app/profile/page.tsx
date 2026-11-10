@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import { getCustomerOrdersAction } from "@/app/actions/order";
 import { getMeAction } from "@/app/actions/user";
 import { auth } from "@/auth";
 import ProfileView from "@/component/profile/ProfileView";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import { redirect } from "next/navigation";
+
+export const metadata: Metadata = {
+  alternates: { canonical: canonicalUrl("/profile") },
+};
 
 const page = async () => {
   const session = await auth();

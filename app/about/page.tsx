@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import OurJourney from "@/component/about/OurJourney";
 import OurStory from "@/component/about/OurStory";
 import OurValues from "@/component/about/OurValues";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   },
   description:
     "Meet the team behind Fish Me Aqua. We are passionate engineers and artists dedicated to building stunning living ecosystems that transform your space.",
+  alternates: { canonical: canonicalUrl("/about") },
 };
 
 const AboutPage = () => {

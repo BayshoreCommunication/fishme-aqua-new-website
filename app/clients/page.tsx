@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import ClientsGrid from "@/component/clients/ClientsGrid";
 import WhatOurClientsSay from "@/component/home/WhatOurClientsSay";
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: "Our Clients",
   description:
     "Meet the homeowners, resorts, and organizations trusted by Fish Me Aqua.",
+  alternates: { canonical: canonicalUrl("/clients") },
 };
 
 export default function ClientsPage() {

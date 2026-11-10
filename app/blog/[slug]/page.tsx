@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import BlogDetail from "@/component/blog/BlogDetail";
@@ -24,10 +25,14 @@ export async function generateMetadata({
     };
   }
 
+  const url = canonicalUrl(`/blog/${encodeURIComponent(slug)}`);
+
   return {
     title: `${post.title} | Fish Me Aqua Blog`,
     description: post.excerpt,
+    alternates: { canonical: url },
     openGraph: {
+      url,
       title: post.title,
       description: post.excerpt,
       type: "article",

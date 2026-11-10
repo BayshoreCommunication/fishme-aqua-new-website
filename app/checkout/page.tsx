@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import { getMeAction } from "@/app/actions/user";
 import { auth } from "@/auth";
 import CheckoutView from "@/component/checkout/CheckoutView";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import { redirect } from "next/navigation";
+
+export const metadata: Metadata = {
+  alternates: { canonical: canonicalUrl("/checkout") },
+};
 
 const page = async () => {
   const session = await auth();

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import ProjectsGrid from "@/component/projects/ProjectsGrid";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   },
   description:
     "Browse our latest aquatic installations. From luxury hotel marine tanks to peaceful home aquascapes we build environments that captivate and inspire.",
+  alternates: { canonical: canonicalUrl("/projects") },
 };
 
 export default function ProjectsPage() {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import Reveal from "@/component/motion/Reveal";
 import Link from "next/link";
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Review the terms, conditions, payment guidelines, custom project contracts, and warranty policies of Fish Me Aqua in Bangladesh.",
+  alternates: { canonical: canonicalUrl("/terms-of-service") },
 };
 
 const sections = [

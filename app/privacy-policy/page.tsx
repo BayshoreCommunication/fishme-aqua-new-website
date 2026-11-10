@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import Reveal from "@/component/motion/Reveal";
 import Link from "next/link";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Learn how Fish Me Aqua collects, uses, protects, and handles your personal data, order records, and consultation information in Bangladesh.",
+  alternates: { canonical: canonicalUrl("/privacy-policy") },
 };
 
 const sections = [

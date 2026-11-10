@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import ServicePage from "@/component/services/ServicePage";
 import StatsSection from "@/component/home/StatsSection";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     "Explore our complete range of services including custom aquarium design professional installation and ongoing maintenance to keep your aquatic life thriving.",
+  alternates: { canonical: canonicalUrl("/services") },
 };
 
 const ServicesPage = () => {

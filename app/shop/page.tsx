@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import { listCategoriesAction } from "@/app/actions/category";
 import { listProductsAction } from "@/app/actions/product";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import ShopGrid from "@/component/shop/ShopGrid";
+
+export const metadata: Metadata = {
+  alternates: { canonical: canonicalUrl("/shop") },
+};
 
 const page = async () => {
   const [productsResult, categoriesResult] = await Promise.all([

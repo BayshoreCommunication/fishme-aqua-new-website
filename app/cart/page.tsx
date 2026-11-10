@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import ShoppingCart from "@/component/shoppingCart/ShoppingCart";
 
 export const metadata: Metadata = {
   title: "Shopping Cart",
   description: "Review your selected Fish Me Aqua products.",
+  alternates: { canonical: canonicalUrl("/cart") },
 };
 
 const CartPage = () => (

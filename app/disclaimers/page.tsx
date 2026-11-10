@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Breadcrumb from "@/component/shared/Breadcrumb";
 import Reveal from "@/component/motion/Reveal";
 import Link from "next/link";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   title: "Disclaimers",
   description:
     "Read the legal, livestock, installation, and safety disclaimers for Fish Me Aqua custom aquariums, aquascaping, and maintenance services.",
+  alternates: { canonical: canonicalUrl("/disclaimers") },
 };
 
 const sections = [

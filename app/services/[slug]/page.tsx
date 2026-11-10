@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Play, Check } from "lucide-react";
@@ -19,7 +20,15 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const service = getService(resolvedParams.slug);
   return service
-    ? { title: service.title, description: service.description }
+    ? {
+        title: service.title,
+        description: service.description,
+        alternates: {
+          canonical: canonicalUrl(
+            `/services/${encodeURIComponent(resolvedParams.slug)}`,
+          ),
+        },
+      }
     : {};
 }
 
