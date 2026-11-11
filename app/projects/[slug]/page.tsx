@@ -54,7 +54,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
           {/* Top Grid: Main Video/Media Player (Left) + Client/Quote Card (Right) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
             {/* Left Video Banner */}
-            <div className="lg:col-span-8 relative aspect-[16/10] w-full overflow-hidden bg-black border border-foreground/10 dark:border-white/10 group">
+            <div className="lg:col-span-8 relative aspect-video w-full overflow-hidden bg-black border border-foreground/10 dark:border-white/10 group">
               {isPlaying ? (
                 <YouTubeEmbed src={project.videoUrl} title={project.title} />
               ) : (

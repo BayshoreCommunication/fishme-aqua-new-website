@@ -73,7 +73,7 @@ export default function ProjectsGrid() {
           >
             <div>
               {/* Media Preview & Play Button */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black mb-5 shadow-md">
+              <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black mb-5 shadow-md">
                 <Image
                   src={youtubeThumbnail(project.videoUrl)}
                   alt={project.title}

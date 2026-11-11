@@ -42,7 +42,7 @@ const MediaCard = ({
   onPlay,
 }: MediaCardProps) => {
   return (
-    <div className="group relative aspect-[16/10] overflow-hidden rounded-[2rem] bg-black shadow-xl">
+    <div className="group relative aspect-video overflow-hidden rounded-[2rem] bg-black shadow-xl">
       {isPlaying ? (
         <YouTubeEmbed src={videoSrc} title={alt} />
       ) : (

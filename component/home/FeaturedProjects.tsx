@@ -51,7 +51,7 @@ const ProjectCard = ({ project, onPlayVideo }: ProjectCardProps) => (
   <div className="h-full bg-foreground/[0.03] backdrop-blur-xl rounded-3xl p-5 border border-foreground/10 hover:border-foreground/25 hover:bg-foreground/[0.06] transition-all duration-300 flex flex-col justify-between group shadow-xl">
     <div>
       {/* Image & Video Play Container */}
-      <div className="relative h-64 sm:h-72 w-full rounded-2xl overflow-hidden mb-5">
+      <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-5">
         <Image
           src={youtubeThumbnail(project.videoUrl)}
           alt={project.title}

@@ -155,11 +155,19 @@ const WhyFishMeAqua = ({
                   <YouTubeEmbed src={videoUrl} title={videoTitle} />
                 ) : (
                   <>
+                    {/* Blurred copy fills the card; the full 16:9 thumbnail sits on top uncropped */}
+                    <Image
+                      src={youtubeThumbnail(videoUrl)}
+                      alt=""
+                      aria-hidden
+                      fill
+                      className="scale-125 object-cover blur-2xl"
+                    />
                     <Image
                       src={youtubeThumbnail(videoUrl)}
                       alt="Why Fish Me Aqua - Featured Installation"
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-contain transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
 

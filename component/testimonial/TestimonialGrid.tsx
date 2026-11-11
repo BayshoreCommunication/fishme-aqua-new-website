@@ -144,7 +144,7 @@ export default function TestimonialGrid() {
               <div className="group h-full flex flex-col justify-between rounded-[2rem] border border-foreground/10 dark:border-white/10 bg-white dark:bg-[#18181b] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-2xl">
                 <div>
                   {/* Video Thumbnail */}
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black mb-5 shadow-md">
+                  <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black mb-5 shadow-md">
                     <Image
                       src={youtubeThumbnail(item.videoUrl)}
                       alt={item.name}

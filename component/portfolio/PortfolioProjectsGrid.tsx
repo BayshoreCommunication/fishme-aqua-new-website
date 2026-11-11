@@ -22,7 +22,7 @@ export default function PortfolioProjectsGrid() {
             <article className="group flex h-full flex-col justify-between overflow-hidden rounded-[2rem] border border-foreground/10 dark:border-white/10 bg-white dark:bg-[#18181b] p-5 shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-[#006E5C]/40 hover:shadow-2xl">
               <div>
                 {/* Media Image & Play Trigger */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black mb-5 shadow-md">
+                <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black mb-5 shadow-md">
                   <Image
                     src={youtubeThumbnail(project.videoUrl)}
                     alt={project.title}

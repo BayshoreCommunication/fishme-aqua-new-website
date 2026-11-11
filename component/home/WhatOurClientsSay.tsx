@@ -97,7 +97,7 @@ const WhatOurClientsSay = () => {
             <Reveal direction="up" delay={100} className="h-full">
               <div className="h-full bg-foreground/[0.03] dark:bg-white/[0.04] backdrop-blur-xl rounded-[2.5rem] p-6 sm:p-8 border border-foreground/10 dark:border-white/15 flex flex-col justify-between shadow-xl group">
                 <div>
-                  <div className="relative h-64 sm:h-72 w-full rounded-3xl overflow-hidden mb-6 bg-black">
+                  <div className="relative aspect-video w-full rounded-3xl overflow-hidden mb-6 bg-black">
                     <Image
                       src={youtubeThumbnail(testimonial.videoUrl)}
                       alt={testimonial.name}
@@ -310,12 +310,20 @@ const WhatOurClientsSay = () => {
             {/* 5. RIGHT CARD 4: Small Video Testimonial Card (Jane Cooper) */}
             {/* ========================================================= */}
             <Reveal direction="up" delay={500} className="h-full">
-              <div className="relative h-full min-h-[220px] lg:min-h-[304px] rounded-[2rem] overflow-hidden border border-foreground/10 dark:border-white/15 group shadow-lg">
+              <div className="relative h-full min-h-[220px] lg:min-h-[304px] rounded-[2rem] overflow-hidden bg-black border border-foreground/10 dark:border-white/15 group shadow-lg">
+                {/* Blurred copy fills the card; the full 16:9 thumbnail sits on top uncropped */}
+                <Image
+                  src={youtubeThumbnail("https://www.youtube.com/embed/2LWsf-aNkGc")}
+                  alt=""
+                  aria-hidden
+                  fill
+                  className="scale-125 object-cover blur-2xl"
+                />
                 <Image
                   src={youtubeThumbnail("https://www.youtube.com/embed/2LWsf-aNkGc")}
                   alt="Jane Cooper Testimonial"
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
 

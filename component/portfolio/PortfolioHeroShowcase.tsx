@@ -81,7 +81,7 @@ export default function PortfolioHeroShowcase({
           {/* Left Large Video / Image Card */}
           <div className="lg:col-span-8">
             <Reveal direction="up" delay={100} className="h-full">
-              <div className="group relative h-full min-h-[360px] sm:min-h-[440px] lg:min-h-[480px] w-full overflow-hidden rounded-[2.5rem] border border-foreground/10 dark:border-white/15 bg-black shadow-2xl">
+              <div className="group relative aspect-video w-full overflow-hidden rounded-[2.5rem] border border-foreground/10 dark:border-white/15 bg-black shadow-2xl">
                 <Image
                   src={youtubeThumbnail(videoUrl) || image}
                   alt={item?.title || "Featured Portfolio Project"}
@@ -107,7 +107,7 @@ export default function PortfolioHeroShowcase({
           {/* Right Quote / Testimonial Card */}
           <div className="lg:col-span-4">
             <Reveal direction="up" delay={200} className="h-full">
-              <div className="relative flex h-full min-h-[360px] sm:min-h-[440px] lg:min-h-[480px] flex-col justify-between overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-[#06332a] via-[#04241d] to-[#011410] p-8 sm:p-10 text-white shadow-2xl border border-white/10">
+              <div className="relative flex h-full min-h-[360px] sm:min-h-[440px] lg:min-h-0 flex-col justify-between overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-[#06332a] via-[#04241d] to-[#011410] p-8 sm:p-10 text-white shadow-2xl border border-white/10">
                 {/* Subtle ambient light curves */}
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(45,212,191,0.2),transparent_65%)]" />
                 <div className="pointer-events-none absolute -top-16 -left-16 h-48 w-48 rounded-full bg-teal-500/10 blur-3xl" />
