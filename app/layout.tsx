@@ -87,16 +87,11 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: ["/opengraph-image.png"],
   },
+  // Google indexing is turned off for now. Set these back to true to allow it.
   robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false, noimageindex: true },
   },
 };
 
